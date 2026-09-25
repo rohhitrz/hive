@@ -27,6 +27,11 @@ export type RunState = {
   agents: Record<string, AgentState>;
   board: BoardEntry[];
   disputes: Record<string, string>;
+  /** Round whose critic disputed each finding (for graph dispute edges). */
+  disputeRound: Record<string, number>;
+  /** Critique rounds that have started, in order. */
+  criticRounds: number[];
+  synthStarted: boolean;
   reviews: Record<number, Review>;
   report?: { markdown: string; citations: Citation[] };
   error?: string;
@@ -43,6 +48,9 @@ export const initialRunState: RunState = {
   agents: {},
   board: [],
   disputes: {},
+  disputeRound: {},
+  criticRounds: [],
+  synthStarted: false,
   reviews: {},
   lastSeq: 0,
 };
@@ -60,8 +68,13 @@ function updateAgent(state: RunState, id: unknown, fn: (a: AgentState) => AgentS
 /** Applies one HiveEvent. Unknown or malformed events leave the state unchanged. */
 function apply(state: RunState, event: HiveEvent, at: string): RunState {
   switch (event.type) {
-    case "phase":
-      return { ...state, phase: event.phase, round: event.round > 0 ? event.round : state.round };
+    case "phase": {
+      const round = num(event.round) > 0 ? num(event.round) : state.round;
+      const next: RunState = { ...state, phase: event.phase, round };
+      if (event.phase === "critiquing" && !state.criticRounds.includes(round)) next.criticRounds = [...state.criticRounds, round];
+      if (event.phase === "synthesizing") next.synthStarted = true;
+      return next;
+    }
 
     case "plan":
       return state;
@@ -105,7 +118,11 @@ function apply(state: RunState, event: HiveEvent, at: string): RunState {
       if (entry.type === "finding") {
         next = updateAgent(next, entry.from, (a) => ({ ...a, findingIds: [...a.findingIds, entry.id] }));
       } else if (entry.type === "dispute" && typeof entry.findingId === "string") {
-        next = { ...next, disputes: { ...next.disputes, [entry.findingId]: str(entry.reason) ?? "" } };
+        next = {
+          ...next,
+          disputes: { ...next.disputes, [entry.findingId]: str(entry.reason) ?? "" },
+          disputeRound: { ...next.disputeRound, [entry.findingId]: state.round },
+        };
       }
       return next;
     }

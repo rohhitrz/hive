@@ -14,7 +14,9 @@
     "db:migrate": "drizzle-kit migrate"
   },
   "dependencies": {
+    "@dagrejs/dagre": "^3.1.1",
     "@hive/core": "workspace:*",
+    "@xyflow/react": "^12.12.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.45.3",

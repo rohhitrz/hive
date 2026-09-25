@@ -178,6 +178,8 @@ type RunState = {
   }>;
   board: BoardEntry[];
   disputes: Record<string /*findingId*/, string /*reason*/>;
+  disputeRound: Record<string /*findingId*/, number>;  // which round's critic disputed it
+  criticRounds: number[];  synthStarted: boolean;       // graph: which critic / synth nodes exist
   reviews: Record<number /*round*/, Review>;
   report?: { markdown: string; citations: Citation[] };
   lastSeq: number;

@@ -40,3 +40,14 @@
   * { @apply border-border; }
   body { @apply bg-background text-foreground antialiased; }
 }
+
+/* Agent graph: pulsing border for working nodes. */
+@keyframes hive-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.35); }
+  50% { box-shadow: 0 0 0 5px rgba(56, 189, 248, 0); }
+}
+.hive-pulse { animation: hive-pulse 1.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .hive-pulse { animation: none; } }
+
+.react-flow { --xy-background-color: transparent; }
+.react-flow__controls-button { background: var(--card); border-color: var(--border); fill: var(--foreground); }
