@@ -29,4 +29,9 @@ export class Budget {
     this.agentsSpawned += granted;
     return granted;
   }
+
+  /** Returns slots reserved for agents that never started. */
+  releaseAgents(n: number) {
+    this.agentsSpawned = Math.max(0, this.agentsSpawned - n);
+  }
 }

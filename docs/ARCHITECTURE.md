@@ -96,8 +96,10 @@ Rules:
   errored and it posted no findings. Tool errors are otherwise fed back to the model so it can recover.
 - Report citations only include numbers that appear in the markdown; `[n]` markers that don't match a finding are
   removed, and `[1, 2]` is normalized to `[1][2]`.
-- `runHive(goal, { budgetUsd, maxAgents, maxRounds, onEvent, signal, models?, tools? })` resolves to
+- `runHive(goal, { budgetUsd, maxAgents, maxRounds, maxConcurrency?, onEvent, signal, models?, tools? })` resolves to
   `{ status, report?, error?, spentUsd, agents }`. `models` / `tools` are test overrides.
+- At most `maxConcurrency` agents run at once (default 3, env `HIVE_MAX_CONCURRENCY`); the rest queue. An agent's
+  `agent_spawned` fires when it actually starts, so a queued agent has no node yet, and its timeout starts then too.
 - The UI ignores unknown `type`s.
 
 ### Required core changes (vs. the week-1 skeleton)
@@ -201,6 +203,7 @@ type RunState = {
 OPENAI_API_KEY=         TAVILY_API_KEY=     JINA_API_KEY=        # JINA optional
 DATABASE_URL=postgres://hive:hive@localhost:5432/hive
 HIVE_LEAD_MODEL=        HIVE_WORKER_MODEL=                        # optional overrides (default gpt-6-luna)
+HIVE_MAX_CONCURRENCY=                                             # optional, agents running at once (default 3)
 HIVE_BASIC_AUTH=        # optional "user:pass"; enables auth middleware
 ```
 

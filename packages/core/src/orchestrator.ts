@@ -7,6 +7,7 @@ import { AgentError, runSubAgent } from "./agent.js";
 import { critique } from "./critic.js";
 import { synthesize } from "./synthesizer.js";
 import { defaultToolImpls } from "./tools.js";
+import { createLimiter } from "./limit.js";
 import { errorMessage, type Models, type RunContext, type ToolImpls } from "./context.js";
 import type { Citation, HiveEvent, RunStatus, SubQuestion } from "./types.js";
 
@@ -14,6 +15,8 @@ export type HiveOptions = {
   budgetUsd: number;
   maxAgents: number;
   maxRounds: number;
+  /** Agents running at once; the rest queue. Keeps parallel agents under provider rate limits. Default 3. */
+  maxConcurrency?: number;
   onEvent?: (e: HiveEvent) => void;
   /** Aborting skips remaining work, still writes a report from existing findings, and ends "cancelled". */
   signal?: AbortSignal;
@@ -21,6 +24,13 @@ export type HiveOptions = {
   models?: Models;
   tools?: ToolImpls;
 };
+
+const DEFAULT_CONCURRENCY = 3;
+
+function defaultConcurrency(): number {
+  const fromEnv = Number(process.env.HIVE_MAX_CONCURRENCY);
+  return Number.isInteger(fromEnv) && fromEnv > 0 ? fromEnv : DEFAULT_CONCURRENCY;
+}
 
 export type HiveResult = {
   status: RunStatus;
@@ -61,7 +71,7 @@ export async function runHive(goal: string, opts: HiveOptions): Promise<HiveResu
 
   let status: RunStatus = "done";
   try {
-    await research(ctx, opts.maxRounds);
+    await research(ctx, opts.maxRounds, opts.maxConcurrency ?? defaultConcurrency());
   } catch (err) {
     if (!signal.aborted) return finish("failed", undefined, errorMessage(err));
   }
@@ -81,8 +91,9 @@ export async function runHive(goal: string, opts: HiveOptions): Promise<HiveResu
 }
 
 /** Plan → (spawn → run → critique) × rounds. Returns early when the signal aborts. */
-async function research(ctx: RunContext, maxRounds: number) {
+async function research(ctx: RunContext, maxRounds: number, maxConcurrency: number) {
   const { budget, signal, emit } = ctx;
+  const limit = createLimiter(maxConcurrency);
 
   emit({ type: "phase", phase: "planning", round: 0 });
   let questions: SubQuestion[] = await plan(ctx);
@@ -94,19 +105,23 @@ async function research(ctx: RunContext, maxRounds: number) {
     emit({ type: "phase", phase: "researching", round });
     const granted = budget.reserveAgents(questions.length);
 
-    // Parallel fan-out. One failed agent must not kill the run: keep partial results.
+    // Parallel fan-out, capped by the limiter. One failed agent must not kill the run: keep partial results.
     await Promise.allSettled(
-      questions.slice(0, granted).map(async (q) => {
-        const spec = await createAgent(`${q.role}: ${q.question}`, ctx);
-        emit({ type: "agent_spawned", agent: spec, round });
-        try {
-          const { summary, costUsd } = await runSubAgent(spec, ctx);
-          emit({ type: "agent_done", agentId: spec.id, ok: true, summary, costUsd });
-        } catch (err) {
-          const costUsd = err instanceof AgentError ? err.costUsd : 0;
-          emit({ type: "agent_done", agentId: spec.id, ok: false, error: errorMessage(err), costUsd });
-        }
-      }),
+      questions.slice(0, granted).map((q) =>
+        limit(async () => {
+          // Queued agents that never started on cancel don't count as spawned.
+          if (signal.aborted) return budget.releaseAgents(1);
+          const spec = await createAgent(`${q.role}: ${q.question}`, ctx);
+          emit({ type: "agent_spawned", agent: spec, round });
+          try {
+            const { summary, costUsd } = await runSubAgent(spec, ctx);
+            emit({ type: "agent_done", agentId: spec.id, ok: true, summary, costUsd });
+          } catch (err) {
+            const costUsd = err instanceof AgentError ? err.costUsd : 0;
+            emit({ type: "agent_done", agentId: spec.id, ok: false, error: errorMessage(err), costUsd });
+          }
+        }),
+      ),
     );
 
     if (signal.aborted) return;
