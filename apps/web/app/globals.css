@@ -51,3 +51,8 @@
 
 .react-flow { --xy-background-color: transparent; }
 .react-flow__controls-button { background: var(--card); border-color: var(--border); fill: var(--foreground); }
+
+/* Inspector drawer slide-over. */
+@keyframes hive-slide-in { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.hive-slide-in { animation: hive-slide-in 160ms ease-out; }
+@media (prefers-reduced-motion: reduce) { .hive-slide-in { animation: none; } }

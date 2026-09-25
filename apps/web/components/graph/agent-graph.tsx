@@ -12,9 +12,9 @@ import { StageNode } from "./stage-node";
 
 const nodeTypes = { agent: AgentNode, stage: StageNode };
 
-type Props = { state: RunState; selectedAgentId?: string; onSelectAgent: (id: string) => void };
+type Props = { state: RunState; selectedAgentId?: string; onSelectAgent: (id: string) => void; onClearSelection: () => void };
 
-function Graph({ state, selectedAgentId, onSelectAgent }: Props) {
+function Graph({ state, selectedAgentId, onSelectAgent, onClearSelection }: Props) {
   const graph = useMemo(() => buildGraph(state), [state]);
   const key = topologyKey(graph.nodes);
   // Re-run dagre only when nodes are added (§6), not on every event.
@@ -69,6 +69,7 @@ function Graph({ state, selectedAgentId, onSelectAgent }: Props) {
       edges={edges}
       nodeTypes={nodeTypes}
       onNodeClick={onNodeClick}
+      onPaneClick={onClearSelection}
       colorMode="dark"
       fitView
       minZoom={0.2}
