@@ -26,10 +26,12 @@ export function StatusBar({ run, state, stream }: { run: RunInfo; state: RunStat
         {state.agentsSpawned}
         <span className="text-muted-foreground"> / {run.maxAgents} agents</span>
       </span>
-      <span className="tabular-nums" title="Billed web searches (Tavily credits)">
-        {state.searches}
-        <span className="text-muted-foreground"> searches</span>
-      </span>
+      {state.searches !== undefined && (
+        <span className="tabular-nums" title="Billed web searches (Tavily credits)">
+          {state.searches}
+          <span className="text-muted-foreground"> searches</span>
+        </span>
+      )}
       <Elapsed startedAt={run.createdAt} endedAt={endedAt} />
       {stream === "reconnecting" && <span className="text-amber-300">reconnecting…</span>}
       {!finished && run.status === "running" && <CancelButton runId={run.id} />}
