@@ -1,0 +1,1567 @@
+[
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 1,
+  "at": "2026-09-25T10:44:53.992Z",
+  "event": {
+   "type": "phase",
+   "phase": "planning",
+   "round": 0
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 2,
+  "at": "2026-09-25T10:44:57.952Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.00016,
+   "agentsSpawned": 0
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 3,
+  "at": "2026-09-25T10:44:57.952Z",
+  "event": {
+   "type": "plan",
+   "questions": [
+    {
+     "role": "German consumer market analyst",
+     "question": "What demand-side factors make Germany’s matcha tea market attractive in 2026, and what limits adoption? Assess consumer interest, health and wellness trends, demographics, and purchasing frequency."
+    },
+    {
+     "role": "Tea supply-chain and commodity analyst",
+     "question": "How do sourcing, production costs, import dependence, quality consistency, and supply-chain risks affect the prospects and drawbacks of selling matcha in Germany in 2026?"
+    },
+    {
+     "role": "Beverage industry and competition analyst",
+     "question": "What are the main competitive and commercial advantages and risks in Germany’s matcha market in 2026? Examine incumbent brands, substitutes, pricing, retail and food-service channels, and barriers to entry."
+    },
+    {
+     "role": "EU food regulation and trade specialist",
+     "question": "What German and EU regulatory, labeling, food-safety, sustainability, and trade requirements create opportunities or constraints for matcha businesses in 2026?"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 4,
+  "at": "2026-09-25T10:44:57.952Z",
+  "event": {
+   "type": "phase",
+   "phase": "researching",
+   "round": 1
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 5,
+  "at": "2026-09-25T10:45:05.490Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.000429,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 6,
+  "at": "2026-09-25T10:45:05.491Z",
+  "event": {
+   "type": "agent_spawned",
+   "agent": {
+    "id": "german-consumer-market-analyst-205e",
+    "role": "German consumer market analyst",
+    "maxSteps": 8,
+    "objective": "Assess which demand-side factors make Germany’s matcha tea market attractive in 2026 and which limit adoption, focusing on consumer interest, health and wellness trends, demographics, and purchasing frequency.",
+    "systemPrompt": "Research the German consumer market for matcha tea in 2026. Explain demand-side opportunities and barriers, covering consumer interest and awareness, health and wellness motivations, relevant demographic patterns, occasions and formats of use, and how frequently consumers purchase or consume matcha. Keep matcha-specific evidence distinct from evidence about green tea, tea generally, or the broader wellness market. Distinguish observed data from forecasts, surveys, retailer signals, and reasoned inference; state the date, population, and limitations of survey evidence where available. Look first for German government and statistical sources (such as Destatis and relevant public-health agencies), peer-reviewed research, transparent market surveys with disclosed methodology, and credible trade or retailer data. Use company or industry reports only with clear attribution and note commercial limitations. Prefer current evidence, while using older evidence only when it remains relevant and labeling it as such. Do not invent market figures, consumer behavior, or purchase frequency; if direct German matcha data is unavailable, say so and use carefully qualified proxies. Provide a concise, balanced synthesis of the strongest demand drivers and adoption constraints, and explain what the evidence suggests for 2026 rather than presenting unsupported certainty. Every factual claim must have an inline citation linking directly to a source URL. Stop when you have enough independent evidence to address each requested dimension, have checked whether matcha-specific frequency or demographic data exists, and can clearly state the key evidence gaps; do not pad the answer with generic tea-market claims."
+   },
+   "round": 1
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 7,
+  "at": "2026-09-25T10:45:07.076Z",
+  "event": {
+   "step": 1,
+   "type": "agent_step",
+   "agentId": "german-consumer-market-analyst-205e",
+   "costUsd": 6.87e-05,
+   "toolCalls": [
+    {
+     "name": "read_board",
+     "input": "{}",
+     "result": "[]"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 8,
+  "at": "2026-09-25T10:45:07.076Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0004977,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 9,
+  "at": "2026-09-25T10:45:07.780Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0008116,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 10,
+  "at": "2026-09-25T10:45:07.780Z",
+  "event": {
+   "type": "agent_spawned",
+   "agent": {
+    "id": "beverage-industry-and-competition-analyst-75b8",
+    "role": "Beverage industry and competition analyst",
+    "maxSteps": 8,
+    "objective": "What are the main competitive and commercial advantages and risks in Germany’s matcha market in 2026?",
+    "systemPrompt": "Research Germany’s matcha market with a focus on commercial competition, not general wellness benefits. Assess incumbent brands and their positioning; substitutes such as coffee, other teas, and powdered drinks; price points and value tiers; retail and food-service channels; and barriers to entry, including sourcing, quality assurance, brand building, and distribution. Explain the main advantages and risks for a new or expanding competitor.\n\nPrioritize sources in this order: German government and EU publications, customs or trade data, and reputable market or industry associations; company filings, official brand and retailer product pages, menus, and press releases for company-specific facts; established market-research organizations and reputable business or food-industry journalism for market estimates and competitive context. Use marketplace listings and social media only as supporting evidence, not as the basis for market-wide conclusions. Prefer recent evidence relevant to Germany. Treat Japan-wide or global data as context, not proof of German market conditions.\n\nFor every factual claim, provide a direct URL citation. Cite the specific source supporting each market estimate, price comparison, brand position, channel observation, and asserted barrier. Clearly label estimates, forecasts, and inference; state the date and geographic scope of evidence. Do not present forecasts or pre-2026 evidence as verified 2026 outcomes. If reliable 2026 data are unavailable, say so and use the latest available evidence with its date rather than inventing figures. Avoid unsupported claims about market size, growth, market shares, or consumer demand.\n\nDeliver a concise, balanced analysis organized into advantages, risks, and implications for competitors, followed by a short bottom line. Compare prices only on a like-for-like basis where possible (product form, weight, grade, and channel), and distinguish retail prices from café/menu prices. Stop when you have enough independent, credible evidence to support the principal findings across brands, substitutes, pricing, channels, and entry barriers; do not keep searching for marginal examples. If evidence is thin or conflicting, disclose that limitation."
+   },
+   "round": 1
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 11,
+  "at": "2026-09-25T10:45:08.080Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0011824000000000001,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 12,
+  "at": "2026-09-25T10:45:08.080Z",
+  "event": {
+   "type": "agent_spawned",
+   "agent": {
+    "id": "tea-supply-chain-and-commodity-analyst-f817",
+    "role": "Tea supply-chain and commodity analyst",
+    "maxSteps": 8,
+    "objective": "How do sourcing, production costs, import dependence, quality consistency, and supply-chain risks affect the prospects and drawbacks of selling matcha in Germany in 2026?",
+    "systemPrompt": "Research the supply-side case for selling matcha in Germany in 2026. Focus on: (1) where matcha is grown, processed, and exported, especially Japan and any relevant alternative origins; (2) the cost drivers from cultivation through milling, packaging, freight, insurance, tariffs, and currency movements; (3) Germany’s and the EU’s reliance on imported matcha and the limits of available trade statistics; (4) factors that make quality, grade, authenticity, and batch consistency difficult to secure; and (5) risks such as crop shortfalls, weather, labor constraints, rising demand, export restrictions, logistics disruption, food-safety requirements, and supplier concentration. Explain how each factor could create either an opportunity or a drawback for a seller in Germany in 2026. Distinguish verified 2026 facts from forecasts, historical evidence, and scenario-based inference; do not present projections as established outcomes. Avoid broad consumer-market analysis except where it directly affects sourcing or supply economics.\n\nUse sources in this order of preference: primary Japanese and EU/German government sources (for example, MAFF, Japan Customs, Eurostat, Destatis, European Commission, German customs or food-safety authorities); intergovernmental and trade-body data (such as ITC, FAO, and relevant tea associations); published research and reputable commodity/logistics analysis; then named producers, importers, and specialist trade publications for corroboration or firsthand market signals. Treat seller marketing, unsourced claims, and social-media posts as weak evidence. Check publication dates and the exact product and geography covered. Where trade codes aggregate matcha with other teas or powders, state that limitation and do not describe aggregated figures as matcha-specific. Do not invent prices, volumes, market shares, or causal links.\n\nFor every factual claim, provide a direct URL citation immediately alongside the claim. Support quantified claims with the underlying source and specify year, unit, and scope. If reliable evidence is unavailable, say so explicitly and explain what can and cannot be inferred. Conclude with a balanced, concise assessment of the main supply-chain advantages and disadvantages for a German seller in 2026, identifying the most consequential uncertainties. Stop once you have enough evidence to address all five requested factors and can support the assessment with sources; do not continue searching merely to accumulate redundant citations."
+   },
+   "round": 1
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 13,
+  "at": "2026-09-25T10:45:09.197Z",
+  "event": {
+   "step": 1,
+   "type": "agent_step",
+   "agentId": "tea-supply-chain-and-commodity-analyst-f817",
+   "costUsd": 8.580000000000001e-05,
+   "toolCalls": [
+    {
+     "name": "read_board",
+     "input": "{}",
+     "result": "[]"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 14,
+  "at": "2026-09-25T10:45:09.197Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0012682000000000001,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 15,
+  "at": "2026-09-25T10:45:09.395Z",
+  "event": {
+   "step": 1,
+   "type": "agent_step",
+   "agentId": "beverage-industry-and-competition-analyst-75b8",
+   "costUsd": 7.72e-05,
+   "toolCalls": [
+    {
+     "name": "read_board",
+     "input": "{}",
+     "result": "[]"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 16,
+  "at": "2026-09-25T10:45:09.395Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0013454,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 17,
+  "at": "2026-09-25T10:45:15.471Z",
+  "event": {
+   "step": 2,
+   "type": "agent_step",
+   "agentId": "german-consumer-market-analyst-205e",
+   "costUsd": 0.0001968,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Deutschland Matcha Verbraucher Umfrage Konsum Kauf Häufigkeit 2024 2025 Studie\"}",
+     "result": "[{\"title\":\"Germany Matcha Tea Market Trends, Size, Share\",\"url\":\"https://www.marketresearchfuture.com/reports/germany-matcha-tea-market-46440\",\"snippet\":\"Influence of Social Media\\n Sustainability Initiatives\\n Rising Health Consciousness\\n\\nRequest Free Sample\\n\\n## Germany Matcha Tea Market Summa…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"German matcha market consumer survey Germany awareness matcha 2024 2025 consumption frequency\"}",
+     "result": "[{\"title\":\"Germany Matcha Tea Market Trends, Size, Share\",\"url\":\"https://www.marketresearchfuture.com/reports/germany-matcha-tea-market-46440\",\"snippet\":\"## Future Outlook\\n\\n### Germany Matcha Tea Market Future Outlook\\n\\nThe Matcha Tea Market in Germany is projected to grow at 6.37% CAGR from 202…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:destatis.de Tee Konsum Deutschland grüner Tee Statistik 2024\"}",
+     "result": "[{\"title\":\"93 Liter zuckerhaltige Erfrischungsgetränke 2024 pro Kopf produziert - Statistisches Bundesamt\",\"url\":\"https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/02/PD26_N012_42.html\",\"snippet\":\"Die WHO\\\") definiert Übergewicht und Adipositas folgendermaßen:\\n\\nBei Erwachsenen: Übergewich…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha sales retailer trend 2024 2025 dm Rossmann matcha demand\"}",
+     "result": "[{\"title\":\"Europe Matcha Market Size, Share, Trends and Analysis, 2033\",\"url\":\"https://www.marketdataforecast.com/market-reports/europe-matcha-market\",\"snippet\":\"Germany followed closely in the European matcha market and captured 18.7% share in 2025. Germany’s strength lies in its rigorous quality …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Deutschland Matcha Studie Verbraucher Zielgruppe Alter Matcha Umfrage\"}",
+     "result": "[{\"title\":\"marketagent - Matcha\",\"url\":\"https://marketagent-schweiz.ch/aktuelles/presse/matcha\",\"snippet\":\"Während die ältere Generation (50–75 Jahre) noch mehrheitlich auf Matcha verzichtet, wächst die Begeisterung bei den 14- bis 29-Jährigen kontinuierlich. „Matcha hat sich in den letzten Jahren …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany health wellness survey consumers 2024 health nutrition younger adults official survey\"}",
+     "result": "[{\"title\":\"Food and Nutrition in Germany 2024\",\"url\":\"https://www.statista.com/study/108753/food-and-nutrition-in-germany\",\"snippet\":\"Method: Online survey\\n Survey name: Consumer Insights Food & Nutrition in Germany\\n Region: Germany\\n Number of respondents: 1050\\n Age of respondents: 18 to 74 yea…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"German Tea Association tea consumption 2024 green tea Germany statistics\"}",
+     "result": "[{\"title\":\"Germany Herbal Tea Market Size, Growth, Trends 2035\",\"url\":\"https://www.marketresearchfuture.com/reports/germany-herbal-tea-market-46426\",\"snippet\":\"|  |  |\\n --- |\\n| MARKET SIZE 2024 | 216.88(USD Million) |\\n| MARKET SIZE 2025 | 227.57(USD Million) |\\n| MARKET SIZE 2035 | 368.25(USD Mi…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU Germany matcha caffeine health claims evidence review matcha health benefits consumer\"}",
+     "result": "[{\"title\":\"The Science Behind Your Cup: What Research Says About Matcha's Health Benefits | Romi Matcha\",\"url\":\"https://www.romimatcha.com/blogs/journal/what-research-says-about-matchas-health-benefits\",\"snippet\":\"Researchers are careful to note that more large-scale human clinical trials are neede…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 18,
+  "at": "2026-09-25T10:45:15.471Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0015422,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 19,
+  "at": "2026-09-25T10:45:16.967Z",
+  "event": {
+   "step": 2,
+   "type": "agent_step",
+   "agentId": "beverage-industry-and-competition-analyst-75b8",
+   "costUsd": 0.0002118,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha market 2025 Germany matcha industry demand market report cafe retail\"}",
+     "result": "[{\"title\":\"Germany Matcha Tea Market Trends, Size, Share\",\"url\":\"https://www.marketresearchfuture.com/reports/germany-matcha-tea-market-46440\",\"snippet\":\"## Future Outlook\\n\\n### Germany Matcha Tea Market Future Outlook\\n\\nThe Matcha Tea Market in Germany is projected to grow at 6.37% CAGR from 202…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:destatis.de Germany imports green tea 2024 customs matcha HS 0902\"}",
+     "result": "[{\"title\":\"Key table Import of goods from Germany - German Federal Statistical Office\",\"url\":\"https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Data-Topic/Tables/BasicData_ImportDE.html\",\"snippet\":\"| Country | Year | Import of goods from Germany  mn US$ |\\n| Source: UN Co…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha brands official shop price 30g matcha dm TeeGschwendner\"}",
+     "result": "[{\"title\":\"KEIKO Online Shop | Bio Matcha | Frisch in Deutschland vermahlen\",\"url\":\"https://www.keiko.de/en/organic-matcha\",\"snippet\":\"Product number:   21356.1M\\n\\nGewicht:  30 g | 50 g\\n\\nAvailable, delivery time: 1-3 working days (in Germany)\\n\\n(€983.33 \\\\ / 1 kg)  \\n\\n€29.50 \\\\\\n\\nDetails\\n\\nM…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha latte menu price Starbucks Germany matcha 2025\"}",
+     "result": "[{\"title\":\"Starbucks Rathausmarkt Delivery | Menu & Prices | Hamburg\",\"url\":\"https://www.ubereats.com/de-en/store/starbucks-rathausmarkt/I_G9yx0uW7654RuUMs1ZPw\",\"snippet\":\"Matcha Latte: €7.20 - White Chocolate: €6.70 … d Matcha Green Tea Latte: €6.00. Matcha Latte: €7.20 - Grey Tea: €4.20\"},{\"title…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha supply shortage Japan 2024 2025 industry quality sourcing\"}",
+     "result": "[{\"title\":\"11 Facts about the Matcha Shortage You Should Know\",\"url\":\"https://ooika.co/learn/11-matcha-shortage-facts\",\"snippet\":\"Zennoh Kyoto market had 10,216KG Tencha in 2024, only 6,140 in 2025! (Nearly 40% less Tencha available at Auction.)\\n\\nSo what’s going on? There may be multiple reasons,…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha retail products REWE dm Rossmann matcha powder prices\"}",
+     "result": "[{\"title\":\"Daily Matcha Powder – The Republic of Tea\",\"url\":\"https://www.republicoftea.com/products/daily-matcha\",\"snippet\":\"## Your cart is empty\\n\\n Continue shopping \\n\\nHave an account?\\n\\nLog in to check out faster.\\n\\n## YOUR CART (0)\\n\\nMy Account\\n\\nSpend $59.00 more for FREE shipping (Cont…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"German tea association tea market 2024 green tea Germany consumption\"}",
+     "result": "[{\"title\":\"Europe Tea Market Analysis | Industry Growth, Size & ...\",\"url\":\"https://www.mordorintelligence.com/industry-reports/europe-tea-market\",\"snippet\":\"European consumers are increasingly willing to pay a premium for specialty tea experiences, shifting the market's value propositions away fro…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha competitors brands aiya matcha tea official Germany\"}",
+     "result": "[{\"title\":\"AIYA Europe GmbH Information\",\"url\":\"https://rocketreach.co/aiya-europe-gmbh-profile_b46f5995fc5c6bbb\",\"snippet\":\"KeywordsMatcha Tea, Japanese Matcha, Organic Matcha, Ceremonial Matcha, Premium Matcha, Matcha Powder, High Quality Matcha, Culinary Matcha, Matcha Latte, Matcha Supplier, Ma…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 20,
+  "at": "2026-09-25T10:45:16.967Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0017540000000000001,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 21,
+  "at": "2026-09-25T10:45:23.108Z",
+  "event": {
+   "step": 2,
+   "type": "agent_step",
+   "agentId": "tea-supply-chain-and-commodity-analyst-f817",
+   "costUsd": 0.0005179,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:maff.go.jp tencha production 2024 Japan matcha production statistics export 2025 shortage tea production\"}",
+     "result": "[{\"title\":\"2024\",\"url\":\"https://www.youtube.com/watch?v=rsKdmWqXzvQ\",\"snippet\":\"# 2024\\n## Channel: Fred again . . (verified)\\n1.47M subscribers\\n\\n### Description\\n781,241 views\\nPosted: 2024-12-31\\nthank you guys [...] [10:46] [Applause]\\n[10:52] okay and also I love the I love that there was lik…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:maff.go.jp tea production prefecture tencha Kyoto Aichi Kagoshima 2023 statistics\"}",
+     "result": "[{\"title\":\"おいしい日本、届け隊: TOP\",\"url\":\"https://maff.export-hr.maff.go.jp\",\"snippet\":\"#プロボノ #事務局支援 #文章作成が得意な方\\n\\n募集期間：2025/01/22～2025/06/30\\n\\nマッチング成立\\n\\n（募集終了）ほたての資源を全部大切に。貝殻アップサイクル商品の輸出をサポートしてくれるメンバー募集！\\n\\n#サステナブル #リモートワーク #副業兼業 #英語が得意な方 #輸出知識\\n\\n募集期間：2024/12/20～2025/03/31\\n\\nマッチング成立\\n\\n（募集終了）ぶどうDAO！？…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Eurostat CN code matcha green tea powder import Germany matcha tariff 0902 2024\"}",
+     "result": "[{\"title\":\"Matcha Powder HS Codes: Duties & Documents\",\"url\":\"https://first-agri.jp/matcha/columns/065\",\"snippet\":\"Matcha's classification under international trade codes directly affects the duties you'll pay on imports. Most countries classify matcha under the Harmonized System (HS) code 0902.10,…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU TARIC green tea powder matcha customs duty Japan EU EPA 0902 Germany\"}",
+     "result": "[{\"title\":\"Matcha Powder HS Codes: Duties & Documents\",\"url\":\"https://first-agri.jp/matcha/columns/065\",\"snippet\":\"Product Cost (FOB): $5,000\\n Air Freight: $800\\n Customs Value: $5,800\\n Import Duty (0% with Japan FTA): $0\\n MPF (0.3464%): $20.09\\n Customs Brokerage: $250\\n Terminal Handling: $50\\…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany import tea customs statistics matcha code 0902 green tea powder Destatis\"}",
+     "result": "[{\"title\":\"HS Code 09021000 - Green Tea · Unfermented Leaves\",\"url\":\"https://www.tariffnumber.com/2026/09021000\",\"snippet\":\"Please disable your ad blocker so we can continue to develop the platform.\\n\\nCombined Nomenclature \\n\\n# HS Code 09021000\\n\\nGreen Tea · Unfermented Leaves · Retail Packaged …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan matcha export restrictions 2025 government tea shortage export\"}",
+     "result": "[{\"title\":\"Matcha Supply Shortage in Japan: Causes, Impacts, and Outlook | Grace & Green\",\"url\":\"https://gracematcha.com/blogs/blog/matcha-supply-shortage-in-japan-causes-impacts-and-outlook\",\"snippet\":\"Japan’s beloved powdered green tea, matcha, has reached a critical point of supply constraint in…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU food safety matcha pesticide maximum residue levels contaminants official import controls tea\"}",
+     "result": "[{\"title\":\"Matcha Contamination Risks: Heavy Metals, Pesticides, and Third-Party Testing for B2B Procurement | First Agri B2B\",\"url\":\"https://first-agri.jp/matcha/columns/023\",\"snippet\":\"Pesticide Residue Controls: The EU maintains a comprehensive database of Maximum Residue Levels (MRLs) for pesti…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"matcha milling tencha production cost stone mill yield labor supply academic Japan\"}",
+     "result": "[{\"title\":\"All about the Global Matcha Shortage (the Complete Guide)\",\"url\":\"https://ooika.co/learn/the-global-matcha-shortage\",\"snippet\":\"### Slow Production\\n\\nTo make matters more complicated, Matcha can not be produced all at once like most other teas are. Stone-milling Matcha is a very slow pr…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan tea harvest weather labor shortage production 2024 MAFF climate tea\"}",
+     "result": "[{\"title\":\"Weather in Japan\",\"url\":\"https://www.weatherapi.com/\",\"snippet\":\"{'location': {'name': 'Tokyo', 'region': 'Tokyo', 'country': 'Japan', 'lat': 35.69, 'lon': 139.692, 'tz_id': 'Asia/Tokyo', 'localtime_epoch': 1790333118, 'localtime': '2026-09-25 19:45'}, 'current': {'last_updated_epoch': 1…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"matcha alternative origins China Korea Taiwan production export matcha tea powder trade\"}",
+     "result": "[{\"title\":\"Matcha\",\"url\":\"https://en.wikipedia.org/wiki/Matcha\",\"snippet\":\"Powdered tea originated in China during the Tang dynasty (618–907) where tea leaves were pounded and then milled into fine powder before being shaped into \\\"cakes\\\". The Classic of Tea, written by Chinese tea master Lu Yu ro…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japanese yen exchange rate 2025 2026 Bank of Japan export costs currency official\"}",
+     "result": "[{\"title\":\"Japanese Yen - Quote - Chart - Historical Data - News\",\"url\":\"https://tradingeconomics.com/japan/currency\",\"snippet\":\"### The USD/JPY exchange rate rose to 157.8780 on September 23, 2026, up 0.32% from the previous session. Over the past month, the Japanese Yen has strengthened 0.76%, bu…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan green tea exports 2024 2025 record MAFF matcha demand tencha production\"}",
+     "result": "[{\"title\":\"Japan's Tea Industry in 2025–2026: Official MAFF Data on ...\",\"url\":\"https://www.matcha-wholesale-japan.com/blogs/news/japans-tea-industry-in-2025-2026-official-maff-data-on-matcha-tencha-production-trends\",\"snippet\":\"One of the most significant findings in MAFF's March 2026 report is th…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU Japan EPA customs tariff green tea 0902 official European Commission\"}",
+     "result": "[{\"title\":\"How to Import Organic Japanese Tea to EU countries - Shizuokatea\",\"url\":\"https://www.shizuokatea.com/blogs/green-tea-merchant/how-to-import-organic-japanese-tea-to-eu-countries\",\"snippet\":\"Under the EU–Japan Economic Partnership Agreement, in force since 1 February 2019, Japanese-origin …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"European Commission import control tea Japan China pesticide border controls 2025 regulation\"}",
+     "result": "[{\"title\":\"The Official Controls (Import of High-Risk Food and Feed of Non-Animal Origin) (Amendment of Commission Implementing Regulation (EU) 2019/1793) (England) Regulations 2025\",\"url\":\"https://www.legislation.gov.uk/uksi/2025/1162/made/data.html\",\"snippet\":\"# The Official Controls (Import of H…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha import dependency domestic tea production Germany matcha\"}",
+     "result": "[{\"title\":\"Matcha is becoming hip in Germany, here's why\",\"url\":\"https://yunomi.life/blogs/ocha/matcha-is-becoming-hip-in-germany-here-s-why\",\"snippet\":\"the matcha types offered at P&T), and perhaps, most importantly, one that is organic. The majority of tea companies in Germany rely on the major t…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan Customs trade statistics matcha HS code powdered green tea 0902 2024\"}",
+     "result": "[{\"title\":\"Matcha Powder HS Codes: Duties & Documents\",\"url\":\"https://first-agri.jp/matcha/columns/065\",\"snippet\":\"Product Cost (FOB): $5,000\\n Air Freight: $800\\n Customs Value: $5,800\\n Import Duty (0% with Japan FTA): $0\\n MPF (0.3464%): $20.09\\n Customs Brokerage: $250\\n Terminal Handling: $50\\…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan tencha production 2024 tonnes MAFF 2025 record demand\"}",
+     "result": "[{\"title\":\"Japan's Tea Industry in 2025–2026: Official MAFF Data on ...\",\"url\":\"https://www.matcha-wholesale-japan.com/blogs/news/japans-tea-industry-in-2025-2026-official-maff-data-on-matcha-tencha-production-trends\",\"snippet\":\"In a historic shift documented by MAFF, Kagoshima Prefecture has now s…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"tea logistics freight Japan Europe shipping rates 2025 container\"}",
+     "result": "[{\"title\":\"How Asia-Europe Shipping Rates Are Surging Toward $20,000 Per Container in 2025\",\"url\":\"https://yescontainers.com/how-asia-europe-shipping-rates-are-surging-toward-20000-per-container-in-2025\",\"snippet\":\"Shipping rates between Asia and Europe are soaring to record-breaking levels, with a…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU imports tea HS 0902 matcha classification powdered tea customs code CN 090220\"}",
+     "result": "[{\"title\":\"Matcha Powder HS Codes: Duties & Documents\",\"url\":\"https://first-agri.jp/matcha/columns/065\",\"snippet\":\"Trusted Trader Programs: Enroll in programs like C-TPAT (US), AEO (EU), or equivalent trusted trader initiatives to expedite customs processing and reduce examination frequency.\\n\\nCon…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU organic matcha imports control Japan organic certification regulation import official\"}",
+     "result": "[{\"title\":\"How to Import Organic Japanese Tea to EU countries - Shizuokatea\",\"url\":\"https://www.shizuokatea.com/blogs/green-tea-merchant/how-to-import-organic-japanese-tea-to-eu-countries\",\"snippet\":\"The electronic certificate of Inspection (e-CoI) is issued in TRACES (the EU’s Trade Control and Ex…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan tea industry aging farmers labor shortage tea production official MAFF\"}",
+     "result": "[{\"title\":\"Japan's Matcha Boom Faces a Critical Threat: A Shortage of Tea Farmers – Matcha Wholesale Japan\",\"url\":\"https://www.matcha-wholesale-japan.com/blogs/news/japans-matcha-boom-faces-a-critical-threat-a-shortage-of-tea-farmers\",\"snippet\":\"According to Japan's Ministry of Agriculture, Forestr…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan tea export 2024 green tea powder export value 2024 official\"}",
+     "result": "[{\"title\":\"Exporting Japanese Green Tea: FDA Requirements, EU Regulations & Logistics Guide | First Agri B2B\",\"url\":\"https://first-agri.jp/matcha/columns/exporting-japanese-green-tea\",\"snippet\":\"| Metric | 2024 (Full Year) | Dec 2025 (Single Month) | YoY Change (Dec 2025) |\\n ---  --- |\\n| Total ex…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"matcha authenticity quality grading variability tencha cultivar shading research Japan matcha\"}",
+     "result": "[{\"title\":\"Matcha Cultivars Guide: Japanese Tea Varieties & Tencha | KTeaShop\",\"url\":\"https://kteashop.com/pages/matcha-cultivars\",\"snippet\":\"In modern Japanese tea cultivation, named cultivars are commonly propagated by cuttings so selected characteristics can be reproduced more consistently. This…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"FAO tea climate change drought frost Japan tea production\"}",
+     "result": "[{\"title\":\"Climate Change on Tea | Encyclopedia MDPI\",\"url\":\"https://encyclopedia.pub/entry/8666\",\"snippet\":\"tolerant to drought than C. sinensis var. sinensis grown in Japan, China, Iran, and Turkey . The supplementation of K+, Kaolin, abscisic acid (ABA), and methyl jasmonate (MeJA) can protect t…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan tea production 2023 by prefecture MAFF statistics tea leaves tencha\"}",
+     "result": "[{\"title\":\"Japan Tea Production Map: Interactive 2026 Guide – One with Tea\",\"url\":\"https://onewithtea.com/pages/japan-tea-production-map\",\"snippet\":\"Matcha is made from tencha, a specific shade-grown Japanese leaf. As of 2023, the four largest tencha-producing prefectures are Kagoshima (1,585 t, #1…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"European Union food labeling matcha country of origin traceability tea import regulation official\"}",
+     "result": "[{\"title\":\"Matcha Import Rules 2026: EU, UK & More | First Agri B2B\",\"url\":\"https://first-agri.jp/matcha/columns/069\",\"snippet\":\"### Member-state language and labeling\\n\\n EU Regulation 1169/2011 requires food labeling in the official language(s) of the member state of sale.\\n Common destination la…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU autonomous tariff suspension tea matcha Japan customs duty green tea 2025 0902\"}",
+     "result": "[{\"title\":\"Tariff Reduction on Green Tea and Matcha Products::O-Cha.com Japanese Green Tea & Matcha\",\"url\":\"https://www.o-cha.com/fr/news/tariff-reduction-on-green-tea-and-matcha-products\",\"snippet\":\"# Tariff Reduction on Green Tea and Matcha Products\\n\\n:\\n\\nfrom\\n\\nto\\n\\nClear\\n\\nClear\\n\\nReset a…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"China matcha exports 2024 production alternative origin matcha tea powder reliable source\"}",
+     "result": "[{\"title\":\"Beyond Japan: Global Matcha Production and Quality ...\",\"url\":\"https://best-matcha.com/guides/industry-insights/beyond-japan-global-matcha-production-and-quality-differences\",\"snippet\":\"China produced an estimated 5,000 metric tons of matcha in 2025 — roughly 60% of the world’s total sup…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 22,
+  "at": "2026-09-25T10:45:23.108Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0022719000000000003,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 23,
+  "at": "2026-09-25T10:45:23.148Z",
+  "event": {
+   "step": 3,
+   "type": "agent_step",
+   "agentId": "german-consumer-market-analyst-205e",
+   "costUsd": 0.0015487,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Matcha Deutschland Nachfrage dm Verkaufszahlen 2025 Matcha Trend Einzelhandel\"}",
+     "result": "[{\"title\":\"Germany Matcha Tea Market Trends, Size, Share\",\"url\":\"https://www.marketresearchfuture.com/reports/germany-matcha-tea-market-46440\",\"snippet\":\"## Future Outlook\\n\\n### Germany Matcha Tea Market Future Outlook\\n\\nThe Matcha Tea Market in Germany is projected to grow at 6.37% CAGR from 202…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Deutschland Matcha Google Trends Suchanfragen 2025 Matcha Nachfrage Cafés\"}",
+     "result": "[{\"title\":\"Matcha Searches Surge 1300% On Google; Ube & Hojicha Also Gain Popularity In India | Curly Tales\",\"url\":\"https://curlytales.com/india/trending/matcha-searches-surge-on-google-ube-hojicha-also-gain-popularity-in-india\",\"snippet\":\"Today, Matcha is slowly moving from cafe menus to an everyd…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha sales growth 2025 retailer German market matcha shortages\"}",
+     "result": "[{\"title\":\"Germany Matcha Tea Market Trends, Size, Share\",\"url\":\"https://www.marketresearchfuture.com/reports/germany-matcha-tea-market-46440\",\"snippet\":\"## Future Outlook\\n\\n### Germany Matcha Tea Market Future Outlook\\n\\nThe Matcha Tea Market in Germany is projected to grow at 6.37% CAGR from 202…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"German matcha consumer survey frequency how often matcha Germany study\"}",
+     "result": "[{\"title\":\"Germany Matcha Tea Market Trends, Size, Share\",\"url\":\"https://www.marketresearchfuture.com/reports/germany-matcha-tea-market-46440\",\"snippet\":\"The increasing awareness of health and wellness among consumers in Germany appears to be a primary driver for the matcha tea market. As individua…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Deutscher Teeverband Jahresbericht 2024 Grüntee Konsum Deutschland 2024 Matcha\"}",
+     "result": "[{\"title\":\"Konsum\",\"url\":\"https://teeverband.de/presse/tee-report/tee-report-2025/konsum\",\"snippet\":\"Bei uns in Deutschland lag der jährliche Pro-Kopf-Konsum 2024 bei insgesamt 67,2 Litern. Es wurden 27,1 Liter Schwarz- und Grüntee sowie 40,1 Liter Kräuter- und\"},{\"title\":\"Social-Media-Trend - Deut…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"German matcha latte menu sales cafes 2025 Germany demand matcha\"}",
+     "result": "[{\"title\":\"Best Matcha Latte Near Me - December 2025: Find Nearby Matcha Latte Reviews - Yelp\",\"url\":\"https://www.yelp.com/nearme/matcha-latte\",\"snippet\":\"# Best Matcha Latte Near Me. Japanese Food, Cafes, Coffee & Tea. 3515 20th St, San Francisco, CA. Coffee & Tea, Ice Cream & Frozen Yogurt. 74 Ne…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"BfR caffeine green tea health claims matcha Germany EFSA caffeine safety\"}",
+     "result": "[{\"title\":\"Coffee, energy drinks and caffeine powder: Energizers with health risks? - BfR\",\"url\":\"https://www.bfr.bund.de/en/release/frequently-asked-questions-on-caffeine-and-foods-containing-caffeine-including-energy-drinks\",\"snippet\":\"According to a External Link:risk assessment by the European …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:food.dge.de grüner Tee Koffein gesundheit Matcha\"}",
+     "result": "[{\"title\":\"tee(2) - Linux manual page - man7.org\",\"url\":\"https://man7.org/linux/man-pages/man2/tee.2.html\",\"snippet\":\"``` [...] ``` [...] ```\"},{\"title\":\"Transesophageal Echocardiogram (TEE) - YouTube\",\"url\":\"https://www.youtube.com/watch?v=iko2FZ1R9Ow\",\"snippet\":\"[1:22] it's a safe test so make su…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU matcha product recall pesticide heavy metals Germany matcha 2025 Stiftung Warentest\"}",
+     "result": "[{\"title\":\"Matcha Contamination Risks: Heavy Metals, Pesticides, and Third-Party Testing for B2B Procurement | First Agri B2B\",\"url\":\"https://first-agri.jp/matcha/columns/023\",\"snippet\":\"Pesticide Residue Controls: The EU maintains a comprehensive database of Maximum Residue Levels (MRLs) for pesti…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 24,
+  "at": "2026-09-25T10:45:23.148Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0038206000000000004,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 25,
+  "at": "2026-09-25T10:45:25.474Z",
+  "event": {
+   "step": 3,
+   "type": "agent_step",
+   "agentId": "beverage-industry-and-competition-analyst-75b8",
+   "costUsd": 0.001622,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Deutscher Tee & Kräutertee Verband Jahresbericht 2024 67,2 Liter Grüntee 27,1\"}",
+     "result": "[{\"title\":\"Tee Report 2025\",\"url\":\"https://teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf\",\"snippet\":\"03 KONSUM 04 55.547 Tassen Kräuter- und Früchtetee 89.100 Tassen Tee 33.553 Tassen Schwarz- und Grüntee Der Tassenverbrauch pr…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:teeverband.de 2024 Teekonsum 67,2 Liter Deutschland Grüntee\"}",
+     "result": "[{\"title\":\"[PDF] Tee Report 2024 - teeverband.de\",\"url\":\"https://www.teeverband.de/files/bilder/C-Tee-Report/x-alt/Marktzahlen/Teereport_2024_ES.pdf\",\"snippet\":\"2024 ... Insgesamt 68,2 Liter Tee wurden 2023 in Deutschland pro Kopf getrunken, davon. 40,5 Liter Kräuter- und Früchtetee sowie 27,7 Lite…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:shop.dm.de Matcha Pulver 30 g Preis dmBio Matcha\"}",
+     "result": "[{\"title\":\"Fairtrade Minimum Price and Premium Information\",\"url\":\"https://www.fairtrade.net/en/why-fairtrade/how-we-do-it/standards/fairtrade-minimum-price-and-premium-information.html\",\"snippet\":\"Valid from 1 January 2026 [...] Why we do it \\n\\n Deforestation\\n Workers' rights\\n Mitigating risks\\…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:rossmann.de Matcha Pulver 30 g Preis Bio Matcha Deutschland\"}",
+     "result": "[{\"title\":\"eCFR :: 40 CFR Part 63 Subpart G -- National Emission Standards for Hazardous Air Pollutants From the Synthetic Organic Chemical Manufacturing Industry for Process Vents, Storage Vessels, Transfer Operations, and Wastewater\",\"url\":\"https://www.ecfr.gov/current/title-40/chapter-I/subchapt…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:alnatura.de Matcha 30 g Preis Matcha Tee\"}",
+     "result": "[{\"title\":\"[PDF] Hochsaison für Steinobst - Alnatura\",\"url\":\"https://www.alnatura.de/-/media/Alnatura/B2C/Dateien/Magazin/Blaetter-Magazin/ALN_2608_AUG_fin-Beihefter_ES.pdf\",\"snippet\":\"Matcha ist ein Schattentee. Drei bis vier Wochen vor der Ernte werden die Pflanzen mit Planen beschattet. Diese Be…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:matcha-karu.com deutschland matcha 30g Preis shop\"}",
+     "result": "[{\"title\":\"Itsutsu Organic Matcha Tea\",\"url\":\"https://matcha-karu.com/en-es/products/organic-matcha-itsutsu\",\"snippet\":\"Bester Preis. 240 g. -57%. 75,00 €. 75,00 €. 0.27€/gram. 120-240 servings ; Free ShippingAvailable with a subscription & starting at 39€ in Germany ; Always\"},{\"title\":\"Organic Ma…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:aiya-europe.com matcha 30g Deutschland price EU shop\"}",
+     "result": "[{\"title\":\"Buy Matcha in bulk for B2B and Manufacturing | Aiya Europe GmbH\",\"url\":\"https://aiya-europe.com/matcha-in-bulk\",\"snippet\":\"The global Matcha market continues to grow, with forecasts estimating a market value of approximately €5 billion by 2028 and a compound annual growth rate of 10.7%. …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha latte cafe menu € Berlin matcha 2025\"}",
+     "result": "[{\"title\":\"Café Prana | Berlin | NeoTaste\",\"url\":\"https://neotaste.com/gb/restaurants/berlin/cafe-prana\",\"snippet\":\"€5.20. Chai Latte hausgemacht. mit Earl grey/ Cacao/Golden/Blend/hasselnuss - 5.60. €4.60. Ceremonial Matcha Latte. mit Earl Grey/Chai/Clean Green - +0.5 mit\"},{\"title\":\"Keyu Café fro…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU regulation tea pesticide residues matcha powdered tea contaminants official EU import food safety\"}",
+     "result": "[{\"title\":\"Matcha Contamination Risks: Heavy Metals, Pesticides, and Third-Party Testing for B2B Procurement | First Agri B2B\",\"url\":\"https://first-agri.jp/matcha/columns/023\",\"snippet\":\"The EU maintains some of the world's strictest food safety standards, with comprehensive regulations covering te…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan matcha 2025 shortage tea production tencha prices 2025 Kyoto official ministry agriculture\"}",
+     "result": "[{\"title\":\"Matcha Shortage & Price Surge in Japan 2025\",\"url\":\"https://ujimatchatea.com/blogs/news/matcha-shortage-price-increase-japan-2025\",\"snippet\":\"These figures are consistent with broader industry reporting and the national trends summarized by Japan’s Ministry of Agriculture, Forestry and F…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany coffee consumption 2024 Deutscher Kaffeeverband 163 liters\"}",
+     "result": "[{\"title\":\"Coffee consumption declines in Germany in 2024\",\"url\":\"https://www.just-drinks.com/news/coffee-consumption-declines-in-germany-in-2024\",\"snippet\":\"Coffee consumption dipped year-on-year in Germany last year, according to new findings from the Deutscher Kaffeeverband (German Coffee Associ…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU Access2Markets tariff green tea Japan 0902 tea Germany customs import matcha\"}",
+     "result": "[{\"title\":\"HS Code 09021000 - Green Tea · Unfermented Leaves\",\"url\":\"https://www.tariffnumber.com/2026/09021000\",\"snippet\":\"Please disable your ad blocker so we can continue to develop the platform.\\n\\nCombined Nomenclature \\n\\n# HS Code 09021000\\n\\nGreen Tea · Unfermented Leaves · Retail Packaged …"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 26,
+  "at": "2026-09-25T10:45:25.474Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0054426000000000006,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 27,
+  "at": "2026-09-25T10:45:37.943Z",
+  "event": {
+   "step": 4,
+   "type": "agent_step",
+   "agentId": "german-consumer-market-analyst-205e",
+   "costUsd": 0.0030549,
+   "toolCalls": [
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://teeverband.de/presse/tee-report/tee-report-2025/konsum\"}",
+     "result": "<untrusted_page url=\"https://teeverband.de/presse/tee-report/tee-report-2025/konsum\">\nTitle: Not found - Root (en)\n\nURL Source: https://teeverband.de/presse/tee-report/tee-report-2025/konsum\n\nWarning: Target URL returned error 404: Not Found\n\nMarkdown Content:\n[Startseite](https://teeverband.de/sta…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.lgl.bayern.de/lebensmittel/warengruppen/wc_47_tee/ue_2024_matcha.htm\"}",
+     "result": "<untrusted_page url=\"https://www.lgl.bayern.de/lebensmittel/warengruppen/wc_47_tee/ue_2024_matcha.htm\">\nTitle: Lebensmittel: Untersuchung des Trendgetränks Matcha-Tee\n\nURL Source: https://www.lgl.bayern.de/lebensmittel/warengruppen/wc_47_tee/ue_2024_matcha.htm\n\nMarkdown Content:\n[](https://www.lgl.…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://lebensmittelpraxis.de/handel-aktuell/41818-social-media-trend-deutsche-importieren-deutlich-mehr-matcha-tee.html\"}",
+     "result": "<untrusted_page url=\"https://lebensmittelpraxis.de/handel-aktuell/41818-social-media-trend-deutsche-importieren-deutlich-mehr-matcha-tee.html\">\nTitle: Social-Media-Trend - Deutsche importieren deutlich mehr Matcha-Tee\n\nURL Source: https://lebensmittelpraxis.de/handel-aktuell/41818-social-media-tren…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://marketagent-schweiz.ch/aktuelles/presse/matcha\"}",
+     "result": "<untrusted_page url=\"https://marketagent-schweiz.ch/aktuelles/presse/matcha\">\nTitle: marketagent - Matcha\n\nURL Source: https://marketagent-schweiz.ch/aktuelles/presse/matcha\n\nMarkdown Content:\nMatcha liegt im Trend: Das zeigt eine aktuelle Marketagent-Umfrage unter gut 1.000 Personen aus der Deutsc…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends\"}",
+     "result": "<untrusted_page url=\"https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends\">\nTitle: Access Denied\n\nURL Source: https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends\n\nWarning: Target URL returned error 403: For…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.foodnavigator.com/Article/2025/04/09/matcha-trend-boosting-sales-but-threatening-supply\"}",
+     "result": "<untrusted_page url=\"https://www.foodnavigator.com/Article/2025/04/09/matcha-trend-boosting-sales-but-threatening-supply\">\nTitle: Matcha trend sends sales skyrocketing but threatens supply\n\nURL Source: https://www.foodnavigator.com/Article/2025/04/09/matcha-trend-boosting-sales-but-threatening-supp…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.bfr.bund.de/en/release/frequently-asked-questions-on-caffeine-and-foods-containing-caffeine-including-energy-drinks\"}",
+     "result": "<untrusted_page url=\"https://www.bfr.bund.de/en/release/frequently-asked-questions-on-caffeine-and-foods-containing-caffeine-including-energy-drinks\">\nTitle: Coffee, energy drinks and caffeine powder: Energizers with health risks?\n\nURL Source: https://www.bfr.bund.de/en/release/frequently-asked-que…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf\"}",
+     "result": "<untrusted_page url=\"https://teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf\">\nTitle: TeeReport_2025_ES_Druckversion.pdf\n\nURL Source: https://teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeR…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 28,
+  "at": "2026-09-25T10:45:37.943Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.008497500000000002,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 29,
+  "at": "2026-09-25T10:45:40.847Z",
+  "event": {
+   "step": 3,
+   "type": "agent_step",
+   "agentId": "tea-supply-chain-and-commodity-analyst-f817",
+   "costUsd": 0.0054962000000000006,
+   "toolCalls": [
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.jetro.go.jp/en/trends/foods/ingredients/greentea.html\"}",
+     "result": "<untrusted_page url=\"https://www.jetro.go.jp/en/trends/foods/ingredients/greentea.html\">\nTitle: Matcha | Highlighted Japanese Ingredients - Japanese agriculture, forestry, fisheries and food - Japan External Trade Organization\n\nURL Source: https://www.jetro.go.jp/en/trends/foods/ingredients/greente…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.maff.go.jp/e/policies/rural_dev/eatmeetjapan/winners-2022/6.html\"}",
+     "result": "<untrusted_page url=\"https://www.maff.go.jp/e/policies/rural_dev/eatmeetjapan/winners-2022/6.html\">\nTitle: From Leaf to Brew: The Secrets of Japanese Tea Production\n\nURL Source: https://www.maff.go.jp/e/policies/rural_dev/eatmeetjapan/winners-2022/6.html\n\nMarkdown Content:\n[Skip to main content.](h…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/japan/eu-japan-agreement/export-info-businesses_en\"}",
+     "result": "<untrusted_page url=\"https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/japan/eu-japan-agreement/export-info-businesses_en\">\nTitle: EU-Japan trade agreement\n\nURL Source: https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countr…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://taxation-customs.ec.europa.eu/customs/common-customs-tariff-cct/tariff-classification-goods/combined-nomenclature_en\"}",
+     "result": "<untrusted_page url=\"https://taxation-customs.ec.europa.eu/customs/common-customs-tariff-cct/tariff-classification-goods/combined-nomenclature_en\">\nTitle: Combined Nomenclature\n\nURL Source: https://taxation-customs.ec.europa.eu/customs/common-customs-tariff-cct/tariff-classification-goods/combined-…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.customs.go.jp/toukei/sankou/code/code_e.htm\"}",
+     "result": "<untrusted_page url=\"https://www.customs.go.jp/toukei/sankou/code/code_e.htm\">\nTitle: Trade Statistics of Japan : Trade Statistics of Japan Ministry of Finance\n\nURL Source: https://www.customs.go.jp/toukei/sankou/code/code_e.htm\n\nMarkdown Content:\n[](https://www.customs.go.jp/toukei/sankou/code/cod…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://food.ec.europa.eu/plants/pesticides/maximum-residue-levels_en\"}",
+     "result": "<untrusted_page url=\"https://food.ec.europa.eu/plants/pesticides/maximum-residue-levels_en\">\nTitle: Maximum Residue Levels\n\nURL Source: https://food.ec.europa.eu/plants/pesticides/maximum-residue-levels_en\n\nMarkdown Content:\n[Skip to main content](https://food.ec.europa.eu/plants/pesticides/maximum…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://food.ec.europa.eu/horizontal-topics/official-controls-and-enforcement/imported-products_en\"}",
+     "result": "<untrusted_page url=\"https://food.ec.europa.eu/horizontal-topics/official-controls-and-enforcement/imported-products_en\">\nTitle: imported products\n\nURL Source: https://food.ec.europa.eu/horizontal-topics/official-controls-and-enforcement/imported-products_en\n\nMarkdown Content:\nThe European Union is…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://eur-lex.europa.eu/eli/reg/2005/396/oj\"}",
+     "result": "<untrusted_page url=\"https://eur-lex.europa.eu/eli/reg/2005/396/oj\">\nTitle: Regulation - 396/2005 - EN\n\nURL Source: https://eur-lex.europa.eu/eli/reg/2005/396/oj\n\nMarkdown Content:\nREGULATION (EC) NO 396/2005 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL\n\nof 23 February 2005\n\non maximum residue lev…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://eur-lex.europa.eu/eli/reg/2023/915/oj\"}",
+     "result": "<untrusted_page url=\"https://eur-lex.europa.eu/eli/reg/2023/915/oj\">\nTitle: Regulation - 2023/915 - EN\n\nURL Source: https://eur-lex.europa.eu/eli/reg/2023/915/oj\n\nMarkdown Content:\nCOMMISSION REGULATION (EU) 2023/915\n\nof 25 April 2023\n\non maximum levels for certain contaminants in food and repealin…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.eurostat.europa.eu/web/international-trade-in-goods/data/database\"}",
+     "result": "error: read failed: 422"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 30,
+  "at": "2026-09-25T10:45:40.847Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.013993700000000001,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 31,
+  "at": "2026-09-25T10:45:45.125Z",
+  "event": {
+   "step": 4,
+   "type": "agent_step",
+   "agentId": "beverage-industry-and-competition-analyst-75b8",
+   "costUsd": 0.0032408000000000003,
+   "toolCalls": [
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf\"}",
+     "result": "<untrusted_page url=\"https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf\">\nTitle: TeeReport_2025_ES_Druckversion.pdf\n\nURL Source: https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Rep…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.keiko.de/en/organic-matcha\"}",
+     "result": "<untrusted_page url=\"https://www.keiko.de/en/organic-matcha\">\nTitle: KEIKO Online Shop | Bio Matcha | Frisch in Deutschland vermahlen\n\nURL Source: https://www.keiko.de/en/organic-matcha\n\nMarkdown Content:\n[Skip to main content](https://www.keiko.de/en/organic-matcha#content-main)[Skip to search](ht…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://aiya-europe.com\"}",
+     "result": "<untrusted_page url=\"https://aiya-europe.com\">\nTitle: Matcha and Green Tea Supplier in Europe | Aiya Europe GmbH\n\nURL Source: https://aiya-europe.com/\n\nPublished Time: Fri, 25 Sep 2026 04:20:44 GMT\n\nMarkdown Content:\n[Skip to content](https://aiya-europe.com/#main)\n\n[![Image 1: Aiya Europe logo](ht…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://aiya-europe.com/matcha-in-bulk\"}",
+     "result": "<untrusted_page url=\"https://aiya-europe.com/matcha-in-bulk\">\nTitle: Buy Matcha in bulk for B2B and Manufacturing | Aiya Europe GmbH\n\nURL Source: https://aiya-europe.com/matcha-in-bulk\n\nMarkdown Content:\n[Skip to content](https://aiya-europe.com/matcha-in-bulk#main)\n\n[![Image 1: Aiya Europe logo](h…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.starbucks.de/en/menu\"}",
+     "result": "<untrusted_page url=\"https://www.starbucks.de/en/menu\">\nTitle: Order - Menu | Starbucks\n\nURL Source: https://www.starbucks.de/en/menu\n\nMarkdown Content:\n[Skip to Content](https://www.starbucks.de/en/menu#primary-content)\n\n[](https://www.starbucks.de/en)\n\nMenu Nutrition Rewards Delivers Starbucks Fo…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.kaffeeverband.de/en\"}",
+     "result": "<untrusted_page url=\"https://www.kaffeeverband.de/en\">\nTitle: Deutscher Kaffeeverband\n\nURL Source: https://www.kaffeeverband.de/en\n\nPublished Time: Fri, 25 Sep 2026 10:45:31 GMT\n\nMarkdown Content:\n[![Image 1](https://www.kaffeeverband.de/media/icon_member.svg)](https://www.kaffeeverband.de/en/becom…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.efsa.europa.eu/en/news/pesticide-residues-food-latest-data-released\"}",
+     "result": "<untrusted_page url=\"https://www.efsa.europa.eu/en/news/pesticide-residues-food-latest-data-released\">\nTitle: Pesticide residues in food: latest data released\n\nURL Source: https://www.efsa.europa.eu/en/news/pesticide-residues-food-latest-data-released\n\nPublished Time: 2026-05-05\n\nMarkdown Content:\n…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Data-Topic/Tables/BasicData_ImportDE.html\"}",
+     "result": "<untrusted_page url=\"https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Data-Topic/Tables/BasicData_ImportDE.html\">\nTitle: Key table Import of goods from Germany\n\nURL Source: https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Data-Topic/Tables/Bas…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 32,
+  "at": "2026-09-25T10:45:45.125Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0172345,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 33,
+  "at": "2026-09-25T10:45:48.024Z",
+  "event": {
+   "step": 5,
+   "type": "agent_step",
+   "agentId": "german-consumer-market-analyst-205e",
+   "costUsd": 0.0043062,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"matcha systematic review clinical human trial health benefits peer reviewed 2024\"}",
+     "result": "[{\"title\":\"Matcha: Clinical Studies on Green Tea Catechins & EGCG\",\"url\":\"https://www.purehealthresearch.com/scientific-research/matcha-green-tea-capsules\",\"snippet\":\"Source: KORN, Aleksandra, JĘDRZEJCZYK, Justyna, et al. Exploring the Health Benefits of Matcha: A Comprehensive Review. Journal of E…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:pubmed.ncbi.nlm.nih.gov matcha randomized controlled trial cognition stress study\"}",
+     "result": "[{\"title\":\"A Trial of Lopinavir–Ritonavir in Adults Hospitalized with ...\",\"url\":\"https://www.nejm.org/doi/full/10.1056/NEJMoa2001282\",\"snippet\":\"15.\\n\\nArabi YM, Alothman A, Balkhy HH, et al. Treatment of Middle East Respiratory Syndrome with a combination of lopinavir-ritonavir and interferon-β1b…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:teeverband.de Matcha Trend 2024 240 Tonnen Januar August Japan Import Verband\"}",
+     "result": "[{\"title\":\"Ein Abdruck vom Messer im Herzen - Music | Tonnen von Hall\",\"url\":\"https://tonnenvonhall.bandcamp.com/album/ein-abdruck-vom-messer-im-herzen\",\"snippet\":\"Ein Abdruck vom Messer im Herzen by Tonnen von Hall, released 31 January 2025 1. Erdmantel 2. Vorhalle 3. Antlitz 4. Stahlhalle 5. Krak…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Deutschland Matcha Preis teuer Verbraucher Hürde Matcha Verbraucher 2025\"}",
+     "result": "[{\"title\":\"How much for matcha? Prices for the popular powdered tea soar due to global demand | The Associated Press\",\"url\":\"https://www.ap.org/news-highlights/spotlights/2025/how-much-for-matcha-prices-for-the-popular-powdered-tea-soar-due-to-global-demand\",\"snippet\":\"Aaron Vick, a senior tea buye…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Matcha taste bitterness consumer acceptance barrier study matcha consumers\"}",
+     "result": "[{\"title\":\"Matcha, Yuzu, and Textured Drinks Signal a U.S. “Small Treat ...\",\"url\":\"https://www.umamill.com/en/japanese-food-market-insights/matcha-yuzu-and-textured-drinks-signal-a-u.s.-small-treat-opportunity-for-japanese-food-importers\",\"snippet\":\"At the same time, bitterness and powderiness can…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Marketagent Matcha Schweiz survey fieldwork dates 2025 sample\"}",
+     "result": "[{\"title\":\"Europe Matcha Market Size, Share, Trends and Analysis, 2033\",\"url\":\"https://www.marketdataforecast.com/market-reports/europe-matcha-market\",\"snippet\":\"The Matcha Beverages segment was the leading segment and accounted for 49.1% share in 2025. The prominence of the Matcha Beverages segmen…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Deutschland Matcha Konsum Häufigkeit Markt Umfrage Matcha trinken 2025\"}",
+     "result": "[{\"title\":\"Germany Matcha Tea Market Trends, Size, Share\",\"url\":\"https://www.marketresearchfuture.com/reports/germany-matcha-tea-market-46440\",\"snippet\":\"## Future Outlook\\n\\n### Germany Matcha Tea Market Future Outlook\\n\\nThe Matcha Tea Market in Germany is projected to grow at 6.37% CAGR from 202…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Deutscher Tee Report 2025 matcha younger target group 2024 trend data page 3\"}",
+     "result": "[{\"title\":\"Matcha Tea Market Size, Share, Growth, Analysis, Report ...\",\"url\":\"https://straitsresearch.com/report/matcha-tea-market\",\"snippet\":\"Germany led the European market with an estimated value of USD 0.28 billion in 2025. Strong demand for organic food products, increasing awareness of the h…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 34,
+  "at": "2026-09-25T10:45:48.024Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0215407,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 35,
+  "at": "2026-09-25T10:45:52.168Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333152168,
+    "id": "m1",
+    "from": "beverage-industry-and-competition-analyst-75b8",
+    "type": "finding",
+    "finding": {
+     "claim": "German tea industry association's 2025 report, reporting on Germany in 2024, says matcha's trend among younger target groups boosted demand for other green-tea specialties; specialty tea-shop sales rose and out-of-home tea consumption was slightly higher. This is association-reported direction, not matcha-specific market size or share.",
+     "evidence": "„Der Trend zu Matcha bei jüngeren Zielgruppen belebte auch die Nachfrage nach weiteren Grüntee-Spezialitäten. Der Abverkauf in Tee-Fachgeschäften konnte zulegen und der Außer-Haus-Konsum verzeichnete ein leichtes Plus.“",
+     "sourceUrl": "https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 36,
+  "at": "2026-09-25T10:45:52.169Z",
+  "event": {
+   "step": 5,
+   "type": "agent_step",
+   "agentId": "beverage-industry-and-competition-analyst-75b8",
+   "costUsd": 0.004952,
+   "toolCalls": [
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"German tea industry association's 2025 report, reporting on Germany in 2024, says matcha's trend among younger target groups boosted demand for other green-tea specialties; specialty tea-shop sales rose and out-of-home tea consumption was slightly higher. This is association-reported dire…",
+     "result": "m1"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 37,
+  "at": "2026-09-25T10:45:52.169Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0264927,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 38,
+  "at": "2026-09-25T10:45:56.928Z",
+  "event": {
+   "step": 6,
+   "type": "agent_step",
+   "agentId": "german-consumer-market-analyst-205e",
+   "costUsd": 0.005437700000000001,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"\\\"Wer trinkt Matcha\\\" Statista Deutschland 58 Prozent 18-29 Umfrage wann\"}",
+     "result": "[{\"title\":\"Infografik: Wer trinkt Matcha? | Statista\",\"url\":\"https://de.statista.com/infografik/36487/umfrage-zum-konsum-von-matcha-in-deutschland\",\"snippet\":\"Matcha ist in Deutschland vor allem bei der jüngeren Konsument:innen ein \\\"absolutes In-Getränk\\\" konstatiert der Teeverband Deutschland. Ei…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"\\\"Warum trinken die Deutschen Matcha\\\" Statista Consumer Insights 2025\"}",
+     "result": "[{\"title\":\"Infografik: Wer trinkt Matcha? | Statista\",\"url\":\"https://de-statista-com.libproxy.pcc.edu/infografik/36487/umfrage-zum-konsum-von-matcha-in-deutschland\",\"snippet\":\"Matcha ist in Deutschland vor allem bei der jüngeren Konsument:innen ein \\\"absolutes In-Getränk\\\" konstatiert der Teeverban…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Statista Consumer Insights Matcha Germany 2024 survey occasional matcha age\"}",
+     "result": "[{\"title\":\"Germany Matcha Tea Market Trends, Size, Share\",\"url\":\"https://www.marketresearchfuture.com/reports/germany-matcha-tea-market-46440\",\"snippet\":\"### Market Size & Forecast\\n\\n|  |  |\\n --- |\\n| 2024 Market Size | 329.4 (USD Million) |\\n| 2035 Market Size | 649.6 (USD Million) |\\n| CAGR (20…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:statista.com \\\"matcha\\\" \\\"Germany\\\" \\\"18-29\\\" matcha survey\"}",
+     "result": "[{\"title\":\"18-29-403.1 Minimum number of fixtures.\",\"url\":\"https://codelibrary.amlegal.com/codes/chicago/latest/chicago_il/0-0-0-2690948\",\"snippet\":\"to the next whole number. [...] Share Download Bookmark Print\\n\\n###### 18-29-403.1 Minimum number of fixtures. [...] English Afrikaans Albanian Amhar…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"\\\"58 Prozent der 18-29-Jährigen\\\" Matcha Deutschland Statista\"}",
+     "result": "[{\"title\":\"Infografik: Wer trinkt Matcha? | Statista\",\"url\":\"https://de.statista.com/infografik/36487/umfrage-zum-konsum-von-matcha-in-deutschland\",\"snippet\":\"Matcha ist in Deutschland vor allem bei der jüngeren Konsument:innen ein \\\"absolutes In-Getränk\\\" konstatiert der Teeverband Deutschland. Ei…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"\\\"Matcha\\\" \\\"gelegentlich\\\" \\\"Deutschland\\\" Statista Consumer Insights probiert Umfrage\"}",
+     "result": "[{\"title\":\"Infografik: Wer trinkt Matcha? | Statista\",\"url\":\"https://de-statista-com.libproxy.pcc.edu/infografik/36487/umfrage-zum-konsum-von-matcha-in-deutschland\",\"snippet\":\"Matcha ist in Deutschland vor allem bei der jüngeren Konsument:innen ein \\\"absolutes In-Getränk\\\" konstatiert der Teeverban…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 39,
+  "at": "2026-09-25T10:45:56.928Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.031930400000000005,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 40,
+  "at": "2026-09-25T10:46:02.960Z",
+  "event": {
+   "step": 4,
+   "type": "agent_step",
+   "agentId": "tea-supply-chain-and-commodity-analyst-f817",
+   "costUsd": 0.0077717,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:maff.go.jp \\\"tencha\\\" \\\"5,336\\\" 2024 statistics tea\"}",
+     "result": "[{\"title\":\"2024 is the first year to exceed 1.5°C above pre-industrial ...\",\"url\":\"https://climate.copernicus.eu/copernicus-2024-first-year-exceed-15degc-above-pre-industrial-level\",\"snippet\":\"was significantly lower than in the last three years. [...] Other highlights include: [...] Key temperatur…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:maff.go.jp \\\"茶種別\\\" てん茶 令和6年 生産量\"}",
+     "result": "[{\"title\":\"[PDF] 令和6年度アジア地域の食料安全保障の確立に向けた農業経営研修 ...\",\"url\":\"https://www.maff.go.jp/j/kokusai/kokkyo/yosan/attach/pdf/r6_jigyo_report-10.pdf\",\"snippet\":\"新潟県 水稲・切花、水稲・野菜 1名 長野県 野菜 3名 福井県 水稲・野菜、水稲、水稲・果樹 5名 愛知県 切花、水稲・切花、酪農、野菜(2) 2名 和歌山県 養鶏、柑橘・野菜 1名 沖縄県 いちご・野菜 フィリピン 2名 北海道 水稲・野菜、野菜 1名 岩手県 りんご・野菜 3名 宮城県 …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:maff.go.jp tea production 2024 tencha 5336 Japan statistics PDF English\"}",
+     "result": "[{\"title\":\"Tencha: Speciality Japanese Tea & Matcha Shop, Artisan Tea ware ...\",\"url\":\"https://www.tencha.co.uk\",\"snippet\":\"Black tea production is becoming more prevalent across Japan. Unlike black teas from some other tea producing regions, Japanese black Tea or Wakocha is much\"},{\"title\":\"Tencha…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan 2024 green tea exports powdered tea 5092 tons MAFF official data 2024 export value 36.4 billion\"}",
+     "result": "[{\"title\":\"Japan's Green Tea Exports Surge 42% in FY2025 Amid Global Matcha Boom – Matcha Wholesale Japan\",\"url\":\"https://www.matcha-wholesale-japan.com/blogs/news/japans-green-tea-exports-surge-42-in-fy2025-amid-global-matcha-boom\",\"snippet\":\"Title: Japan's Green Tea Exports Surge 42% in FY2025 Am…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany tea imports HS 0902 2024 Eurostat Japan Germany import green tea\"}",
+     "result": "[{\"title\":\"[PDF] THE GLOBAL E-WASTE MONITOR 2024 - ITU\",\"url\":\"https://www.itu.int/dms_pub/itu-d/opb/gen/D-GEN-E_WASTE.01-2024-PDF-E.pdf\",\"snippet\":\"Step 2 For the European Union, the international trade statistical data were extracted from Eurostat as 8-digit combined nomen-clature codes. Domestic…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany tea imports 0902 Eurostat Comext Japan 2023 green tea tonnes\"}",
+     "result": "[{\"title\":\"Tea imports from Japan |2023\",\"url\":\"https://wits.worldbank.org/trade/comtrade/en/country/All/year/2023/tradeflow/Imports/partner/JPN/product/0902\",\"snippet\":\"In 2023, Top importers of Tea from Japan were United States ($107,155.97K , 3,159,250 Kg), European Union ($31,010.80K , 937,124 …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:destatis.de tea imports Germany 2024 green tea tea trade statistics\"}",
+     "result": "[{\"title\":\"Tea - The Nutrition Source\",\"url\":\"https://nutritionsource.hsph.harvard.edu/food-features/tea\",\"snippet\":\"Tea is the most popular beverage in the world after water. It’s a simple preparation of pouring hot water over cured leaves of the Camellia sinensis plant. The first recording of tea…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Eurostat international trade in goods code 090210 green tea import Germany Japan 2024\"}",
+     "result": "[{\"title\":\"[PDF] MARKET RESEARCH REPORT - GTAIC\",\"url\":\"https://gtaic.ai/files/reports/Germany_090220_fb190696-2d7a-497c-890e-13128369fbee.pdf\",\"snippet\":\"the most recent available calendar year. By import volumes, expressed in tons, the five largest exporters of Green Tea >3kg to Germany in 2024 w…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:ec.europa.eu/eurostat PRODCOM matcha green tea powder imports 0902\"}",
+     "result": "[{\"title\":\"Metolius Tea - Organic Chai, Syrups & Loose Leaf Teas\",\"url\":\"https://metoliustea.com\",\"snippet\":\"### The Warm Hug\\n\\n  This is the ideal London Fog, a creamy, aromatic take on the classic tea latte. Begin with our London Fog Concentrate, made from high-quality black tea steeped with org…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:maff.go.jp tea production farmers census tea operations 2020 decrease Japan\"}",
+     "result": "[{\"title\":\"[PDF] Annual Report on Food, Agriculture and Rural Areas in Japan ...\",\"url\":\"https://www.maff.go.jp/e/pdf/fy2006_rep.pdf\",\"snippet\":\"Rate of change (increase or decrease) Rate of change (increase/decrease) Commercial farm households with certified farmers Commercial farm households with…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Reuters Japan tea heat stressed output matcha 2025 Kyoto heat tencha May auction 8235\"}",
+     "result": "[{\"title\":\"Japanese Tea Report - May 2025\",\"url\":\"https://gjtea.org/japanese-tea-report-may-2025\",\"snippet\":\"The spring season, which began in April, continued to unfold throughout May, marked by the opening of tea auctions in various regions. Gifu held its first auction on 30th April, followed by …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Bank of Japan exchange rate yen 2025 annual average euro yen statistics official\"}",
+     "result": "[{\"title\":\"EUR to JPY historical exchange rate\",\"url\":\"https://www.ofx.com/en-us/forex-news/historical-exchange-rates/eur/jpy\",\"snippet\":\"| Date | 1 EUR= |\\n| Average | 184.222123 |\\n| April 30, 2026 | 186.063635 |\\n| May 31, 2026 | 184.733569 |\\n| June 30, 2026 | 185.072427 |\\n| July 31, 2026 | 18…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:boj.or.jp foreign exchange rates euro yen daily 2025\"}",
+     "result": "[{\"title\":\"[PDF] Basic Thinking on Monetary Policy and the Outlook for Economic ...\",\"url\":\"https://www.boj.or.jp/en/about/press/koen_2023/data/ko230519a1.pdf\",\"snippet\":\"Stance I. The Basic Thinking on Monetary Policy 30 40 50 60 70 80 90 100 110 20 21 22 23 Manufacturing Nonmanufacturing Accommod…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU organic import Japan recognition regulation EU organic 2026 Japanese organic equivalent official\"}",
+     "result": "[{\"title\":\"How to Import Organic Japanese Tea to EU countries\",\"url\":\"https://www.shizuokatea.com/blogs/green-tea-merchant/how-to-import-organic-japanese-tea-to-eu-countries\",\"snippet\":\"Yes. Japan is on the EU’s list of recognised third countries for organic equivalence (Annex I of Regulation (EU) …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU traceability food import general food law Article 18 importer responsibility official Commission\"}",
+     "result": "[{\"title\":\"L_2004139EN.01005501.xml - EUR-Lex - European Union\",\"url\":\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML?uri=CELEX%3A32004R0853\",\"snippet\":\"Food business operators must, in accordance with Article 18 of Regulation (EC) No 178/2002, have in place systems and procedures to identify …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"matcha United States Patent Trademark Office no matcha standard definition Japanese official matcha definition powdered green tea\"}",
+     "result": "[{\"title\":\"Matcha\",\"url\":\"https://en.wikipedia.org/wiki/Matcha\",\"snippet\":\"Matcha (/ˈmætʃə, ˈmɑːtʃə/ ⓘ; Japanese: 抹茶) is a finely ground powder of green tea specially processed from shade-grown tea leaves. Shade growing gives matcha its characteristic bright green color and strong umami flavor. Mat…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"matcha quality grade no regulated grading standards ceremonial grade Japan trade\"}",
+     "result": "[{\"title\":\"Unlock Premium Quality: Your Guide to Sourcing Bulk Ceremonial Matcha – Matcha Warehouse\",\"url\":\"https://www.matchawarehouse.com.au/blogs/news/unlock-premium-quality-your-guide-to-sourcing-bulk-ceremonial-matcha\",\"snippet\":\"When you're looking to buy ceremonial matcha in larger quantitie…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan tea exports no export restriction matcha export controls 2025 official\"}",
+     "result": "[{\"title\":\"Japan Green Tea Exports +42% in FY2025: Matcha Boom\",\"url\":\"https://onewithtea.com/blogs/news/japan-green-tea-exports-fy2025-matcha-boom\",\"snippet\":\"Japan exported 13,125 tonnes of green tea in fiscal 2025 (year ending March 2026), up 42% year over year. Total export value rose 2.2-fold …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"China green tea powder matcha production origins Guizhou Zhejiang trade association source\"}",
+     "result": "[{\"title\":\"China's Matcha Industry_Baiduwiki\",\"url\":\"https://baike.baidu.com/en/item/China's%20Matcha%20Industry/4694848\",\"snippet\":\"According to the 2026 China Matcha Industry Development Report, China's matcha production exceeded 12,000 tons in 2025, accounting for nearly 70% of the global total.…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Global Japanese Tea Association matcha definition tencha powdered tea grades batch consistency\"}",
+     "result": "[{\"title\":\"Matcha (抹茶) - Global Japanese Tea Association\",\"url\":\"https://gjtea.org/matcha\",\"snippet\":\"Matcha (抹茶) is one of the most traditional teas in Japan and it has even evolved into a way of life. For the past few years we have seen matcha booming all around the world. The catchy bright green…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"tea freight insurance cargo insurance import cost Incoterms cost components source logistics\"}",
+     "result": "[{\"title\":\"Insuring Overseas: Your Guide to International Cargo Insurance\",\"url\":\"https://ascentlogistics.com/blog/insuring-overseas-international-cargo-insurance\",\"snippet\":\"Insurance coverage should include the invoice value of the goods, the freight charges (ocean or air) and an additional 10 pe…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"German customs import VAT tea 7% Germany official tea products tax\"}",
+     "result": "[{\"title\":\"How to Import Organic Japanese Tea to Germany (2026 ...\",\"url\":\"https://www.shizuokatea.com/blogs/green-tea-merchant/how-to-import-organic-japanese-tea-to-germany\",\"snippet\":\"### What VAT applies to imported tea in Germany?\\n\\nPackaged, dried tea is taxed at Germany’s reduced VAT rate of…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU tea imports Japan exports Germany dependence import green tea production none Germany tea cultivation\"}",
+     "result": "[{\"title\":\"How to Import Organic Japanese Tea to Germany (2026 ...\",\"url\":\"https://www.shizuokatea.com/blogs/green-tea-merchant/how-to-import-organic-japanese-tea-to-germany\",\"snippet\":\"No. The EU repealed its Fukushima-era import controls through Commission Implementing Regulation (EU) 2023/1453, …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU import data CN 0902 tea whether or not flavoured matcha exact coding matcha\"}",
+     "result": "[{\"title\":\"Matcha & HTS 9903.05.86: Tea Is on the Exclusion List\",\"url\":\"https://www.japanomars.com/insights/matcha-forced-labor-tariff-exemption\",\"snippet\":\"Classification. Plain, unflavored matcha is green tea under 0902. If your product is blended (matcha lattes premixed with sugar or milk powde…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Eurostat CN 0902 green tea 090210 matcha class tariff database exact description\"}",
+     "result": "[{\"title\":\"Matcha & HTS 9903.05.86: Tea Is on the Exclusion List\",\"url\":\"https://www.japanomars.com/insights/matcha-forced-labor-tariff-exemption\",\"snippet\":\"Matcha is green tea, so it classifies under HTS heading 0902, typically 0902.10 for retail packings of 3 kg or less or 0902.20 for bulk. Both…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"MAFF tea production tencha 2024 total production 5,336 source tea production association 2.7\"}",
+     "result": "[{\"title\":\"Japan's Tea Industry in 2025–2026: Official MAFF Data on ...\",\"url\":\"https://www.matcha-wholesale-japan.com/blogs/news/japans-tea-industry-in-2025-2026-official-maff-data-on-matcha-tencha-production-trends\",\"snippet\":\"One of the most significant findings in MAFF's March 2026 report is th…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"2025 Japanese tea output forecast tencha harvest weather heat shortage reputable Reuters July 2025\"}",
+     "result": "[{\"title\":\"Weather in Japan\",\"url\":\"https://www.weatherapi.com/\",\"snippet\":\"{'location': {'name': 'Tokyo', 'region': 'Tokyo', 'country': 'Japan', 'lat': 35.69, 'lon': 139.692, 'tz_id': 'Asia/Tokyo', 'localtime_epoch': 1790333118, 'localtime': '2026-09-25 19:45'}, 'current': {'last_updated_epoch': 1…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan tea exporter supplier concentration tea farmers age 2020 census tea cultivated farms MAFF\"}",
+     "result": "[{\"title\":\"The Japanese Tea Industry & the Many Challenges it is ...\",\"url\":\"https://bernadine-tay-bymh.squarespace.com/s/220522-Kimberley-K-X-ESTA-POST-1-2-_.pdf\",\"snippet\":\"willing to work in agriculture and in rural areas. Without the next generation joining the industry, tea farmers are getting…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU Germany organic imports certificate of inspection TRACES organic regulation 2018/848 official\"}",
+     "result": "[{\"title\":\"EU organic certification according to Reg. (EU) 2018/848\",\"url\":\"https://www.kiwa.com/en/services/certification/european-organic-regulations-eu-no-2018-848\",\"snippet\":\"Since 01.01.2022, the new organic regulation VO (EU) 2018/848 has been in force within the EU. The EU organic regulation…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"2026 Japanese tea crop forecast 2026 matcha harvest data official Japan\"}",
+     "result": "[{\"title\":\"2026 Matcha Industry Outlook: Supply, Prices, Trends\",\"url\":\"https://onewithtea.com/blogs/news/2026-matcha-industry-outlook\",\"snippet\":\"Tea Association compilation of MAFF data. Shizuoka reclaimed the first-flush lead the very next year: the 2026 harvest ran about 10,700 tonnes to Kagosh…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japanese tea processing steps tencha cultivation shading steaming drying sorting milling tea production association\"}",
+     "result": "[{\"title\":\"Japanese Tea Processing - Global Japanese Tea Association\",\"url\":\"https://gjtea.org/japanese-tea-information/japanese-tea-processing\",\"snippet\":\"Sencha processing essentially has three key steps: steaming, rolling and drying. Steaming is the shortest but the most important step for Japan…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU Japanese matcha tariffs CN 09021000 3.2% TARIC current official\"}",
+     "result": "[{\"title\":\"Japan Matcha US Tariffs 2026: Buyer's Sourcing Guide\",\"url\":\"https://onewithtea.com/blogs/news/japan-matcha-tariff-exemption-2026-sourcing-window\",\"snippet\":\"Current operative state (late May 2026): standing 6.4 percent base duty on HS 0902.20 applies. Section 122 invalidated for now. Ve…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan-EU EPA tea customs tariff green tea 0902 concession schedule zero duty legal\"}",
+     "result": "[{\"title\":\"Exporting Japanese Green Tea: FDA Requirements, EU Regulations & Logistics Guide | First Agri B2B\",\"url\":\"https://first-agri.jp/matcha/columns/exporting-japanese-green-tea\",\"snippet\":\"### HS Code Classification\\n\\nCorrect product classification directly affects tariff rates and complianc…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"China matcha exported to EU Germany food pesticide controls China matcha origin\"}",
+     "result": "[{\"title\":\"On Contaminates & Pesticides in Tea - Seven Cups\",\"url\":\"https://sevencups.com/2006/07/tea-contaminates\",\"snippet\":\"to the market. Just a few years ago in China, there were only a dozen or so companies were allowed to export anything. The best importers to dealing with the old Chinese ex…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Global Japanese Tea Association 2024 tencha 5336 tons\"}",
+     "result": "[{\"title\":\"Global Matcha Shortage Hits as Demand Outpaces Supply | Food and Drink Digital\",\"url\":\"https://fooddigital.com/news/how-high-temperatures-have-caused-mass-matcha-supply-issues\",\"snippet\":\"The Japanese Tea Production Association reports Japan produced 5,336 tons of tencha in 2024, a notab…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"matcha bulk sourcing milling 30 grams per hour stone mill producer source\"}",
+     "result": "[{\"title\":\"Stone-Ground Matcha: Why the Grinding Method Matters\",\"url\":\"https://onewithtea.com/blogs/news/stone-ground-matcha-benefits\",\"snippet\":\"Traditional stone-ground matcha uses ishi-usu granite mills producing just 30g/hr. direct from family farms. Source: Delijx Equipment Specs,\"},{\"title\":…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"tea packaging nitrogen flush light oxygen matcha shelf life manufacturer evidence\"}",
+     "result": "[{\"title\":\"Nitrogen Flush Packaging - Mikey Does\",\"url\":\"https://mikeydoes.com/glossary/nitrogen-flush-packaging\",\"snippet\":\"Shelf Life with and without Nitrogen Flush ; Matcha, 18–24 months, 6–12 months ; Premium green tea, 18–24 months, 6–12 months ; Light oolong, 24+ months, 12–18\"},{\"title\":\"Ho…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU matcha pesticide MRL tea powder residues consumption entire leaf regulatory category tea leaves\"}",
+     "result": "[{\"title\":\"Global Import Regulations & Compliance For Organic Matcha: A Practical Guide For B2B Buyers - knowledge - Wellgreen\",\"url\":\"https://www.wellgreenxa.com/info/global-import-regulations-compliance-for-org-103265248.html\",\"snippet\":\"Pesticide MRLs and monitoring: Tea and powdered botanicals …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"European Commission 2019/1793 tea Japan matcha enhanced checks tea\"}",
+     "result": "[{\"title\":\"Commission Implementing Regulation (EU) 2019/1793of 22 October 2019on the temporary increase of official controls and emergency measures governing the entry into the Union of certain goods from certain third countries implementing Regulations (EU) 2017/625 and (EC) No 178/2002 of the Eur…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan tea supply chain export concentration exporters matcha shortage buying global demand 2025 Reuters\"}",
+     "result": "[{\"title\":\"Matcha Shortage 2026: Which Grades Are Hit Hardest\",\"url\":\"https://onewithtea.com/blogs/news/2026-matcha-shortage-explained\",\"snippet\":\"The 2026 matcha shortage is a tencha problem, not a general green tea problem. Tencha is the shade-grown leaf used to make ceremonial matcha, and only a…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan tea price tencha 2025 record Kyoto auction 8235 yen Reuters 2025\"}",
+     "result": "[{\"title\":\"The World Wants More Matcha. Japan Is Running Out of People to Grow It. — Matcha Métier\",\"url\":\"https://matchametier.com/articles/matcha-supply-crisis.html\",\"snippet\":\"## The price signal is already visible\\n\\nTencha, the shaded leaf that gets ground into matcha powder, reached 8,235 yen…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"2024 Japan tea harvest weather summer heat highest temperatures Japan Meteorological Agency tea yields Reuters\"}",
+     "result": "[{\"title\":\"Japan’s heat-stressed matcha tea output struggles to meet soaring global demand｜Arab News Japan\",\"url\":\"https://www.arabnews.jp/en/business/article_150794\",\"snippet\":\"Title: Japan’s heat-stressed matcha tea output struggles to meet soaring global demand｜Arab News Japan\\n* Japan’s heat-st…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"China matcha labeling country origin EU customs tea powder classification green tea HS 0902\"}",
+     "result": "[{\"title\":\"Matcha Green Tea Powder Import Tariff & Duty Rate | HTS 0902.10.90\",\"url\":\"https://tariffs.wove.com/us/tariff/0902.10.90/matcha-green-tea-powder\",\"snippet\":\"## Import Duty Rates by Country of Origin\\n\\n| Origin Country | MFN Rate | Ch.99 Surcharges | Total Effective Rate |\\n ---  --- |\\n…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha import statistics HS 090220 powder matcha impossible separate code CN 2024\"}",
+     "result": "[{\"title\":\"Green tea, nes exports by country |2024\",\"url\":\"https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2024/tradeflow/Exports/partner/WLD/product/090220\",\"snippet\":\"|  |  |  |  |  |  |  |  |  |\\n ---  ---  ---  --- \\n| Reporter | TradeFlow | ProductCode | Product Description | Yea…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Germany matcha production import tea sourcing dependence official\"}",
+     "result": "[{\"title\":\"How to Import Matcha Tea from Japan: 2026 Guide for Cafés\",\"url\":\"https://www.importmatcha.com/guides/matcha-tea-import\",\"snippet\":\"## FAQs\\n\\nIt depends on supplier type. Direct producers typically start at 50–100kg for test orders. Trading companies may accept smaller quantities at hig…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Japan customs 090220 powder green tea export matcha 2024 trade statistics commodity codes\"}",
+     "result": "[{\"title\":\"Japan Green Tea Exports +42% in FY2025: Matcha Boom\",\"url\":\"https://onewithtea.com/blogs/news/japan-green-tea-exports-fy2025-matcha-boom\",\"snippet\":\"Japan exported 13,125 tonnes of green tea in FY2025 (year ending March 2026), up 42% year over year (Nation Thailand / Kyodo).\\n Total expo…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"2024 Japan exports powdered tea other green tea code 090220 5,092 tonnes customs\"}",
+     "result": "[{\"title\":\"Green tea, nes exports by country |2024\",\"url\":\"https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2024/tradeflow/Exports/partner/WLD/product/090220\",\"snippet\":\"|  |  |  |  |  |  |  |  |  |\\n ---  ---  ---  --- \\n| Reporter | TradeFlow | ProductCode | Product Description | Yea…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EU Common Nomenclature 0902.20 other green tea bulk not matcha 2025 code\"}",
+     "result": "[{\"title\":\"HS Code 090220 - Tariff Classification of - Other green tea (not fermented)\",\"url\":\"https://www.flexport.com/data/hs-code/090220-other-green-tea-not-fermented\",\"snippet\":\"Afghanistan, Albania, Algeria, Angola, Anguilla, Armenia, Azerbaijan, Belize, Benin, Bhutan, Bolivia, Bosnia-Hercegov…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"Hamburg freight Japan sea shipping schedule port disruptions Red Sea 2025 UNCTAD maritime transport\"}",
+     "result": "[{\"title\":\"[PDF] Review of maritime transport 2025 - UNCTAD\",\"url\":\"https://unctad.org/system/files/official-document/rmt2025_en.pdf\",\"snippet\":\"Growth in distance-adjusted trade is projected to moderate. Crude oil ton-miles are expected to rise slightly (0.1 per cent), while product ton-miles are …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"UNCTAD 2024 Red Sea disruption freight rates shipping routes 2025\"}",
+     "result": "[{\"title\":\"UNCTAD: Review of Maritime Transport 2025 | Robban Assafina\",\"url\":\"https://www.assafinaonline.com/en/article/UNCTAD-Review-of-Maritime-Transport-2025?id=25659\",\"snippet\":\"Geopolitical tensions and disrupted maritime chokepoints In 2024 and the first half of 2025, global shipping grapple…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"shipping cargo insurance rate premium volatile freight routes 2025 marine insurance source\"}",
+     "result": "[{\"title\":\"DYNAGAS LNG PARTNERS LP_December 31, 2025\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1578453/000110465926040882/dlng-20251231x20f.htm\",\"snippet\":\"Protection and Indemnity Insurance. Protection and indemnity insurance, which covers our third-party legal liabilities in connection with…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 41,
+  "at": "2026-09-25T10:46:02.960Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.039702100000000004,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 42,
+  "at": "2026-09-25T10:46:21.851Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333181851,
+    "id": "m2",
+    "from": "beverage-industry-and-competition-analyst-75b8",
+    "type": "finding",
+    "finding": {
+     "claim": "German tea industry association reports 2024 per-capita consumption of 67.2 litres total tea, including black/green tea 27.1 L and herbal/fruit infusions 40.1 L; all tea categories declined slightly by 1.5% year-on-year. This establishes a broad tea context, not matcha sales.",
+     "evidence": "„jährliche Pro-Kopf-Konsum 2024 bei insgesamt 67,2 Litern. Es wurden 27,1 Liter Schwarz- und Grüntee sowie 40,1 Liter Kräuter- und Früchtetee getrunken. Im Vergleich zum Vorjahr sank der Verbrauch ... um 1,5 %“",
+     "sourceUrl": "https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 43,
+  "at": "2026-09-25T10:46:21.852Z",
+  "event": {
+   "step": 6,
+   "type": "agent_step",
+   "agentId": "beverage-industry-and-competition-analyst-75b8",
+   "costUsd": 0.0049475,
+   "toolCalls": [
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"German tea industry association reports 2024 per-capita consumption of 67.2 litres total tea, including black/green tea 27.1 L and herbal/fruit infusions 40.1 L; all tea categories declined slightly by 1.5% year-on-year. This establishes a broad tea context, not matcha sales.\",\"sourceUrl\"…",
+     "result": "m2"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 44,
+  "at": "2026-09-25T10:46:21.852Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.044649600000000005,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 45,
+  "at": "2026-09-25T10:46:36.035Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333196035,
+    "id": "m3",
+    "from": "beverage-industry-and-competition-analyst-75b8",
+    "type": "finding",
+    "finding": {
+     "claim": "The German Tea & Herbal Tea Association's 2025 report flags tighter EU residue limits and documentation obligations as increasing analytical and compliance costs for German tea companies, with some suppliers avoiding EU exports and some tea varieties becoming difficult to source. This is a sector-level barrier applicable to matcha sourcing, not matcha-specific incidence evidence.",
+     "evidence": "„Folgen steigende Kosten in der Analytik ... immer mehr Lieferanten scheuen aufgrund der kaum mehr erfüllbaren Anforderungen Exporte in die EU.“",
+     "sourceUrl": "https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 46,
+  "at": "2026-09-25T10:46:36.038Z",
+  "event": {
+   "step": 7,
+   "type": "agent_step",
+   "agentId": "beverage-industry-and-competition-analyst-75b8",
+   "costUsd": 0.0049499,
+   "toolCalls": [
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"The German Tea & Herbal Tea Association's 2025 report flags tighter EU residue limits and documentation obligations as increasing analytical and compliance costs for German tea companies, with some suppliers avoiding EU exports and some tea varieties becoming difficult to source. This is …",
+     "result": "m3"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 47,
+  "at": "2026-09-25T10:46:36.038Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.049599500000000005,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 48,
+  "at": "2026-09-25T10:47:05.498Z",
+  "event": {
+   "ok": false,
+   "type": "agent_done",
+   "error": "Delay was aborted",
+   "agentId": "german-consumer-market-analyst-205e",
+   "costUsd": 0.014613000000000001
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 49,
+  "at": "2026-09-25T10:47:06.280Z",
+  "event": {
+   "step": 8,
+   "text": "## Germany’s matcha market in 2026: commercial assessment\n\n**Evidence caveat.** I found no dependable Germany-specific 2026 matcha market size, growth rate or market-share series. The latest German tea-industry figures below describe **2024**, published in the association’s 2025 report; Japan suppl…",
+   "type": "agent_step",
+   "agentId": "beverage-industry-and-competition-analyst-75b8",
+   "costUsd": 0.006516900000000001,
+   "toolCalls": []
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 50,
+  "at": "2026-09-25T10:47:06.280Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.056116400000000004,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 51,
+  "at": "2026-09-25T10:47:06.280Z",
+  "event": {
+   "ok": true,
+   "type": "agent_done",
+   "agentId": "beverage-industry-and-competition-analyst-75b8",
+   "costUsd": 0.026518100000000003,
+   "summary": "## Germany’s matcha market in 2026: commercial assessment\n\n**Evidence caveat.** I found no dependable Germany-specific 2026 matcha market size, growth rate or market-share series. The latest German tea-industry figures below describe **2024**, published in the association’s 2025 report; Japan supply data are context, not proof of Germany-specific shortages or prices.\n\n### Advantages\n\n- **A foothold in an established tea market:** In 2024, Germans consumed 67.2 litres of tea, herbal and fruit infusions per person; black and green tea accounted for 27.1 litres. The German Tea & Herbal Tea Association also reported that matcha’s appeal among younger groups helped demand for other green-tea specialties, while specialty-tea-shop sales rose and out-of-home tea consumption recorded a slight increase. These are positive category signals, **not** measures of matcha sales or share. [German Tea & Herbal Tea Association, 2025 report on 2024](https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf)\n\n- **Multiple ways to compete—and incumbents to learn from:** AIYA Europe presents itself as a business-to-business supplier, offering matcha for hospitality and food manufacturing, wholesale, retail packs and private-label support. German brand KEIKO positions around organic tea, matcha freshly ground in Germany, and both business and consumer sales. TeeGschwendner combines a specialist tea range with stores, hospitality and a stated quality-control approach. Together these examples show room for ingredient supply, specialist retail, own-label products and differentiated brands, but also illustrate that these are established routes with existing competitors. [AIYA Europe](https://aiya-europe.com/); [KEIKO](https://www.keiko.de/en/organic-matcha); [TeeGschwendner](https://www.teegschwendner.de/en)\n\n- **Potential to sell beyond home-preparation powder:** AIYA lists matcha for cafés and restaurants as well as applications such as desserts, chocolate and baked goods; its range also includes tea-latte mixes and hojicha and black-tea powders. Starbucks Germany’s menu has a dedicated matcha category. These sources confirm that food-service and adjacent powder-drink formats are commercial routes; they do **not** establish their sales volumes. [AIYA Europe](https://aiya-europe.com/); [Starbucks Germany menu](https://www.starbucks.de/en/menu)\n\n- **Premium pricing is visible, though the evidence is not a market-wide price survey:** KEIKO’s online listings show 30g products at €29.50, €34.50 and €48.50—about €983–€1,617/kg. Those listings are not necessarily like-for-like in grade or intended use, so the range indicates observed direct-to-consumer price points, not a standard German price. Separately, one Berlin café listing prices a ceremonial matcha latte at €5.20; that is a single menu example, not a national benchmark. [KEIKO product range](https://www.keiko.de/en/organic-matcha); [Café Prana listing](https://neotaste.com/gb/restaurants/berlin/cafe-prana)\n\n### Risks\n\n- **Strong substitutes and a high bar for repeat use:** Coffee is a much larger everyday-beverage reference point: German Coffee Association figures reported by *Just Drinks* put 2024 per-capita coffee consumption at about 163 litres, down from 166 litres in 2023. Within tea, herbal and fruit infusions alone exceeded black and green tea in 2024. Instant coffee mixes also grew 6% in volume in 2024, according to the association figures reported in the same article. Matcha therefore competes not just with other matcha, but with familiar coffee, tea and convenient latte formats. [*Just Drinks*, 11 March 2025](https://www.just-drinks.com/news/coffee-consumption-declines-in-germany-in-2024/)\n\n- **Sourcing and input-cost exposure:** Matcha depends on a specific Japanese green-tea supply chain; as international context, *Supply Chain Dive* reported that Kyoto tencha trading prices rose 265% between 2024 and 2025, citing International Trade Centre data, and described supply pressures including heat and an ageing farming population. That is evidence of Japanese-origin input risk—not a measure of the prices German buyers paid or of their access to supply. [*Supply Chain Dive*, 2025](https://www.supplychaindive.com/news/matcha-shortage-social-medias-latest-obsession/761258)\n\n- **Quality assurance and compliance add cost and execution risk:** The German tea association says tighter residue requirements and documentation obligations have raised analytical costs for tea businesses, and reports that some suppliers are reluctant to export to the EU. AIYA, for its part, emphasizes controlled storage, traceability, documentation and quality management for professional supply. Taken together, these sources suggest that a new entrant needs more than a source and a label: it needs supplier oversight and a defensible quality-control process. The association’s comments are sector-wide, not matcha-specific. [German Tea & Herbal Tea Association, 2025 report](https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf); [AIYA bulk-supply information](https://aiya-europe.com/matcha-in-bulk)\n\n- **Distribution and brand building are not automatic:** Existing suppliers already offer B2B products, samples, private-label help and retail-ready formats, while specialist tea businesses have established storefronts and product ranges. A new entrant may find it easier to access a supplier or launch an own label than to earn trust, secure repeat purchase, and win durable retail or café distribution. This is a competitive inference from the companies’ stated offerings, not a quantified barrier or a claim about retailer acceptance rates. [AIYA Europe](https://aiya-europe.com/); [KEIKO](https://www.keiko.de/en/organic-matcha); [TeeGschwendner](https://www.teegschwendner.de/en)\n\n### Implications for competitors\n\nA new or expanding competitor has a credible opening if it can pair **reliable, documented sourcing** with a clear reason to choose its product—such as a distinct origin or taste, a useful café format, or credible organic positioning. For food service, dependable supply, consistent preparation and fit with existing menus may matter as much as consumer branding; for retail, the observed premium price points leave room to differentiate, but the available prices do not establish how much German shoppers will pay across quality tiers. These are strategic implications from the channel, product and price evidence above, not forecasts of market growth.\n\n**Bottom line:** Germany offers real routes to market through specialist tea retail, direct sales, hospitality and ingredient applications, and the tea association reports a positive matcha-related signal for green-tea specialties. The commercial case is offset by powerful everyday substitutes, existing specialist and B2B competitors, and sourcing and compliance requirements that can raise cost and disrupt supply. What remains unknown is the market’s Germany-specific 2026 size, growth, matcha shares by channel, and whether the Japanese supply pressures reported for 2025 translated into sustained German price or availability changes."
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 52,
+  "at": "2026-09-25T10:47:08.085Z",
+  "event": {
+   "ok": false,
+   "type": "agent_done",
+   "error": "Delay was aborted",
+   "agentId": "tea-supply-chain-and-commodity-analyst-f817",
+   "costUsd": 0.013871600000000001
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 53,
+  "at": "2026-09-25T10:47:08.085Z",
+  "event": {
+   "type": "phase",
+   "phase": "critiquing",
+   "round": 1
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 54,
+  "at": "2026-09-25T10:47:13.928Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0563991,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 55,
+  "at": "2026-09-25T10:47:13.928Z",
+  "event": {
+   "type": "review",
+   "round": 1,
+   "review": {
+    "gaps": [
+     "What are Germany's matcha sales, market share, prices, and growth projections for 2026?",
+     "Has the younger-consumer demand trend persisted, and how does matcha demand vary by channel and consumer segment?",
+     "How significantly do supply availability, compliance costs, competition, and margins affect German matcha businesses?"
+    ],
+    "verdicts": [
+     {
+      "note": "The cited report directly supports a positive matcha-related demand signal among younger consumers and growth in specialty tea-shop sales. It does not establish matcha-specific market size or show that the trend continued into 2026.",
+      "verdict": "supported",
+      "findingId": "m1"
+     },
+     {
+      "note": "The figures support the stated broad tea-market context and slight year-on-year decline. They do not show that matcha sales declined; the aggregate trend does not contradict m1's more specific positive signal.",
+      "verdict": "supported",
+      "findingId": "m2"
+     },
+     {
+      "note": "The evidence supports compliance and sourcing pressures for the tea sector, which may be a disadvantage for matcha suppliers. It does not quantify matcha-specific exposure or costs.",
+      "verdict": "supported",
+      "findingId": "m3"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 56,
+  "at": "2026-09-25T10:47:13.928Z",
+  "event": {
+   "type": "phase",
+   "phase": "synthesizing",
+   "round": 0
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 57,
+  "at": "2026-09-25T10:47:25.483Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0570583,
+   "agentsSpawned": 3
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 58,
+  "at": "2026-09-25T10:47:25.483Z",
+  "event": {
+   "type": "report",
+   "markdown": "# Germany’s matcha tea market in 2026: decision brief\n\n## Executive view\n\nThe evidence points to **an opportunity in consumer interest, but not a proven market-growth case**. Matcha’s popularity among younger consumers has supported demand for other green-tea specialties, while specialty tea-shop sales and out-of-home tea consumption have risen. However, the available findings do not quantify matcha sales, market share, or growth. The wider tea market also softened slightly in 2024, and tighter EU compliance requirements are adding cost and sourcing risk for tea companies. [1][2][3]\n\n**Decision implication:** Treat Germany as a promising market to test—particularly through specialty retail and out-of-home channels—but validate demand, margins, and supply reliability before making a large-scale commitment.\n\n## Main pros\n\n- **A favorable consumer-interest signal.** The German tea industry association reports that matcha’s trend among younger target groups boosted demand for other green-tea specialties. This suggests potential for matcha to benefit from broader interest in green tea, though it does not establish matcha-specific sales growth. [1]\n- **Potentially supportive specialty and out-of-home channels.** Specialty tea-shop sales rose, and out-of-home tea consumption was slightly higher in 2024. These are encouraging channel signals for testing matcha products, but the report does not attribute those increases specifically to matcha. [1]\n- **Room to serve a distinct tea segment.** In 2024, black and green tea together accounted for 27.1 litres of Germany’s 67.2 litres of per-capita tea consumption. This provides context for the addressable tea category, but does not reveal how much of it is green tea or matcha. [2]\n\n## Main cons and risks\n\n- **No verified matcha market size or growth rate.** The available evidence is directional and association-reported; it does not establish matcha’s German sales, market share, price levels, or 2026 growth outlook. [1]\n- **The broader tea context is not uniformly positive.** Total per-capita tea consumption was 67.2 litres in 2024, and all tea categories declined slightly year on year, by 1.5%. This is a cautionary backdrop, not evidence that matcha itself declined. [2]\n- **Compliance may raise costs and constrain supply.** The association reports that tighter EU residue limits and documentation obligations are increasing analytical and compliance costs for German tea companies. It also notes that some suppliers are avoiding EU exports and some tea varieties are becoming difficult to source. These are sector-level risks that may apply to matcha sourcing; matcha-specific effects are not established. [3]\n\n## Practical 2026 stance\n\nProceed with **measured, evidence-generating market tests**, rather than assuming the trend signals a large or fast-growing market. Prioritize tests that can distinguish matcha demand from broader green-tea interest, and assess supplier compliance costs and continuity alongside consumer response. The findings support testing the opportunity, but are insufficient on their own to justify a market-size forecast or a major capacity commitment.\n\n## Open questions\n\n- What are Germany’s matcha sales, market share, and growth rate, and how have they changed over time?\n- Which customer groups, formats, price points, and purchase occasions account for matcha demand?\n- How much of the reported specialty-shop and out-of-home growth is attributable to matcha specifically?\n- What are the landed costs, compliance requirements, and supply-continuity risks for matcha compared with other tea categories?\n- Does matcha demand remain resilient when broader tea consumption is declining?\n\n## Sources\n\n- **[1]** German Tea & Herbal Tea Association, *Tea Report 2025* (reporting on Germany in 2024): https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf\n- **[2]** German Tea & Herbal Tea Association, *Tea Report 2025* (reporting on Germany in 2024): https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf\n- **[3]** German Tea & Herbal Tea Association, *Tea Report 2025* (reporting on sector-level compliance and sourcing issues): https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf",
+   "citations": [
+    {
+     "n": 1,
+     "url": "https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf",
+     "claim": "German tea industry association's 2025 report, reporting on Germany in 2024, says matcha's trend among younger target groups boosted demand for other green-tea specialties; specialty tea-shop sales rose and out-of-home tea consumption was slightly higher. This is association-reported direction, not matcha-specific market size or share.",
+     "findingId": "m1"
+    },
+    {
+     "n": 2,
+     "url": "https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf",
+     "claim": "German tea industry association reports 2024 per-capita consumption of 67.2 litres total tea, including black/green tea 27.1 L and herbal/fruit infusions 40.1 L; all tea categories declined slightly by 1.5% year-on-year. This establishes a broad tea context, not matcha sales.",
+     "findingId": "m2"
+    },
+    {
+     "n": 3,
+     "url": "https://www.teeverband.de/files/bilder/C-Tee-Report/Report2025/Tee-Report2025/Downloads/Report/TeeReport_2025_ES_Druckversion.pdf",
+     "claim": "The German Tea & Herbal Tea Association's 2025 report flags tighter EU residue limits and documentation obligations as increasing analytical and compliance costs for German tea companies, with some suppliers avoiding EU exports and some tea varieties becoming difficult to source. This is a sector-level barrier applicable to matcha sourcing, not matcha-specific incidence evidence.",
+     "findingId": "m3"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "fb133734-25e2-4a71-85d5-edf1a9179020",
+  "seq": 59,
+  "at": "2026-09-25T10:47:25.483Z",
+  "event": {
+   "type": "run_end",
+   "status": "done"
+  }
+ }
+]

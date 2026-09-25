@@ -1,0 +1,1383 @@
+[
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 1,
+  "at": "2026-09-25T10:53:43.213Z",
+  "event": {
+   "type": "phase",
+   "phase": "planning",
+   "round": 0
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 2,
+  "at": "2026-09-25T10:53:46.434Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.00012090000000000001,
+   "agentsSpawned": 0
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 3,
+  "at": "2026-09-25T10:53:46.434Z",
+  "event": {
+   "type": "plan",
+   "questions": [
+    {
+     "role": "Rainwater System Design Engineer",
+     "question": "How should a rainwater harvesting system for a small urban home be designed and sized, including roof catchment, gutters, storage, and overflow?"
+    },
+    {
+     "role": "Water Quality and Public Health Specialist",
+     "question": "What treatment and safety practices are needed for different household uses of harvested rainwater, and how can contamination risks be reduced?"
+    },
+    {
+     "role": "Residential Plumbing and Maintenance Specialist",
+     "question": "What routine inspection, cleaning, and maintenance practices keep a household rainwater system reliable over time?"
+    },
+    {
+     "role": "Building Codes and Water Policy Specialist",
+     "question": "What local regulations, permits, and plumbing-code requirements should homeowners check before installing a rainwater harvesting system?"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 4,
+  "at": "2026-09-25T10:53:46.434Z",
+  "event": {
+   "type": "phase",
+   "phase": "researching",
+   "round": 1
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 5,
+  "at": "2026-09-25T10:53:53.325Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0004246,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 6,
+  "at": "2026-09-25T10:53:53.326Z",
+  "event": {
+   "type": "agent_spawned",
+   "agent": {
+    "id": "rainwater-system-design-engineer-a5f3",
+    "role": "Rainwater system design engineer",
+    "maxSteps": 7,
+    "objective": "How should a rainwater-harvesting system for a small urban home be designed and sized, including its roof catchment, gutters, storage, and overflow?",
+    "systemPrompt": "Research and explain a practical, site-specific design method for a small urban home's rainwater-harvesting system. Cover: (1) estimating usable roof catchment area and runoff yield from local rainfall, including an appropriate runoff coefficient and losses; (2) matching supply to intended demand and choosing storage capacity using a transparent method; (3) sizing and configuring gutters, downpipes, screens, and first-flush diversion; (4) locating and specifying a covered, opaque, mosquito-resistant tank with suitable inlet, outlet, access, and maintenance provisions; and (5) safely sizing and routing overflow and emergency overflow away from buildings, neighboring properties, and foundations. Distinguish potable from non-potable use and flag treatment, cross-connection, plumbing, structural-load, stormwater, and permitting requirements that must be checked locally. State assumptions and show equations with units; use a worked example only if clearly labeled illustrative, not a universal recommendation. Do not invent dimensions, code requirements, or safety assurances.\n\nPrioritize current local government building, plumbing, stormwater, and public-health requirements for jurisdiction-specific claims; then use government water agencies, university extension publications, recognized technical standards, and peer-reviewed research. Use manufacturer documentation only for product-specific specifications. Verify that sources apply to the stated climate, system type, and use. Cite a direct URL for every factual or prescriptive claim, placing citations immediately after the supported claim. If authoritative sources disagree, explain the difference and defer to applicable local requirements.\n\nAsk for location, roof area/material, rainfall data, intended uses and demand, available tank space, and applicable constraints when these are missing. If those inputs are unavailable, provide a clearly qualified design workflow and identify which values require local verification rather than presenting a definitive design. Stop once the design workflow, sizing method, key safety/code checks, and overflow approach are supported by reliable sources; do not expand into a general guide to all rainwater-harvesting topics."
+   },
+   "round": 1
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 7,
+  "at": "2026-09-25T10:53:53.624Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0007319,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 8,
+  "at": "2026-09-25T10:53:53.624Z",
+  "event": {
+   "type": "agent_spawned",
+   "agent": {
+    "id": "water-quality-and-public-health-specialist-f60d",
+    "role": "Water Quality and Public Health Specialist",
+    "maxSteps": 8,
+    "objective": "What treatment and safety practices are needed for different household uses of harvested rainwater, and how can contamination risks be reduced?",
+    "systemPrompt": "Research public-health and water-quality guidance for rainwater harvesting in small urban homes. Explain how recommended safeguards differ for drinking and cooking, bathing, laundry, toilet flushing, and outdoor uses; distinguish uses that may be acceptable without treatment from those requiring treatment or testing, and flag that local rules can differ. Cover key contamination pathways and practical controls, including roof and gutter materials, debris screens, first-flush diversion, covered and well-maintained storage, vector control, treatment barriers appropriate to the intended use, plumbing separation and backflow prevention, and maintenance or water testing. Do not imply that clear-looking or filtered water is safe to drink. Address risks such as pathogens, metals or chemicals from roofing and plumbing, and cross-connections where relevant.\n\nPrioritize current guidance from public-health and drinking-water authorities (for example, national or local health departments, CDC, EPA, and WHO), applicable regulations and standards, and university extension or peer-reviewed sources for technical details. Prefer primary guidance over commercial vendor material. Check publication dates and geographic scope; identify jurisdiction-specific requirements rather than presenting them as universal. Do not invent treatment performance, testing intervals, or legal requirements.\n\nFor every factual claim and recommendation in your answer, provide a direct URL citation to its supporting source. Tie citations to the relevant sentence or bullet, and ensure the cited page actually supports the claim. If authoritative sources disagree or guidance is location-dependent, describe the difference and cite each position. Separate evidence-based recommendations from practical precautions or unresolved uncertainties.\n\nStop when you have enough reliable sources to support (1) a clear use-by-use safety distinction, (2) the principal contamination risks and their controls, (3) suitable treatment and testing considerations for potable use, and (4) critical local-regulation caveats. Do not continue collecting sources once these points are adequately supported; state any important evidence gaps instead of speculating."
+   },
+   "round": 1
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 9,
+  "at": "2026-09-25T10:53:54.833Z",
+  "event": {
+   "step": 1,
+   "type": "agent_step",
+   "agentId": "rainwater-system-design-engineer-a5f3",
+   "costUsd": 7.72e-05,
+   "toolCalls": [
+    {
+     "name": "read_board",
+     "input": "{}",
+     "result": "[]"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 10,
+  "at": "2026-09-25T10:53:54.833Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0008091,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 11,
+  "at": "2026-09-25T10:53:55.073Z",
+  "event": {
+   "step": 1,
+   "type": "agent_step",
+   "agentId": "water-quality-and-public-health-specialist-f60d",
+   "costUsd": 7.460000000000001e-05,
+   "toolCalls": [
+    {
+     "name": "read_board",
+     "input": "{}",
+     "result": "[]"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 12,
+  "at": "2026-09-25T10:53:55.073Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0008837,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 13,
+  "at": "2026-09-25T10:54:03.730Z",
+  "event": {
+   "step": 2,
+   "type": "agent_step",
+   "agentId": "water-quality-and-public-health-specialist-f60d",
+   "costUsd": 0.00018219999999999998,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:cdc.gov rainwater collection drinking water treatment first flush roof contaminants household uses\"}",
+     "result": "[{\"title\":\"Collecting Rainwater and Your Health: An Overview | Drinking Water | CDC\",\"url\":\"https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html\",\"snippet\":\"Title: Collecting Rainwater and Your Health: An Overview | Drinking Water | CDC\\nA **.gov** website belongs to an offic…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:epa.gov rainwater harvesting drinking water rain barrel contaminants guidance\"}",
+     "result": "[{\"title\":\"Rainwater Collection and Treatment - Texas Commission on Environmental Quality - www.tceq.texas.gov\",\"url\":\"https://www.tceq.texas.gov/drinkingwater/rainwater.html\",\"snippet\":\"Texas Commission on Environmental Quality\\nTexas Commission on Environmental Quality\\n\\nSearch tceq.texas.gov\\n\\…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:health.state.mn.us rainwater harvesting public health uses drinking bathing laundry toilet flushing\"}",
+     "result": "[{\"title\":\"avoiding the laundry list literature review – patter\",\"url\":\"https://patthomson.net/2017/09/11/avoiding-the-laundry-list-literature-review\",\"snippet\":\"LikeLike\\n\\n    Reply\\n\\n     Yes absolutely. I’ve been planning a post on this and will quote you and this comment.\\n\\n      LikeLike [.…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"WHO rainwater harvesting household drinking water treatment first flush storage health\"}",
+     "result": "[{\"title\":\"Rain Tanks | Rainwater Harvesting for Potable Water\",\"url\":\"https://www.ntotank.com/blog/rainwater-harvesting-for-potable-water\",\"snippet\":\"The rainwater harvesting accessory known as a first flush diverter, or roof washer, can help improve total water quality before it reaches the stora…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"state health department rainwater harvesting non potable use laundry bathing toilet flushing guidance\"}",
+     "result": "[{\"title\":\"Is It Illegal To Harvest Rainwater? 2026 Laws By State\",\"url\":\"https://myrainplan.com/blog/rainwater-harvesting-laws-by-state\",\"snippet\":\"Garden irrigation: Water vegetables, flowers, and ornamental plants during dry periods\\n Lawn maintenance: Keep grass healthy without drawing from mun…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"rainwater harvesting roof materials metals water quality university extension first flush household\"}",
+     "result": "[{\"title\":\"Effect of Roof Material on Water Quality for Rainwater ...\",\"url\":\"https://www.twdb.texas.gov/innovativewater/rainwater/projects/rainquality/2011_02_rainquality_final_rpt.pdf\",\"snippet\":\"by the Texas Commission on Environmental Quality (TCEQ), and, thus, the USEPA drinking water standard…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 14,
+  "at": "2026-09-25T10:54:03.730Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0010658999999999998,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 15,
+  "at": "2026-09-25T10:54:05.302Z",
+  "event": {
+   "step": 2,
+   "type": "agent_step",
+   "agentId": "rainwater-system-design-engineer-a5f3",
+   "costUsd": 0.0002053,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:epa.gov rainwater harvesting roof runoff storage first flush mosquito tank overflow manual pdf\"}",
+     "result": "[{\"title\":\"[PDF] Rainwater Harvesting - Environmental Protection Agency (EPA)\",\"url\":\"https://www.epa.gov/sites/default/files/2015-11/documents/rainharvesting.pdf\",\"snippet\":\"debris O: Twice a year Inspect and clean pre-screening, inlet filtration devices, and first flush diverters O: Four times a …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"government rainwater harvesting design manual roof runoff coefficient storage sizing first flush gutters overflow pdf\"}",
+     "result": "[{\"title\":\"Rainwater Harvesting System Design Guide: Yield, First-Flush, Filtration, and Storage Sizing | TryBuildCalc\",\"url\":\"https://trybuildcalc.com/knowledge/plumbing/rainwater-harvesting-design-guide\",\"snippet\":\"A rainwater harvesting system is only as good as the roof feeding it and the first…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"university extension rainwater harvesting roof catchment coefficient storage sizing demand first flush tank overflow\"}",
+     "result": "[{\"title\":\"Rainwater Harvesting System Design Guide\",\"url\":\"https://trybuildcalc.com/knowledge/plumbing/rainwater-harvesting-design-guide\",\"snippet\":\"A rainwater harvesting system is only as good as the roof feeding it and the first-flush and filtration stages ahead of storage — an oversized tank f…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"government rainwater harvesting tank overflow foundation away building stormwater requirements\"}",
+     "result": "[{\"title\":\"Design criteria for stormwater and rainwater harvest and use/reuse | Minnesota Stormwater Manual\",\"url\":\"https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse\",\"snippet\":\"Design an overflow system for when the tank reaches capacity; the over…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"rainwater harvesting handbook gutters downspouts sizing rainfall intensity screens first flush government\"}",
+     "result": "[{\"title\":\"Rainwater Harvesting: System Planning\",\"url\":\"https://greywateraction.org/wp-content/uploads/2014/11/Rainwater-Harvesting-System-Practitioner-Manual.pdf\",\"snippet\":\"roof area for each downspout. If the use of small downspouts is preferred, the number of downspouts required can be found b…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 16,
+  "at": "2026-09-25T10:54:05.302Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0012711999999999999,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 17,
+  "at": "2026-09-25T10:54:16.565Z",
+  "event": {
+   "step": 3,
+   "type": "agent_step",
+   "agentId": "rainwater-system-design-engineer-a5f3",
+   "costUsd": 0.0011857,
+   "toolCalls": [
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.twdb.texas.gov/publications/brochures/conservation/doc/RainwaterHarvestingManual_3rdedition.pdf\"}",
+     "result": "<untrusted_page url=\"https://www.twdb.texas.gov/publications/brochures/conservation/doc/RainwaterHarvestingManual_3rdedition.pdf\">\nTitle: The Texas Manual on Rainwater Harvesting\n\nURL Source: https://www.twdb.texas.gov/publications/brochures/conservation/doc/RainwaterHarvestingManual_3rdedition.pdf…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse\"}",
+     "result": "<untrusted_page url=\"https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse\">\nTitle: Design criteria for stormwater and rainwater harvest and use/reuse\n\nURL Source: https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.epa.gov/sites/default/files/2015-11/documents/rainharvesting.pdf\"}",
+     "result": "<untrusted_page url=\"https://www.epa.gov/sites/default/files/2015-11/documents/rainharvesting.pdf\">\nTitle: Rainwater Harvesting: Conservation, Credit, Codes, and Cost Literature Review and Case Studies\n\nURL Source: https://www.epa.gov/sites/default/files/2015-11/documents/rainharvesting.pdf\n\nPublis…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf\"}",
+     "result": "<untrusted_page url=\"https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf\">\nTitle: C-7--Rainwater-Harvesting.pdf\n\nURL Source: https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainw…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:twdb.texas.gov Rainwater harvesting manual roof coefficient 0.9 gallons roof rainfall storage demand tank sizing water balance\"}",
+     "result": "[{\"title\":\"[PDF] The Texas Manual on Rainwater Harvesting\",\"url\":\"https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf\",\"snippet\":\"College Sta tion (TX): Tex as A&M University. 90 p. 28 This page intentionally left blank. 29 Chapter 4 Water Balance and S…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:cdc.gov rainwater collection drinking water treatment roof runoff potable rainwater public health\"}",
+     "result": "[{\"title\":\"Collecting Rainwater and Your Health: An Overview | Drinking Water | CDC\",\"url\":\"https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html\",\"snippet\":\"Consider using a simple device called a “first flush diverter” to improve the quality of the rainwater you collect. The…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:extension.umn.edu rainwater harvesting roof runoff coefficient 0.9 gallons tank sizing rainfall demand\"}",
+     "result": "[{\"title\":\"How To Calculate The Coefficient Of Variation (In Excel)\",\"url\":\"https://www.youtube.com/watch?v=OI1wzkuKS6Y\",\"snippet\":\"[1:42] by a hundred so it's a calculate the cv percentage I'm going to click on this empty cell and type in equals open\\n[1:49] bracket and I'm going to click on the S…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:epa.gov rainwater harvesting potable nonpotable cross connection backflow plumbing tank mosquito screen\"}",
+     "result": "[{\"title\":\"Document Display | NEPIS | US EPA\",\"url\":\"https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=901N0K00.TXT\",\"snippet\":\"This feature allows you to alert EPA to a problem with the document or page you are viewing. Whenever posible, document images or structure will be repaired in response to these…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"official building plumbing code rainwater harvesting mosquito proof tank overflow local permit rainwater storage urban home\"}",
+     "result": "[{\"title\":\"The 2026 Guide to Rainwater Harvesting in the USA\",\"url\":\"https://www.tank-depot.com/blog/the-2026-guide-to-rainwater-harvesting-in-the-usa-laws-benefits-and-expert-design\",\"snippet\":\"| Arkansas | Strict Code | Engineer Design Required. For non-potable systems, the system must be designe…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 18,
+  "at": "2026-09-25T10:54:16.565Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0024568999999999997,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 19,
+  "at": "2026-09-25T10:54:22.611Z",
+  "event": {
+   "step": 3,
+   "type": "agent_step",
+   "agentId": "water-quality-and-public-health-specialist-f60d",
+   "costUsd": 0.0011110999999999998,
+   "toolCalls": [
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html\"}",
+     "result": "<untrusted_page url=\"https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html\">\nTitle: Collecting Rainwater and Your Health: An Overview\n\nURL Source: https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html\n\nMarkdown Content:\n[July 23, 2024, visit link for deta…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html\"}",
+     "result": "<untrusted_page url=\"https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html\">\nTitle: Collecting Rainwater and Your Health: An Overview\n\nURL Source: https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html\n\nMarkdown Conten…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.tceq.texas.gov/drinkingwater/rainwater.html\"}",
+     "result": "<untrusted_page url=\"https://www.tceq.texas.gov/drinkingwater/rainwater.html\">\nTitle: Rainwater Collection and Treatment\n\nURL Source: https://www.tceq.texas.gov/drinkingwater/rainwater.html\n\nMarkdown Content:\nThe Texas Water Development Board and Take Care of Texas both offer guidance for rainwater…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://rainwaterharvesting.tamu.edu/pre-storage-treatment\"}",
+     "result": "<untrusted_page url=\"https://rainwaterharvesting.tamu.edu/pre-storage-treatment\">\nTitle: Pre-Storage Treatment - Rainwater Harvesting\n\nURL Source: https://rainwaterharvesting.tamu.edu/pre-storage-treatment\n\nMarkdown Content:\nThe goal of pre-storage treatment is to clean the rainwater runoff as much…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://stormwater.pca.state.mn.us/overview_for_stormwater_and_rainwater_harvest_and_usereuse\"}",
+     "result": "<untrusted_page url=\"https://stormwater.pca.state.mn.us/overview_for_stormwater_and_rainwater_harvest_and_usereuse\">\nTitle: Overview for stormwater and rainwater harvest and use/reuse\n\nURL Source: https://stormwater.pca.state.mn.us/overview_for_stormwater_and_rainwater_harvest_and_usereuse\n\nMarkdow…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.epa.gov/waterreuse/summary-washingtons-water-reuse-guideline-or-regulation-landscaping-and-onsite-non\"}",
+     "result": "<untrusted_page url=\"https://www.epa.gov/waterreuse/summary-washingtons-water-reuse-guideline-or-regulation-landscaping-and-onsite-non\">\nTitle: Summary of Washington’s Water Reuse Guideline or Regulation for Landscaping and Onsite Non-potable Water Reuse | US EPA\n\nURL Source: https://www.epa.gov/wa…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 20,
+  "at": "2026-09-25T10:54:22.611Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0035679999999999996,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 21,
+  "at": "2026-09-25T10:54:23.697Z",
+  "event": {
+   "step": 4,
+   "type": "agent_step",
+   "agentId": "rainwater-system-design-engineer-a5f3",
+   "costUsd": 0.0024069,
+   "toolCalls": [
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf\"}",
+     "result": "<untrusted_page url=\"https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf\">\nTitle: Microsoft Word - 6.15 FINAL_WK.doc\n\nURL Source: https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf\n\nPublished Time: Fri, 07 …"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 22,
+  "at": "2026-09-25T10:54:23.697Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0059749,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 23,
+  "at": "2026-09-25T10:54:28.525Z",
+  "event": {
+   "step": 5,
+   "type": "agent_step",
+   "agentId": "rainwater-system-design-engineer-a5f3",
+   "costUsd": 0.0025479,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:twdb.texas.gov/innovativewater/rainwater \\\"one to two gallons\\\" first flush 100 square feet\"}",
+     "result": "[{\"title\":\"103 - Intro to Flush Trim Bits - The Wood Whisperer\",\"url\":\"https://thewoodwhisperer.com/videos/flush-trim-bits\",\"snippet\":\"[](\\n\\n[](\\n\\n4\\n\\nWe use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept”, y…"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 24,
+  "at": "2026-09-25T10:54:28.525Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0085228,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 25,
+  "at": "2026-09-25T10:54:29.161Z",
+  "event": {
+   "step": 4,
+   "type": "agent_step",
+   "agentId": "water-quality-and-public-health-specialist-f60d",
+   "costUsd": 0.0019779,
+   "toolCalls": [
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:stormwater.pca.state.mn.us rainwater reuse bathing laundry toilet irrigation treatment quality matrix potable\"}",
+     "result": "[{\"title\":\"MATRIX™ Technology - Lockheed Martin\",\"url\":\"https://www.lockheedmartin.com/en-us/products/sikorsky-matrix-technology.html\",\"snippet\":\"New Zealand\\n\\nEnglish\\nEnglish Norsk\\n\\nPoland\\n\\nEnglish Polski\\n\\nRepublic of Korea\\n\\nEnglish 한국어\\n\\nRomania\\n\\nEnglish Romnă\\n\\nSaudi Arabia\\n\\nEngl…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:gov rainwater harvesting bathing laundry toilet flushing untreated rainwater use public health\"}",
+     "result": "[{\"title\":\"Rainwater Harvesting Policies\",\"url\":\"https://www.epa.gov/sites/default/files/2015-10/documents/gi_munichandbook_harvesting.pdf\",\"snippet\":\"designed rainwater harvesting systems for non-potable uses that meet the minimum criteria described in the MOU and in guidance materials prepared by…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:gov rainwater harvesting roof material treated potable treatment disinfection storage tank cover mosquitoes guidance\"}",
+     "result": "[{\"title\":\"Rain Water Harvesting Guidelines | Oxfam WASH\",\"url\":\"https://www.oxfamwash.org/rain-water-harvesting-guidelines\",\"snippet\":\"An above-ground roof washer or filtering device shall be provided on all storage tanks.\\n Overflow from rainwater systems cannot flow into wastewater systems.\\n St…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"CDC private rainwater treatment drinking filter disinfect test bacteria metals rainwater\"}",
+     "result": "[{\"title\":\"Ultimate Guide to Rainwater Safety – Tap Score\",\"url\":\"https://mytapscore.com/blogs/tips-for-taps/ultimate-guide-to-rainwater-safety\",\"snippet\":\"If you intend to drink your harvested rainwater, you should consider investing in a dedicated collection and filtration system. The Centers for…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"EPA rainwater collection rain barrel use garden toilet flushing treatment water quality guidance home\"}",
+     "result": "[{\"title\":\"Environment - Pittwater Online News\",\"url\":\"https://www.pittwateronlinenews.com/Environment-News-September-2026-Issue-658.php\",\"snippet\":\"IPART Webpage for consultation: www.ipart.nsw.gov.au/review/water/review-water-pricing-framework-data-centres\\n\\nBackground in August 2026 report: Fra…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"WHO rainwater collection roof materials storage cover mosquito first flush drinking water household technical guidance pdf\"}",
+     "result": "[{\"title\":\"How to Plan a Safe Rainwater Harvesting System in 2026\",\"url\":\"https://naturalistico.com/en/learn/blog/how-to-plan-a-safe-rainwater-harvesting-system-in-2026\",\"snippet\":\"For most households, plan for non-potable uses. Rooftop rain can carry germs and chemicals, so casual drinking use is …"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 26,
+  "at": "2026-09-25T10:54:29.161Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0105007,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 27,
+  "at": "2026-09-25T10:54:36.799Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333676799,
+    "id": "m1",
+    "from": "rainwater-system-design-engineer-a5f3",
+    "type": "finding",
+    "finding": {
+     "claim": "For yield estimates, the Texas Water Development Board gives the theoretical conversion of 0.62 US gal per ft² per inch of rain and notes real-world losses from first flush, evaporation, splash-out, gutter overshoot, and leaks; it reports common system efficiency assumptions of about 75–85%.",
+     "evidence": "In theory, a rainwater harvesting system can collect approximately 0.62 gallons of water per square foot of roof area, per inch of rainfall. In practice, however, there is always some loss due to first flush, evaporation, splash-out, overshoot from gutters, and possible leaks. Most installers use an efficiency of about 75 to 85 percent for the system.",
+     "sourceUrl": "https://www.twdb.texas.gov/innovativewater/rainwater/faq.asp",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 28,
+  "at": "2026-09-25T10:54:36.799Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333676799,
+    "id": "m2",
+    "from": "rainwater-system-design-engineer-a5f3",
+    "type": "finding",
+    "finding": {
+     "claim": "The Texas Water Development Board manual recommends monthly water-balance sizing: captured supply depends on rainfall, catchment area and collection efficiency; beginning tank storage plus captured volume minus monthly use gives end-of-month available storage, capped by tank capacity.",
+     "evidence": "The basic rule for sizing any rainwater harvesting system is that the volume of water that can be captured and stored (the supply) must equal or exceed the volume of water used (the demand)... Water available (gallons) = Initial volume in storage (gallons) + gallons captured – gallons used.",
+     "sourceUrl": "https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 29,
+  "at": "2026-09-25T10:54:36.799Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333676799,
+    "id": "m3",
+    "from": "rainwater-system-design-engineer-a5f3",
+    "type": "finding",
+    "finding": {
+     "claim": "CDC advises a first-flush diverter because the initial roof runoff picks up dirt, germs and chemicals, and says the required diversion amount depends on the roof area; rainwater can contain germs and chemicals and needs treatment appropriate to its intended use.",
+     "evidence": "The device directs the first rainwater that falls during a storm away from your rainwater collection system. This first flow of rainwater picks up the most dirt, germs, and chemicals. The amount of water the first flush diverter should remove depends on the size of the roof feeding into your collection system.",
+     "sourceUrl": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 30,
+  "at": "2026-09-25T10:54:36.799Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333676799,
+    "id": "m4",
+    "from": "rainwater-system-design-engineer-a5f3",
+    "type": "finding",
+    "finding": {
+     "claim": "Minnesota Stormwater Manual recommends designing rainwater-harvesting overflow for a full tank, directing it away from the foundation to a non-eroding surface, and allowing maintenance access; it also says to assess the full-water tank foundation load.",
+     "evidence": "Design an overflow system for when the tank reaches capacity; the overflow pipe diameter should be the same as the inlet pipe diameter and should be directed away from the foundation and towards a surface that will not erode. Create operation and maintenance accessibility... Assess the need for a foundation based on the weight of the tank when full of water.",
+     "sourceUrl": "https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 31,
+  "at": "2026-09-25T10:54:36.799Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333676799,
+    "id": "m5",
+    "from": "rainwater-system-design-engineer-a5f3",
+    "type": "finding",
+    "finding": {
+     "claim": "North Carolina's stormwater manual lists collection, pretreatment, storage, overflow, and distribution as required system components in its jurisdiction, and says above-ground cistern materials should block light to prevent algae growth.",
+     "evidence": "Rainwater harvesting systems shall include... a collection system; a pre-treatment device to minimize gross and coarse solids collection in the tank; a cistern or other storage device; an overflow; and a distribution system... Material should block light to avoid algae growth within the cistern.",
+     "sourceUrl": "https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 32,
+  "at": "2026-09-25T10:54:36.799Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333676799,
+    "id": "m6",
+    "from": "rainwater-system-design-engineer-a5f3",
+    "type": "finding",
+    "finding": {
+     "claim": "CDC warns that rainwater may become contaminated by roofing materials, atmospheric deposition, and animal waste; potable use needs treatment matched to the contaminants/use, and rainwater should not be mixed with treated drinking water without safeguards.",
+     "evidence": "Rainwater can pick up germs and chemicals in the air and as it moves into your rainwater collection system... chemicals like asbestos, lead, or copper... Dirt and germs from the roof...",
+     "sourceUrl": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 33,
+  "at": "2026-09-25T10:54:36.800Z",
+  "event": {
+   "step": 6,
+   "type": "agent_step",
+   "agentId": "rainwater-system-design-engineer-a5f3",
+   "costUsd": 0.0031332000000000005,
+   "toolCalls": [
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"For yield estimates, the Texas Water Development Board gives the theoretical conversion of 0.62 US gal per ft² per inch of rain and notes real-world losses from first flush, evaporation, splash-out, gutter overshoot, and leaks; it reports common system efficiency assumptions of about 75–8…",
+     "result": "m1"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"The Texas Water Development Board manual recommends monthly water-balance sizing: captured supply depends on rainfall, catchment area and collection efficiency; beginning tank storage plus captured volume minus monthly use gives end-of-month available storage, capped by tank capacity.\",\"s…",
+     "result": "m2"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"CDC advises a first-flush diverter because the initial roof runoff picks up dirt, germs and chemicals, and says the required diversion amount depends on the roof area; rainwater can contain germs and chemicals and needs treatment appropriate to its intended use.\",\"sourceUrl\":\"https://www.…",
+     "result": "m3"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"Minnesota Stormwater Manual recommends designing rainwater-harvesting overflow for a full tank, directing it away from the foundation to a non-eroding surface, and allowing maintenance access; it also says to assess the full-water tank foundation load.\",\"sourceUrl\":\"https://stormwater.pca…",
+     "result": "m4"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"North Carolina's stormwater manual lists collection, pretreatment, storage, overflow, and distribution as required system components in its jurisdiction, and says above-ground cistern materials should block light to prevent algae growth.\",\"sourceUrl\":\"https://files.nc.gov/ncdeq/Energy%20M…",
+     "result": "m5"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"CDC warns that rainwater may become contaminated by roofing materials, atmospheric deposition, and animal waste; potable use needs treatment matched to the contaminants/use, and rainwater should not be mixed with treated drinking water without safeguards.\",\"sourceUrl\":\"https://www.cdc.gov…",
+     "result": "m6"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 34,
+  "at": "2026-09-25T10:54:36.800Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.013633900000000001,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 35,
+  "at": "2026-09-25T10:54:51.442Z",
+  "event": {
+   "step": 5,
+   "type": "agent_step",
+   "agentId": "water-quality-and-public-health-specialist-f60d",
+   "costUsd": 0.0029072000000000004,
+   "toolCalls": [
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.cdc.gov/drinking-water/about/about-home-water-treatment-systems.html\"}",
+     "result": "<untrusted_page url=\"https://www.cdc.gov/drinking-water/about/about-home-water-treatment-systems.html\">\nTitle: About Home Water Treatment Systems\n\nURL Source: https://www.cdc.gov/drinking-water/about/about-home-water-treatment-systems.html\n\nMarkdown Content:\n[Apr. 10, 2024, visit link for details.]…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.cdc.gov/drinking-water/prevention/about-choosing-home-water-filters.html\"}",
+     "result": "<untrusted_page url=\"https://www.cdc.gov/drinking-water/prevention/about-choosing-home-water-filters.html\">\nTitle: About Choosing Home Water Filters\n\nURL Source: https://www.cdc.gov/drinking-water/prevention/about-choosing-home-water-filters.html\n\nMarkdown Content:\n[Apr. 10, 2024, visit link for de…"
+    },
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://www.energy.gov/cmei/femp/rainwater-harvesting-systems-technology-review\"}",
+     "result": "<untrusted_page url=\"https://www.energy.gov/cmei/femp/rainwater-harvesting-systems-technology-review\">\nTitle: Rainwater Harvesting Systems Technology Review\n\nURL Source: https://www.energy.gov/cmei/femp/rainwater-harvesting-systems-technology-review\n\nPublished Time: 2017-06-14T14:19:57-0400\n\nMarkdo…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:epa.gov rainwater harvesting cross connection backflow prevention plumbing code potable nonpotable\"}",
+     "result": "[{\"title\":\"Rainwater Harvesting Policies\",\"url\":\"https://www.epa.gov/sites/default/files/2015-10/documents/gi_munichandbook_harvesting.pdf\",\"snippet\":\"indoor use, a potable make-up supply line is needed for dry periods and when the collected rainwater supply is unable to meet water demands. The mak…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"site:gov rainwater tanks covered mosquito screen storage maintain clean rainwater harvesting health\"}",
+     "result": "[{\"title\":\"Rainwater Harvesting FAQs | Answers to Harvesting Rainwater\",\"url\":\"https://www.ntotank.com/blog/rainwater-harvesting-faqs\",\"snippet\":\"Yes, an improperly designed and poorly-cared for rainwater harvesting setup can cause a mosquito infestation. On the other hand, a properly designed and …"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"CDC rainwater cistern covered tank mosquito screen maintenance storage water safety\"}",
+     "result": "[{\"title\":\"Identifying and eliminating mosquito breeding sites is key ...\",\"url\":\"https://m.facebook.com/maldivianrc/photos/d41d8cd9/1403688445131425\",\"snippet\":\"If you can, try drilling drain holes into the bottom of them; keep a fine-mesh screen over rain barrels, water tanks and cisterns.\"},{\"ti…"
+    },
+    {
+     "name": "web_search",
+     "input": "{\"query\":\"rainwater harvesting washing clothes public health untreated official guidance laundry rainwater indoor use\"}",
+     "result": "[{\"title\":\"September 05, 2026 To National Stock Exchange of India ...\",\"url\":\"https://beta.bseindia.com/xml-data/corpfiling/AttachHis/97f7d70a-5c4b-45b9-8a39-cc5444e047cc.pdf\",\"snippet\":\"Key initiatives include: • LED lighting across office locations • VRV/VRF air-conditioning systems • BEE 5-star …"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 36,
+  "at": "2026-09-25T10:54:51.442Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.016541100000000003,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 37,
+  "at": "2026-09-25T10:54:57.081Z",
+  "event": {
+   "step": 6,
+   "type": "agent_step",
+   "agentId": "water-quality-and-public-health-specialist-f60d",
+   "costUsd": 0.0036242,
+   "toolCalls": [
+    {
+     "name": "read_page",
+     "input": "{\"url\":\"https://rainwaterharvesting.tamu.edu/after-storage-treatment\"}",
+     "result": "<untrusted_page url=\"https://rainwaterharvesting.tamu.edu/after-storage-treatment\">\nTitle: After-Storage Treatment - Rainwater Harvesting\n\nURL Source: https://rainwaterharvesting.tamu.edu/after-storage-treatment\n\nMarkdown Content:\nTreatment of the water after the storage and before use is critical …"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 38,
+  "at": "2026-09-25T10:54:57.081Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.020165300000000004,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 39,
+  "at": "2026-09-25T10:55:10.363Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710363,
+    "id": "m7",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "CDC (U.S., page dated July 23, 2024) says rainwater may contain germs and chemicals even when it looks clean; dust/smoke/airborne particles, roof droppings, and asbestos/lead/copper from roofing, gutters, pipes, storage or other surfaces are routes into collected water. It advises public tap/bottled water rather than rainwater for drinking, cooking, brushing teeth, rinsing produce and watering edible plants when possible.",
+     "evidence": "“Even when rainwater looks clean, it can contain germs and chemicals”; chemicals like asbestos, lead, or copper can come from roofing materials, gutters, piping, storage materials; bird poop can wash from roof. If possible use public tap/bottled water rather than rainwater for drinking/cooking etc.",
+     "sourceUrl": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 40,
+  "at": "2026-09-25T10:55:10.365Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710365,
+    "id": "m8",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "CDC recommends limiting rainwater uses to reduce swallowing; examples are ornamental/non-edible plant watering and washing items not used for cooking/eating. CDC specifically recommends regular germ and chemical testing if a household drinks, cooks, or bathes with collected rainwater and contacting local health department for test selection; if contaminants are found, choose treatment that removes those specific germs or chemicals.",
+     "evidence": "“Consider only using rainwater in ways that limit the chances you will swallow it”; examples include water plants you do not eat, wash items not used for cooking/eating. “If you drink, cook, or bathe with rainwater, test it regularly for germs and chemicals.”",
+     "sourceUrl": "https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 41,
+  "at": "2026-09-25T10:55:10.365Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710365,
+    "id": "m9",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "CDC advises first-flush diversion because initial runoff carries most roof dirt, germs and chemicals, with diversion volume dependent on catchment roof area; screening or emptying rain barrels at least every 10 days helps stop mosquitoes. CDC advises keeping collection clean, repairing/replacing broken parts, and regularly emptying rain barrels.",
+     "evidence": "“first flow of rainwater picks up the most dirt, germs, and chemicals”; amount diverted depends on roof size. Mosquito advice: screen intake or empty barrel at least every 10 days.",
+     "sourceUrl": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 42,
+  "at": "2026-09-25T10:55:10.365Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710365,
+    "id": "m10",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "Texas A&M AgriLife Extension says roof-runoff pretreatment screening and first-flush diversion remove large debris and reduce organic matter/treatment burden; screens should be checked regularly and kept unclogged, and its general diversion sizing recommendation is 1–2 gallons per 100 square feet (a technical rule of thumb, not universal).",
+     "evidence": "Pre-storage treatment reduces organic matter and later treatment; first flush contains most debris; “In general, we recommend about 1-2 gallons of diversion for every 100 square feet”; inspect screens regularly for clogging.",
+     "sourceUrl": "https://rainwaterharvesting.tamu.edu/pre-storage-treatment",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 43,
+  "at": "2026-09-25T10:55:10.365Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710365,
+    "id": "m11",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "Texas A&M AgriLife Extension recommends treatment barriers proportionate to end use; larger filters can allow small microbes such as bacteria through, so disinfection may be needed. It describes filtration followed by UV as a common potable treatment train, with filtration before UV because sediment blocks UV; chlorination, UV and ozone are disinfection options, and activated carbon adsorption can target VOCs. This is technical guidance, not a guarantee that every system achieves potable quality.",
+     "evidence": "“level of treatment will depend” on use; recommends multi-barrier; cartridge filters followed by UV common; sediment blocks pathogens from UV; chlorine, UV, ozonation described.",
+     "sourceUrl": "https://rainwaterharvesting.tamu.edu/after-storage-treatment",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 44,
+  "at": "2026-09-25T10:55:10.365Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710365,
+    "id": "m12",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "CDC home-treatment guidance (U.S., Apr. 10, 2024) says choose systems according to test results and contaminants; different filters address different hazards: microfiltration does not remove viruses or lead/arsenic, UV with prefiltration disinfects germs but not chemicals, and RO removes pathogens plus some chemicals (verify product claims).",
+     "evidence": "CDC: “Different systems remove different germs or chemicals”; microfiltration does not remove viruses/lead/arsenic; UV with pre-filtration removes parasites, bacteria, viruses but not chemicals; RO removes pathogens and some chemicals.",
+     "sourceUrl": "https://www.cdc.gov/drinking-water/about/about-home-water-treatment-systems.html",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 45,
+  "at": "2026-09-25T10:55:10.365Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710365,
+    "id": "m13",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "EPA's REUSExplorer summary of Washington's 2021 plumbing-code framework documents jurisdiction-specific onsite nonpotable reuse rules: selected end uses include irrigation, toilets/urinals, and car washing; the state's requirements include debris exclusion, end-use-dependent filtration/disinfection, and testing every 12 months and after repair/renovation in covered systems. This is Washington-specific, not a national requirement.",
+     "evidence": "Page states Washington approves rooftop rainwater for non-potable irrigation, water closets, urinals, car washing, etc.; describes filtration/disinfection and annual plus post-repair testing under WPC 2021.",
+     "sourceUrl": "https://www.epa.gov/waterreuse/summary-washingtons-water-reuse-guideline-or-regulation-landscaping-and-onsite-non",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 46,
+  "at": "2026-09-25T10:55:10.365Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710365,
+    "id": "m14",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "U.S. DOE FEMP's 2017 technology review describes regular system upkeep, including cleaning roof/gutters/screens, maintaining treatment devices per manufacturer, inspecting tanks and overflows, and testing potable-system water; it also flags backflow prevention and potable-water connections as components requiring local-code-compliant inspection/testing. Its example frequencies are system-specific guidance, not universal intervals.",
+     "evidence": "O&M table recommends upkeep for collection system, inlet filter, first-flush, tank, treatment, backflow device and potable make-up connection; potable quality regularly tested; frequencies include annual backflow professional test or local requirement.",
+     "sourceUrl": "https://www.energy.gov/cmei/femp/rainwater-harvesting-systems-technology-review",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 47,
+  "at": "2026-09-25T10:55:10.365Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710365,
+    "id": "m15",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "CDC says rainwater used alongside piped tap water must be kept separate so it cannot enter drinking-water pipes, because this can contaminate treated supply; rules vary by place. EPA's 2015 rainwater handbook describes dedicated dual piping plus backflow prevention/air gap as commonly required safeguards in codes, but current local plumbing requirements must be checked.",
+     "evidence": "CDC: make sure rainwater cannot enter pipes carrying safe drinking water. EPA handbook: potable make-up supply connection is greatest cross-contamination risk; codes require backflow assembly, air gap, or both; separate dual piping needed.",
+     "sourceUrl": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 48,
+  "at": "2026-09-25T10:55:10.365Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333710365,
+    "id": "m16",
+    "from": "water-quality-and-public-health-specialist-f60d",
+    "type": "finding",
+    "finding": {
+     "claim": "CDC says collecting rainwater is not allowed everywhere and some states regulate it; residents should check state/environmental and health agencies. Texas TCEQ's page frames drinking/cooking/dishwashing as requiring consideration of treatment adequate to make the water safe, while Texas A&M, as Texas extension guidance, scales treatment to intended use.",
+     "evidence": "CDC: collecting rainwater is not allowed in all places; some states regulate collection; contact environmental/health department. Texas TCEQ asks what treatment ensures safe use when intended for drinking/cooking/washing dishes.",
+     "sourceUrl": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "confidence": "high"
+    }
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 49,
+  "at": "2026-09-25T10:55:10.366Z",
+  "event": {
+   "step": 7,
+   "type": "agent_step",
+   "agentId": "water-quality-and-public-health-specialist-f60d",
+   "costUsd": 0.0045455,
+   "toolCalls": [
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"CDC (U.S., page dated July 23, 2024) says rainwater may contain germs and chemicals even when it looks clean; dust/smoke/airborne particles, roof droppings, and asbestos/lead/copper from roofing, gutters, pipes, storage or other surfaces are routes into collected water. It advises public …",
+     "result": "m7"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"CDC recommends limiting rainwater uses to reduce swallowing; examples are ornamental/non-edible plant watering and washing items not used for cooking/eating. CDC specifically recommends regular germ and chemical testing if a household drinks, cooks, or bathes with collected rainwater and …",
+     "result": "m8"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"CDC advises first-flush diversion because initial runoff carries most roof dirt, germs and chemicals, with diversion volume dependent on catchment roof area; screening or emptying rain barrels at least every 10 days helps stop mosquitoes. CDC advises keeping collection clean, repairing/re…",
+     "result": "m9"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"Texas A&M AgriLife Extension says roof-runoff pretreatment screening and first-flush diversion remove large debris and reduce organic matter/treatment burden; screens should be checked regularly and kept unclogged, and its general diversion sizing recommendation is 1–2 gallons per 100 squ…",
+     "result": "m10"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"Texas A&M AgriLife Extension recommends treatment barriers proportionate to end use; larger filters can allow small microbes such as bacteria through, so disinfection may be needed. It describes filtration followed by UV as a common potable treatment train, with filtration before UV becau…",
+     "result": "m11"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"CDC home-treatment guidance (U.S., Apr. 10, 2024) says choose systems according to test results and contaminants; different filters address different hazards: microfiltration does not remove viruses or lead/arsenic, UV with prefiltration disinfects germs but not chemicals, and RO removes …",
+     "result": "m12"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"EPA's REUSExplorer summary of Washington's 2021 plumbing-code framework documents jurisdiction-specific onsite nonpotable reuse rules: selected end uses include irrigation, toilets/urinals, and car washing; the state's requirements include debris exclusion, end-use-dependent filtration/di…",
+     "result": "m13"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"U.S. DOE FEMP's 2017 technology review describes regular system upkeep, including cleaning roof/gutters/screens, maintaining treatment devices per manufacturer, inspecting tanks and overflows, and testing potable-system water; it also flags backflow prevention and potable-water connection…",
+     "result": "m14"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"CDC says rainwater used alongside piped tap water must be kept separate so it cannot enter drinking-water pipes, because this can contaminate treated supply; rules vary by place. EPA's 2015 rainwater handbook describes dedicated dual piping plus backflow prevention/air gap as commonly req…",
+     "result": "m15"
+    },
+    {
+     "name": "post_finding",
+     "input": "{\"claim\":\"CDC says collecting rainwater is not allowed everywhere and some states regulate it; residents should check state/environmental and health agencies. Texas TCEQ's page frames drinking/cooking/dishwashing as requiring consideration of treatment adequate to make the water safe, while Texas A…",
+     "result": "m16"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 50,
+  "at": "2026-09-25T10:55:10.366Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.024710800000000005,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 51,
+  "at": "2026-09-25T10:55:22.094Z",
+  "event": {
+   "step": 7,
+   "text": "## Inputs needed for a site-specific design\n\nTo size a system for your home, I’d need: **location**; roof area and material, including which roof sections drain to the proposed tank; local rainfall data; intended uses and expected demand; available tank space and placement; and any known building, …",
+   "type": "agent_step",
+   "agentId": "rainwater-system-design-engineer-a5f3",
+   "costUsd": 0.0050466,
+   "toolCalls": []
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 52,
+  "at": "2026-09-25T10:55:22.094Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.029757400000000003,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 53,
+  "at": "2026-09-25T10:55:22.095Z",
+  "event": {
+   "ok": true,
+   "type": "agent_done",
+   "agentId": "rainwater-system-design-engineer-a5f3",
+   "costUsd": 0.0146028,
+   "summary": "## Inputs needed for a site-specific design\n\nTo size a system for your home, I’d need: **location**; roof area and material, including which roof sections drain to the proposed tank; local rainfall data; intended uses and expected demand; available tank space and placement; and any known building, plumbing, stormwater, public-health, or permitting constraints. Without those details, the workflow below is a preliminary method—not a tank specification or confirmation that a design meets local rules.\n\n## 1. Estimate the contributing roof area and usable yield\n\nMeasure the **horizontal projected area** of roof sections that actually drain to the system, rather than adding the sloped surface areas. Count each drainage area only once, and calculate separate contributing areas if sections have different gutters or downpipes. The Texas Water Development Board’s manual likewise says to use the roof’s horizontal footprint for catchment calculations. [Texas Water Development Board, *The Texas Manual on Rainwater Harvesting*](https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf)\n\nUse consistent units. For metric units:\n\n\\[\nV_{\\text{gross}}(\\mathrm{L}) =\nP(\\mathrm{mm})\\times A(\\mathrm{m^2})\\times C\n\\]\n\nHere, \\(P\\) is rainfall over the period being assessed, \\(A\\) is contributing roof area, and \\(C\\) is a runoff coefficient representing water that runs off the roof rather than being retained or lost. One millimetre of rain on one square metre equals one litre before losses.\n\nThen account for collection losses:\n\n\\[\nV_{\\text{usable}} = V_{\\text{gross}}\\times \\eta\n\\]\n\nwhere \\(\\eta\\) is the collection efficiency. The Texas Water Development Board gives a theoretical yield of 0.62 US gallons per square foot per inch of rain and notes losses from first-flush diversion, evaporation, splash-out, gutter overshoot, and leaks; its FAQ describes 75–85% as a commonly used **overall system-efficiency** range. Treat that as a starting range to test—not a site-specific guarantee—and don’t subtract losses separately if they are already included in \\(\\eta\\). [Texas Water Development Board, rainwater-harvesting FAQ](https://www.twdb.texas.gov/innovativewater/rainwater/faq.asp)\n\nUse local rainfall records at a time resolution suited to the design question: seasonal or monthly totals can help screen potential supply, but daily rainfall sequences are more useful for testing storage through dry spells. Rainwater yield depends on both rainfall and catchment area, so annual rainfall alone cannot establish whether the system will meet demand. [Texas Water Development Board, *The Texas Manual on Rainwater Harvesting*](https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf)\n\n## 2. Match supply to demand, then select storage transparently\n\nFirst list the intended uses and estimate each one’s demand by month or day. Compare that demand with usable rainfall yield: if demand regularly exceeds supply, a larger tank cannot solve the underlying catchment or rainfall shortfall. The Texas manual describes system sizing as a supply–demand comparison and presents a monthly water-balance method. [Texas Water Development Board, *The Texas Manual on Rainwater Harvesting*](https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf)\n\nA transparent monthly balance is:\n\n\\[\nS_t=\\min\\left[\nV_{\\text{tank}},\n\\max\\left(0,\\ S_{t-1}+Y_t-D_t\\right)\n\\right]\n\\]\n\nwhere \\(S_t\\) is stored water at the end of period \\(t\\) (L), \\(V_{\\text{tank}}\\) is usable tank capacity (L), \\(Y_t\\) is usable yield during the period (L), and \\(D_t\\) is demand during the period (L). Water exceeding \\(V_{\\text{tank}}\\) spills; demand exceeding available stored water is unmet. This follows the Texas manual’s balance of initial storage plus captured water minus use, subject to the tank’s capacity. [Texas Water Development Board, *The Texas Manual on Rainwater Harvesting*](https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf)\n\nRun the balance over representative local rainfall sequences and candidate tank sizes. Select a capacity based on a stated performance goal—for example, a target share of demand met or a tolerable frequency of shortages—not a generic “days of storage” rule. Check seasonal demand as well as annual totals; a system can have adequate annual rainfall but still run short during a dry season. [Texas Water Development Board, *The Texas Manual on Rainwater Harvesting*](https://www.twdb.texas.gov/innovativewater/rainwater/doc/rainwaterharvestingmanual_3rdedition.pdf)\n\n## 3. Size and configure gutters, downpipes, screens, and first flush\n\nSize gutters, downpipes, and connecting pipes for **peak runoff during the locally applicable design storm**, not for average monthly rainfall. For each roof section draining to a conveyance element, a useful flow estimate is:\n\n\\[\nQ(\\mathrm{L/s}) =\n\\frac{i(\\mathrm{mm/h})\\times A(\\mathrm{m^2})\\times C}{3600}\n\\]\n\nwhere \\(i\\) is the locally required design rainfall intensity and \\(A\\) is the roof area served by that gutter or downpipe. Use the local building or plumbing code, approved design tables, or a qualified designer to select actual sizes and slopes; the Tennessee stormwater manual, for example, directs designers to size collection conveyance for the intended design storm, but its jurisdiction-specific criteria are not a substitute for your local requirements. [Tennessee Permanent Stormwater Management and Design Guidance Manual, “Rainwater Harvesting”](https://tnpermanentstormwater.org/manual/19%20Chapter%205.4.10%20Rainwater%20Harvesting.pdf)\n\nFit and maintain screens or other pretreatment to keep leaves and coarse debris out of the tank. Include an accessible first-flush diverter, but set its diverted volume using applicable local guidance and the roof area it serves rather than assuming one universal amount: CDC says the first flow can carry dirt, germs, and chemicals and that the needed diversion depends on roof size. [CDC, “Collecting Rainwater and Your Health: An Overview”](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html) [North Carolina DEQ, *Stormwater Design Manual: C-7 Rainwater Harvesting*](https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf)\n\nFor a first-flush depth \\(d\\) in millimetres over a contributing area \\(A\\) in square metres:\n\n\\[\nV_{\\text{first flush}}(\\mathrm{L})=d(\\mathrm{mm})\\times A(\\mathrm{m^2})\n\\]\n\nThis is a volume calculation, not a recommendation for \\(d\\); choose that value based on local requirements, roof conditions, contamination concerns, and system guidance. The diverter should be accessible for cleaning and able to drain or reset as intended between events. [CDC, “Collecting Rainwater and Your Health: An Overview”](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html) [Tennessee Permanent Stormwater Management and Design Guidance Manual, “Rainwater Harvesting”](https://tnpermanentstormwater.org/manual/19%20Chapter%205.4.10%20Rainwater%20Harvesting.pdf)\n\n## 4. Locate and specify the tank\n\nPlace the tank where the roof can drain to it as intended and where the tank, pipes, access, and maintenance are practical. Specify a **covered, opaque tank**; North Carolina DEQ recommends light-blocking material for above-ground cisterns to prevent algae growth. Provide secure access for inspection and cleaning, and protect openings—including inlets, vents, and outlets—with screens or other mosquito-resistant details that can be maintained. [North Carolina DEQ, *Stormwater Design Manual: C-7 Rainwater Harvesting*](https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf) [U.S. EPA, *Rainwater Harvesting: Conservation, Credit, Codes, and Cost*](https://www.epa.gov/sites/default/files/2015-11/documents/rainharvesting.pdf)\n\nThe tank layout should provide a screened inlet, an accessible cleanout or other practical means to remove sediment, an outlet that can supply the intended use, and an overflow. Confirm that fittings, tank materials, and access arrangements suit the water’s intended use and local requirements; do not assume an outdoor-use tank is approved for drinking-water service. [North Carolina DEQ, *Stormwater Design Manual: C-7 Rainwater Harvesting*](https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf) [U.S. EPA, *Rainwater Harvesting: Conservation, Credit, Codes, and Cost*](https://www.epa.gov/sites/default/files/2015-11/documents/rainharvesting.pdf)\n\nCheck the supporting surface and structure for the **full tank load**, not just the empty tank. The Minnesota Stormwater Manual specifically calls for assessing the need for a foundation based on the weight of a full tank; a roof, deck, balcony, or other elevated location may need review by a qualified structural professional. [Minnesota Stormwater Manual, “Design criteria for stormwater and rainwater harvest and use/reuse”](https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse)\n\n## 5. Route normal and emergency overflow safely\n\nProvide an overflow that can pass excess water when the tank is full, and evaluate its capacity against the inflow conveyance and the site’s design storm. Minnesota’s manual recommends an overflow pipe with capacity at least equal to the inlet and discharge directed away from the foundation toward a surface that will not erode; treat this as guidance to verify against the applicable local code and site conditions, not as a universal pipe-size rule. [Minnesota Stormwater Manual, “Design criteria for stormwater and rainwater harvest and use/reuse”](https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse)\n\nPlan a clear, safe route for overflow—including a high-level emergency route if needed—so discharge does not reach buildings, foundations, neighboring property, or an erosion-prone area. Confirm locally whether discharge to a rain garden, infiltration area, storm drain, or another outlet is allowed and what approvals or design criteria apply; North Carolina DEQ also identifies overflow as a system component and directs overflow away from buildings in its stormwater guidance. [North Carolina DEQ, *Stormwater Design Manual: C-7 Rainwater Harvesting*](https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf) [Minnesota Stormwater Manual, “Design criteria for stormwater and rainwater harvest and use/reuse”](https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse)\n\n## 6. Check use, health, plumbing, and approvals locally\n\nFor **non-potable use**, decide exactly which uses are intended and confirm that local rules permit them. For **drinking or other potable use**, do not assume that roof runoff is safe: CDC notes that rainwater can pick up germs and chemicals, including contaminants from the atmosphere and roofing materials, and advises choosing treatment suited to the contaminants and intended use. [CDC, “Collecting Rainwater and Your Health: An Overview”](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html)\n\nBefore connecting the system to indoor plumbing or a backup mains supply, check the local plumbing code for rainwater-system approvals, backflow protection, cross-connection controls, and any required separation or testing. CDC warns that mixing rainwater with treated water can contaminate the treated supply, while the Minnesota manual calls for backflow prevention where systems have a cross-connection. [CDC, “Collecting Rainwater and Your Health: An Overview”](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html) [Minnesota Stormwater Manual, “Design criteria for stormwater and rainwater harvest and use/reuse”](https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse)\n\nCheck local building, plumbing, stormwater, and public-health requirements; permit and plan-review triggers; approved tank placement and structural support; and any rules for overflow discharge. The manuals cited here are guidance from different jurisdictions—not one universal code: for example, North Carolina’s 85% capture criterion applies to its stormwater-treatment context and should not be treated as a general residential tank-sizing rule. [North Carolina DEQ, *Stormwater Design Manual: C-7 Rainwater Harvesting*](https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf) [U.S. EPA, *Rainwater Harvesting: Conservation, Credit, Codes, and Cost*](https://www.epa.gov/sites/default/files/2015-11/documents/rainharvesting.pdf)\n\n**Summary:** A sound design estimates usable roof runoff, compares it with actual intended demand using a transparent water balance, and sizes conveyance and overflow for local design rainfall. The tank should be covered, opaque, maintainable, structurally supported, and protected against mosquito entry, with potable use and plumbing connections requiring particular care. Your location, roof details, rainfall, demand, tank space, and local constraints are still unknown, so no definitive tank, gutter, downpipe, first-flush, or overflow dimensions can be specified yet."
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 54,
+  "at": "2026-09-25T10:55:40.914Z",
+  "event": {
+   "step": 8,
+   "text": "# Rainwater harvesting in a small urban home: treatment and safety\n\n**Start with the intended use, not the water’s appearance.** CDC warns that rainwater can contain germs and chemicals even when it looks clean; the quality needed for drinking is higher than for watering flowers. [CDC, updated July…",
+   "type": "agent_step",
+   "agentId": "water-quality-and-public-health-specialist-f60d",
+   "costUsd": 0.0057614,
+   "toolCalls": []
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 55,
+  "at": "2026-09-25T10:55:40.914Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0355188,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 56,
+  "at": "2026-09-25T10:55:40.914Z",
+  "event": {
+   "ok": true,
+   "type": "agent_done",
+   "agentId": "water-quality-and-public-health-specialist-f60d",
+   "costUsd": 0.0201841,
+   "summary": "# Rainwater harvesting in a small urban home: treatment and safety\n\n**Start with the intended use, not the water’s appearance.** CDC warns that rainwater can contain germs and chemicals even when it looks clean; the quality needed for drinking is higher than for watering flowers. [CDC, updated July 23, 2024](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html)\n\n| Household use | Practical safety distinction |\n|---|---|\n| **Drinking, cooking, brushing teeth, rinsing produce** | **Treat as potable uses.** CDC advises using public tap or bottled water for these purposes if possible. If rainwater is the supply, test it for germs and chemicals and use treatment selected for the contaminants found; a screen or ordinary taste-improving filter is not proof of safety. [CDC rainwater guidance](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html) [CDC home-treatment guidance](https://www.cdc.gov/drinking-water/about/about-home-water-treatment-systems.html) |\n| **Bathing or showering** | CDC specifically advises regular testing if you bathe with rainwater. It also recommends limiting uses that could lead to swallowing water; if tests find contaminants, use treatment that addresses them. CDC does not establish one universal treatment recipe for every household’s bathing water. [CDC rainwater guidance](https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html) |\n| **Laundry** | Laundry may be allowed as a non-potable use under some local rules, but do not assume untreated rainwater is acceptable: indoor-use criteria and treatment requirements vary by jurisdiction and system. Check local plumbing and public-health requirements before connecting a washer. [Minnesota Pollution Control Agency, overview of rainwater reuse](https://stormwater.pca.state.mn.us/overview_for_stormwater_and_rainwater_harvest_and_usereuse) [EPA summary of Washington’s rules](https://www.epa.gov/waterreuse/summary-washingtons-water-reuse-guideline-or-regulation-landscaping-and-onsite-non) |\n| **Toilet flushing** | This is non-potable use, not a reason to connect rainwater to drinking-water plumbing. Whether it is allowed and what treatment, labeling, or plumbing safeguards are required depend on local code. Washington, for example, lists toilet flushing among approved onsite non-potable uses and sets requirements for covered systems. [EPA summary of Washington’s rules](https://www.epa.gov/waterreuse/summary-washingtons-water-reuse-guideline-or-regulation-landscaping-and-onsite-non) |\n| **Outdoor uses** | Lower-exposure uses—such as watering ornamental plants or washing items not used for cooking or eating—are CDC examples of uses that limit the chance of swallowing rainwater. CDC advises against using it to water plants you plan to eat when public tap or bottled water is available. Some places allow certain outdoor uses with less treatment, but that is not a universal rule. [CDC rainwater guidance](https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html) |\n\n**Bottom line on untreated water:** Some lower-contact outdoor uses may be acceptable without post-collection treatment under local rules; that does **not** mean the water is safe to drink, cook with, or use for every indoor purpose. Treatment rules can even distinguish among outdoor methods: Washington’s plumbing-code summary, for example, describes an exception from specified treatment requirements for certain small-volume subsurface or non-sprinkled irrigation systems. That narrow example is not a rule for other places or uses. [EPA summary of Washington’s rules](https://www.epa.gov/waterreuse/summary-washingtons-water-reuse-guideline-or-regulation-landscaping-and-onsite-non)\n\n## Reduce contamination before water reaches the tank\n\n- **Check the whole catchment path.** Airborne dust, smoke and other particles can reach rainwater, while roof debris and animal droppings can wash into it. Lead, copper or asbestos may enter from roofing, gutters, pipes, storage materials or other surfaces. Inspect the roof and plumbing materials; if they are damaged, old, or of uncertain composition, ask local health or water-quality authorities whether collection is appropriate and what testing is relevant. [CDC rainwater guidance](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html)\n- **Use screens and first-flush diversion as pretreatment—not disinfection.** CDC says the first runoff carries much of the dirt, germs and chemicals accumulated on the roof, and recommends considering a diverter sized for the catchment area. Texas A&M AgriLife Extension describes screens and diversion as ways to keep larger debris out of storage and reduce organic matter; screens need regular inspection and cleaning. These steps improve collection quality but do not establish drinking-water safety. [CDC rainwater guidance](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html) [Texas A&M AgriLife, pre-storage treatment](https://rainwaterharvesting.tamu.edu/pre-storage-treatment)\n- **Keep storage protected and maintainable.** Use a covered, screened storage arrangement so debris and insects are less likely to enter, and keep the system clean and repair damaged parts. CDC advises screening the rain-barrel inlet or emptying a rain barrel at least every 10 days to help prevent mosquito breeding; that advice is for barrels and should not be read as a universal tank-emptying schedule. [CDC rainwater guidance](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html) [EPA rainwater-harvesting handbook](https://www.epa.gov/sites/default/files/2015-11/documents/rainharvesting.pdf)\n- **Keep rainwater plumbing separate from potable plumbing.** CDC warns that rainwater entering pipes carrying treated drinking water can contaminate that supply. For indoor systems, use the separation, backflow-prevention and other plumbing safeguards required by local code; EPA’s rainwater handbook describes separate piping and backflow protection or an air gap as safeguards used in codes. [CDC rainwater guidance](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html) [EPA rainwater-harvesting handbook](https://www.epa.gov/sites/default/files/2015-11/documents/rainharvesting.pdf)\n\n## For potable use: test first, then choose treatment for the hazards\n\nIf you plan to drink, cook with, or bathe in harvested rainwater, CDC recommends testing for germs and chemicals and asking the local health department which tests are appropriate. CDC’s general advice for rainwater-collection systems is to test at least once a year for harmful germs and chemicals; additional or different tests may be appropriate based on local conditions and system materials. [CDC rainwater guidance](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html) [CDC filter and testing guidance](https://www.cdc.gov/drinking-water/prevention/about-choosing-home-water-filters.html)\n\nChoose treatment based on test results and the specific contaminants—not on water clarity or taste. CDC notes that different treatment systems remove different hazards: for example, UV with pre-filtration can address germs but not chemicals, while reverse-osmosis systems remove pathogens and some chemicals, with the chemicals covered depending on the product. Check a system’s specific contaminant-reduction claims, maintain it as directed, and retest as advised by the health department. [CDC home-treatment guidance](https://www.cdc.gov/drinking-water/about/about-home-water-treatment-systems.html) [CDC filter guidance](https://www.cdc.gov/drinking-water/prevention/about-choosing-home-water-filters.html)\n\nTexas A&M AgriLife Extension describes a multi-barrier approach—such as filtration followed by disinfection—as one possible potable-water treatment train. It cautions that larger filters can let small microbes through and that sediment can interfere with UV disinfection; this is technical guidance, not a guarantee that any particular installation will produce safe water. [Texas A&M AgriLife, after-storage treatment](https://rainwaterharvesting.tamu.edu/after-storage-treatment)\n\n**Do not judge safety by appearance.** CDC says water can look clean and still contain harmful germs or chemicals, and that many home filters are not designed to remove germs. [CDC rainwater guidance](https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html) [CDC filter guidance](https://www.cdc.gov/drinking-water/prevention/about-choosing-home-water-filters.html)\n\n## Local rules and limits\n\nRainwater-collection, plumbing, treatment, labeling and testing requirements are location-specific. CDC advises checking local environmental and health agencies; EPA’s Washington summary illustrates how one jurisdiction’s approved uses and treatment requirements differ from a general household recommendation. Texas TCEQ likewise frames treatment for drinking, cooking or dishwashing as a question that must be addressed for the proposed system. Check current local rules before building or connecting an indoor system. [CDC rainwater guidance](https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html) [EPA summary of Washington’s rules](https://www.epa.gov/waterreuse/summary-washingtons-water-reuse-guideline-or-regulation-landscaping-and-onsite-non) [Texas Commission on Environmental Quality](https://www.tceq.texas.gov/drinkingwater/rainwater.html)\n\n**Summary:** Use the least-treated water only for lower-exposure uses that local rules allow, and do not assume rainwater is safe to drink because it is clear or screened. Potable use calls for contaminant-aware testing and treatment, while indoor non-potable uses still require careful plumbing separation and may have code-specific treatment rules. The right test panel and treatment design—and whether a particular indoor use is permitted—remain dependent on the home’s catchment, local hazards and jurisdiction."
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 57,
+  "at": "2026-09-25T10:55:40.914Z",
+  "event": {
+   "type": "phase",
+   "phase": "critiquing",
+   "round": 1
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 58,
+  "at": "2026-09-25T10:55:53.883Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.036407800000000004,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 59,
+  "at": "2026-09-25T10:55:53.883Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333753883,
+    "id": "m17",
+    "from": "critic",
+    "type": "dispute",
+    "reason": "The evidence supports the stated storage-balance equation, but does not establish the claim’s monthly calculation method or that end-of-month storage is capped at tank capacity.",
+    "findingId": "m2"
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 60,
+  "at": "2026-09-25T10:55:53.883Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333753883,
+    "id": "m18",
+    "from": "critic",
+    "type": "dispute",
+    "reason": "The quoted evidence supports contamination routes, but does not itself substantiate the claims about treatment matched to use or safeguards against mixing rainwater with treated drinking water.",
+    "findingId": "m6"
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 61,
+  "at": "2026-09-25T10:55:53.883Z",
+  "event": {
+   "type": "board",
+   "entry": {
+    "at": 1790333753883,
+    "id": "m19",
+    "from": "critic",
+    "type": "dispute",
+    "reason": "The evidence supports limiting uses that could lead to swallowing and regular testing for the listed household uses, but does not show the claims about contacting the health department or selecting treatment for identified contaminants.",
+    "findingId": "m8"
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 62,
+  "at": "2026-09-25T10:55:53.883Z",
+  "event": {
+   "type": "review",
+   "round": 1,
+   "review": {
+    "gaps": [
+     "What do the homeowner’s local collection, plumbing, cross-connection, and permitting rules require?",
+     "Given the home’s roof area and material, local rainfall pattern, storage space, and intended uses, what system size and seasonal yield are realistic?",
+     "For the chosen uses, what maintenance schedule, testing plan, and treatment costs are appropriate for the specific system and water-quality risks?"
+    ],
+    "verdicts": [
+     {
+      "note": "The quoted conversion, listed sources of loss, and 75–85% efficiency assumption directly support the claim.",
+      "verdict": "supported",
+      "findingId": "m1"
+     },
+     {
+      "note": "The evidence supports the stated storage-balance equation, but does not establish the claim’s monthly calculation method or that end-of-month storage is capped at tank capacity.",
+      "verdict": "unsupported",
+      "findingId": "m2"
+     },
+     {
+      "note": "The evidence directly supports diverting initial runoff and sizing diversion with regard to roof area. The broader treatment advice is consistent with the cited CDC guidance.",
+      "verdict": "supported",
+      "findingId": "m3"
+     },
+     {
+      "note": "The evidence directly supports overflow planning, routing overflow away from the foundation to a non-eroding surface, maintenance access, and checking the full-tank foundation load.",
+      "verdict": "supported",
+      "findingId": "m4"
+     },
+     {
+      "note": "The quoted manual language directly lists the system components and says cistern material should block light to limit algae.",
+      "verdict": "supported",
+      "findingId": "m5"
+     },
+     {
+      "note": "The quoted evidence supports contamination routes, but does not itself substantiate the claims about treatment matched to use or safeguards against mixing rainwater with treated drinking water.",
+      "verdict": "unsupported",
+      "findingId": "m6"
+     },
+     {
+      "note": "The quoted CDC advice supports the stated contamination risks and the recommendation to use tap or bottled water for the listed purposes when possible.",
+      "verdict": "supported",
+      "findingId": "m7"
+     },
+     {
+      "note": "The evidence supports limiting uses that could lead to swallowing and regular testing for the listed household uses, but does not show the claims about contacting the health department or selecting treatment for identified contaminants.",
+      "verdict": "unsupported",
+      "findingId": "m8"
+     },
+     {
+      "note": "The evidence directly supports first-flush diversion and mosquito prevention by screening or emptying barrels at least every 10 days; the remaining upkeep claims are consistent with the cited CDC page.",
+      "verdict": "supported",
+      "findingId": "m9"
+     },
+     {
+      "note": "The evidence supports pretreatment, regular screen checks, and the stated 1–2 gallon diversion rule of thumb, appropriately qualified as general rather than universal.",
+      "verdict": "supported",
+      "findingId": "m10"
+     },
+     {
+      "note": "The evidence supports matching treatment to intended use, using filtration before UV, and the described treatment options. The finding appropriately avoids promising potable quality.",
+      "verdict": "supported",
+      "findingId": "m11"
+     },
+     {
+      "note": "The quoted CDC guidance supports choosing treatment based on contaminants and the stated limitations of microfiltration, UV, and RO.",
+      "verdict": "supported",
+      "findingId": "m12"
+     },
+     {
+      "note": "The finding accurately presents the listed uses and requirements as features of Washington’s framework, not as nationwide rules.",
+      "verdict": "supported",
+      "findingId": "m13"
+     },
+     {
+      "note": "The evidence supports the maintenance and testing practices and appropriately qualifies example frequencies as system-specific.",
+      "verdict": "supported",
+      "findingId": "m14"
+     },
+     {
+      "note": "The evidence supports preventing rainwater from entering potable pipes and describes safeguards in the EPA handbook, while correctly directing readers to check current local requirements.",
+      "verdict": "supported",
+      "findingId": "m15"
+     },
+     {
+      "note": "The evidence supports checking local rules and considering treatment for intended use; the Texas-specific examples are clearly identified as such.",
+      "verdict": "supported",
+      "findingId": "m16"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 63,
+  "at": "2026-09-25T10:55:53.883Z",
+  "event": {
+   "type": "phase",
+   "phase": "synthesizing",
+   "round": 0
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 64,
+  "at": "2026-09-25T10:56:11.426Z",
+  "event": {
+   "type": "budget",
+   "spentUsd": 0.0376089,
+   "agentsSpawned": 2
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 65,
+  "at": "2026-09-25T10:56:11.427Z",
+  "event": {
+   "type": "report",
+   "markdown": "# Rainwater harvesting for small urban homes: decision-ready guide\n\n## Recommendation\n\nFor most small urban homes, start with a **nonpotable system** for a clearly defined use, such as outdoor irrigation or—where local rules allow—flushing toilets. Keep it separate from drinking-water plumbing. Do not plan to use harvested rainwater for drinking, cooking, brushing teeth, rinsing produce, or watering edible plants when public tap or bottled water is available; rainwater can contain germs and chemicals even when it looks clean. [5][10][12]\n\nBefore buying equipment, confirm that collection and the intended use are allowed locally. Requirements vary by jurisdiction. [10][13]\n\n## Plan the system\n\n### 1. Estimate whether collection is worthwhile\n\nUse this theoretical yield estimate:\n\n**Rainfall (inches) × catchment roof area (ft²) × 0.62 = gallons**\n\nThen allow for losses. The Texas Water Development Board reports common efficiency assumptions of about **75–85%**, with losses from first flush, evaporation, splash-out, gutter overshoot, and leaks. [1]\n\nFor example, a 100 ft² catchment receiving 1 inch of rain has a theoretical yield of 62 gallons, or roughly 47–53 gallons at 75–85% efficiency. This is an estimate, not a guarantee of collected volume. [1]\n\n### 2. Match storage and treatment to the intended use\n\nDecide what the water will be used for before choosing tank size, filters, or disinfection. Treatment should be proportionate to the end use; a larger filter alone may not remove small microbes such as bacteria. [8]\n\nFor potable use, do not assume that a basic filter makes the water safe. CDC recommends using public tap or bottled water for drinking and other listed household uses when possible. If potable use is being considered, testing and treatment choices should be based on the contaminants identified; treatment devices address different hazards, and product claims should be verified. [5][9][13]\n\n### 3. Include the full system—not just a tank\n\nPlan for collection, pretreatment, storage, overflow, and distribution. These are the components listed in North Carolina’s guidance for systems in its jurisdiction. [4]\n\nA practical design should include:\n\n- **Roof and gutter collection:** Keep collection surfaces and gutters clean; inspect and clear screens regularly so they do not clog. [7][11]\n- **Debris screening and first flush:** Screen out large debris and divert initial roof runoff, which carries much of the dirt, germs, and chemicals. The required diversion depends on roof area. Texas A&M gives 1–2 gallons per 100 ft² as a technical rule of thumb, not a universal requirement. [2][7]\n- **Storage:** For above-ground cisterns, use materials that block light to help prevent algae growth. [4]\n- **Overflow:** Design for a full tank, route overflow away from the foundation to a non-eroding surface, and provide maintenance access. [3]\n- **Structural support:** Assess the foundation or support for the tank when full. [3]\n- **Distribution:** Keep rainwater plumbing separate from potable-water pipes so harvested water cannot contaminate the treated supply. Check local requirements for backflow prevention, air gaps, and any potable-water connections. [11][12]\n\n## Use and safety choices\n\n| Intended use | Decision guidance |\n|---|---|\n| Irrigation, toilet flushing, or similar nonpotable use | These are examples of uses covered by Washington’s jurisdiction-specific framework; confirm that the use and required treatment are permitted locally. [10] |\n| Drinking, cooking, brushing teeth, rinsing produce, or watering edible plants | Use public tap or bottled water instead when possible. Rainwater may contain germs and chemicals from airborne particles, roof droppings, and materials such as asbestos, lead, or copper in collection and storage components. [5] |\n| Potable use where considered | Obtain appropriate water testing and select treatment for the identified hazards. Filtration followed by UV is one described treatment train, but filtration must precede UV and the system is not guaranteed to produce potable-quality water. [8][9] |\n\nFor example, CDC notes that microfiltration does not remove viruses or lead/arsenic; UV with prefiltration disinfects germs but does not remove chemicals; and reverse osmosis removes pathogens plus some chemicals. Verify product claims and choose based on test results. [9]\n\n## Maintenance and checks\n\n- Regularly clean the roof, gutters, and screens; inspect the tank and overflow; and maintain treatment devices according to the manufacturer’s instructions. [7][11]\n- Keep rain barrels screened or empty them at least every 10 days to help prevent mosquitoes. Repair or replace broken parts and keep the collection system clean. [6]\n- If the system is potable, test the water and maintain treatment; do not rely on appearance as an indicator of safety. [5][11]\n- Follow local plumbing requirements for backflow safeguards and potable-water connections. Washington’s testing schedule—every 12 months and after repair or renovation—applies to covered systems under that state’s framework, not universally. [10][11][12]\n\n## Sources\n\n1. Texas Water Development Board, rainwater harvesting FAQ: https://www.twdb.texas.gov/innovativewater/rainwater/faq.asp  \n2. CDC, private rainwater collection: https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html  \n3. Minnesota Stormwater Manual, rainwater-harvesting design criteria: https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse  \n4. North Carolina Stormwater Manual, Rainwater Harvesting: https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf  \n5. CDC, private rainwater collection: https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html  \n6. CDC, private rainwater collection: https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html  \n7. Texas A&M AgriLife Extension, pre-storage treatment: https://rainwaterharvesting.tamu.edu/pre-storage-treatment  \n8. Texas A&M AgriLife Extension, after-storage treatment: https://rainwaterharvesting.tamu.edu/after-storage-treatment  \n9. CDC, home water-treatment systems: https://www.cdc.gov/drinking-water/about/about-home-water-treatment-systems.html  \n10. U.S. EPA, summary of Washington’s water reuse framework: https://www.epa.gov/waterreuse/summary-washingtons-water-reuse-guideline-or-regulation-landscaping-and-onsite-non  \n11. U.S. DOE FEMP, rainwater harvesting systems technology review: https://www.energy.gov/cmei/femp/rainwater-harvesting-systems-technology-review  \n12. CDC, private rainwater collection: https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html  \n13. CDC, private rainwater collection: https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html  \n\n## Open questions\n\nBefore deciding on a system, determine:\n\n- What roof area and rainfall information should be used for a local yield estimate?\n- Which uses are permitted at the property, and what local plumbing, treatment, and testing rules apply?\n- Is the goal nonpotable use only, or is potable use being considered?\n- What contaminants could enter the water from the roof, gutters, pipes, and storage materials, and what testing is appropriate?\n- Where can a full-tank overflow be routed safely, and can the support carry the full tank load?\n- What maintenance schedule is appropriate for the selected equipment and intended use?",
+   "citations": [
+    {
+     "n": 1,
+     "url": "https://www.twdb.texas.gov/innovativewater/rainwater/faq.asp",
+     "claim": "For yield estimates, the Texas Water Development Board gives the theoretical conversion of 0.62 US gal per ft² per inch of rain and notes real-world losses from first flush, evaporation, splash-out, gutter overshoot, and leaks; it reports common system efficiency assumptions of about 75–85%.",
+     "findingId": "m1"
+    },
+    {
+     "n": 2,
+     "url": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "claim": "CDC advises a first-flush diverter because the initial roof runoff picks up dirt, germs and chemicals, and says the required diversion amount depends on the roof area; rainwater can contain germs and chemicals and needs treatment appropriate to its intended use.",
+     "findingId": "m3"
+    },
+    {
+     "n": 3,
+     "url": "https://stormwater.pca.state.mn.us/design_criteria_for_stormwater_and_rainwater_harvest_and_usereuse",
+     "claim": "Minnesota Stormwater Manual recommends designing rainwater-harvesting overflow for a full tank, directing it away from the foundation to a non-eroding surface, and allowing maintenance access; it also says to assess the full-water tank foundation load.",
+     "findingId": "m4"
+    },
+    {
+     "n": 4,
+     "url": "https://files.nc.gov/ncdeq/Energy%20Mineral%20and%20Land%20Resources/Stormwater/BMP%20Manual/C-7--Rainwater-Harvesting.pdf",
+     "claim": "North Carolina's stormwater manual lists collection, pretreatment, storage, overflow, and distribution as required system components in its jurisdiction, and says above-ground cistern materials should block light to prevent algae growth.",
+     "findingId": "m5"
+    },
+    {
+     "n": 5,
+     "url": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "claim": "CDC (U.S., page dated July 23, 2024) says rainwater may contain germs and chemicals even when it looks clean; dust/smoke/airborne particles, roof droppings, and asbestos/lead/copper from roofing, gutters, pipes, storage or other surfaces are routes into collected water. It advises public tap/bottled water rather than rainwater for drinking, cooking, brushing teeth, rinsing produce and watering edible plants when possible.",
+     "findingId": "m7"
+    },
+    {
+     "n": 6,
+     "url": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "claim": "CDC advises first-flush diversion because initial runoff carries most roof dirt, germs and chemicals, with diversion volume dependent on catchment roof area; screening or emptying rain barrels at least every 10 days helps stop mosquitoes. CDC advises keeping collection clean, repairing/replacing broken parts, and regularly emptying rain barrels.",
+     "findingId": "m9"
+    },
+    {
+     "n": 7,
+     "url": "https://rainwaterharvesting.tamu.edu/pre-storage-treatment",
+     "claim": "Texas A&M AgriLife Extension says roof-runoff pretreatment screening and first-flush diversion remove large debris and reduce organic matter/treatment burden; screens should be checked regularly and kept unclogged, and its general diversion sizing recommendation is 1–2 gallons per 100 square feet (a technical rule of thumb, not universal).",
+     "findingId": "m10"
+    },
+    {
+     "n": 8,
+     "url": "https://rainwaterharvesting.tamu.edu/after-storage-treatment",
+     "claim": "Texas A&M AgriLife Extension recommends treatment barriers proportionate to end use; larger filters can allow small microbes such as bacteria through, so disinfection may be needed. It describes filtration followed by UV as a common potable treatment train, with filtration before UV because sediment blocks UV; chlorination, UV and ozone are disinfection options, and activated carbon adsorption can target VOCs. This is technical guidance, not a guarantee that every system achieves potable quality.",
+     "findingId": "m11"
+    },
+    {
+     "n": 9,
+     "url": "https://www.cdc.gov/drinking-water/about/about-home-water-treatment-systems.html",
+     "claim": "CDC home-treatment guidance (U.S., Apr. 10, 2024) says choose systems according to test results and contaminants; different filters address different hazards: microfiltration does not remove viruses or lead/arsenic, UV with prefiltration disinfects germs but not chemicals, and RO removes pathogens plus some chemicals (verify product claims).",
+     "findingId": "m12"
+    },
+    {
+     "n": 10,
+     "url": "https://www.epa.gov/waterreuse/summary-washingtons-water-reuse-guideline-or-regulation-landscaping-and-onsite-non",
+     "claim": "EPA's REUSExplorer summary of Washington's 2021 plumbing-code framework documents jurisdiction-specific onsite nonpotable reuse rules: selected end uses include irrigation, toilets/urinals, and car washing; the state's requirements include debris exclusion, end-use-dependent filtration/disinfection, and testing every 12 months and after repair/renovation in covered systems. This is Washington-specific, not a national requirement.",
+     "findingId": "m13"
+    },
+    {
+     "n": 11,
+     "url": "https://www.energy.gov/cmei/femp/rainwater-harvesting-systems-technology-review",
+     "claim": "U.S. DOE FEMP's 2017 technology review describes regular system upkeep, including cleaning roof/gutters/screens, maintaining treatment devices per manufacturer, inspecting tanks and overflows, and testing potable-system water; it also flags backflow prevention and potable-water connections as components requiring local-code-compliant inspection/testing. Its example frequencies are system-specific guidance, not universal intervals.",
+     "findingId": "m14"
+    },
+    {
+     "n": 12,
+     "url": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "claim": "CDC says rainwater used alongside piped tap water must be kept separate so it cannot enter drinking-water pipes, because this can contaminate treated supply; rules vary by place. EPA's 2015 rainwater handbook describes dedicated dual piping plus backflow prevention/air gap as commonly required safeguards in codes, but current local plumbing requirements must be checked.",
+     "findingId": "m15"
+    },
+    {
+     "n": 13,
+     "url": "https://www.cdc.gov/healthywater/drinking/private/rainwater-collection.html",
+     "claim": "CDC says collecting rainwater is not allowed everywhere and some states regulate it; residents should check state/environmental and health agencies. Texas TCEQ's page frames drinking/cooking/dishwashing as requiring consideration of treatment adequate to make the water safe, while Texas A&M, as Texas extension guidance, scales treatment to intended use.",
+     "findingId": "m16"
+    }
+   ]
+  }
+ },
+ {
+  "runId": "befacf1f-2106-4d5e-a64d-f05797302e46",
+  "seq": 66,
+  "at": "2026-09-25T10:56:11.427Z",
+  "event": {
+   "type": "run_end",
+   "status": "done"
+  }
+ }
+]
