@@ -10,7 +10,8 @@
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
-    "lint": "pnpm -r lint"
+    "lint": "pnpm -r lint",
+    "start": "pnpm --filter web start"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -18,5 +19,8 @@
       "sharp",
       "@tailwindcss/oxide"
     ]
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

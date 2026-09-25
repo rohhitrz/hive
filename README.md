@@ -113,8 +113,25 @@ Everything lives in the root `.env` (see [`.env.example`](.env.example)):
 | `HIVE_LEAD_MODEL`, `HIVE_WORKER_MODEL`, `HIVE_MAX_CONCURRENCY`, `HIVE_MAX_SEARCHES_PER_AGENT` | no | see above |
 
 > **Before exposing Hive beyond localhost,** set `HIVE_BASIC_AUTH`. Without it, anyone who can reach the
-> server can start runs on your API keys. Runs execute inside the Node server process, so deploy to a
-> long-running host (Railway, Fly, a VM), not serverless functions.
+> server can start runs on your API keys. See [Deploy](#deploy-railway) for hosting.
+
+## Deploy (Railway)
+
+Hive needs **one long-running Node server plus Postgres**. Runs execute for minutes inside the server
+process and stream to the browser from that same process, so serverless platforms (e.g. Vercel functions)
+don't fit. [Railway](https://railway.com) runs both from this repo:
+
+1. **New project → Deploy from GitHub repo →** pick this repo. `railway.json` sets the build (`pnpm build`),
+   start (`pnpm start`, which applies database migrations first), a `/api/health` check, and 1 replica.
+2. **+ New → Database → PostgreSQL** in the same project.
+3. On the app service, **Variables:**
+   - `DATABASE_URL` = `${{Postgres.DATABASE_URL}}` (a reference to the database you just added)
+   - `OPENAI_API_KEY`, `TAVILY_API_KEY`
+   - `HIVE_BASIC_AUTH` = `user:a-long-password` (**required on a public URL**, or anyone can spend your keys)
+4. **Settings → Networking → Generate Domain.** Open it, log in with the basic-auth user, start a run.
+
+Keep it at one replica: the live event stream lives in the server's memory. Redeploys mark in-flight runs
+as *Interrupted*; their events up to that point still replay.
 
 ## Development
 

@@ -12,6 +12,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Everything except static build assets.
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  // Everything except static build assets and the host's health check.
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|api/health$).*)"],
 };

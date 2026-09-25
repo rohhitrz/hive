@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node scripts/migrate.mjs && next start",
     "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests",
     "lint": "tsc --noEmit",
