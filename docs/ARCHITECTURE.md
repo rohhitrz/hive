@@ -100,6 +100,8 @@ Rules:
   `{ status, report?, error?, spentUsd, agents }`. `models` / `tools` are test overrides.
 - At most `maxConcurrency` agents run at once (default 3, env `HIVE_MAX_CONCURRENCY`); the rest queue. An agent's
   `agent_spawned` fires when it actually starts, so a queued agent has no node yet, and its timeout starts then too.
+- To stay under provider tokens-per-minute limits, each agent step resends older tool results in slim form: past
+  `read_page` bodies become a one-line stub with the URL, past `web_search` results keep only title + URL.
 - The UI ignores unknown `type`s.
 
 ### Required core changes (vs. the week-1 skeleton)

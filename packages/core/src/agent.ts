@@ -1,5 +1,6 @@
 import { generateText, stepCountIs } from "ai";
 import { buildTools } from "./tools.js";
+import { pruneToolResults } from "./prune.js";
 import { emitBudget, errorMessage, MAX_RETRIES, truncate, type RunContext } from "./context.js";
 import type { AgentSpec, ToolCallSummary } from "./types.js";
 
@@ -42,8 +43,11 @@ export async function runSubAgent(spec: AgentSpec, ctx: RunContext): Promise<{ s
       tools: buildTools(spec.id, ctx.board, ctx.tools),
       stopWhen: stepCountIs(spec.maxSteps),
       maxRetries: MAX_RETRIES,
-      // Last step: no tools, so the agent always ends with its summary.
-      prepareStep: ({ stepNumber }) => (stepNumber === spec.maxSteps - 1 ? { toolChoice: "none" } : undefined),
+      prepareStep: ({ stepNumber, messages }) => ({
+        messages: pruneToolResults(messages),
+        // Last step: no tools, so the agent always ends with its summary.
+        ...(stepNumber === spec.maxSteps - 1 ? { toolChoice: "none" as const } : {}),
+      }),
       abortSignal: AbortSignal.any([ctx.signal, timeout]),
       onStepFinish: (s) => {
         const stepCost = ctx.budget.charge(s.usage, "worker");
