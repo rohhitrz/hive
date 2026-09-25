@@ -14,3 +14,6 @@ export const ListRunsQuerySchema = z.object({
 });
 
 export const RunIdSchema = z.string().uuid();
+
+/** Resume point for the SSE stream: Last-Event-ID header wins over ?after. */
+export const AfterSeqSchema = z.coerce.number().int().min(0).default(0);

@@ -1,8 +1,8 @@
 import "server-only";
-import { desc, eq } from "drizzle-orm";
+import { and, asc, desc, eq, gt } from "drizzle-orm";
 import { getDb } from "./db/client";
 import { runEvents, runs, type NewRun, type Run } from "./db/schema";
-import type { RunStore } from "./runner";
+import type { RunEvent, RunStore } from "./runner";
 
 export const drizzleRunStore: RunStore = {
   async createRun(input) {
@@ -34,4 +34,21 @@ export async function getRun(id: string): Promise<Run | undefined> {
 
 export async function listRuns(limit: number): Promise<Run[]> {
   return getDb().select().from(runs).orderBy(desc(runs.createdAt)).limit(limit);
+}
+
+export async function listEvents(runId: string, afterSeq = 0): Promise<RunEvent[]> {
+  const rows = await getDb()
+    .select()
+    .from(runEvents)
+    .where(and(eq(runEvents.runId, runId), gt(runEvents.seq, afterSeq)))
+    .orderBy(asc(runEvents.seq));
+  return rows.map((r) => ({ runId: r.runId, seq: r.seq, at: r.at.toISOString(), event: r.payload }));
+}
+
+/** A "running" row with no live run in this process was orphaned by a restart. */
+export async function markInterrupted(runId: string): Promise<void> {
+  await getDb()
+    .update(runs)
+    .set({ status: "interrupted", finishedAt: new Date() })
+    .where(and(eq(runs.id, runId), eq(runs.status, "running")));
 }
