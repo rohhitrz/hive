@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { RunInfo } from "@/components/run/run-info";
-import { RunView } from "@/components/run/run-view";
+import { LiveRun } from "@/components/run/live-run";
+import { ReplayRun } from "@/components/run/replay-run";
 import { getRun, markInterrupted } from "@/lib/run-store";
 import { getRunner } from "@/lib/runner";
 import { RunIdSchema } from "@/lib/validation";
@@ -30,5 +31,6 @@ export default async function RunPage({ params }: { params: Promise<{ id: string
     createdAt: run.createdAt.toISOString(),
     finishedAt: run.finishedAt?.toISOString() ?? null,
   };
-  return <RunView run={info} />;
+  // Running here → live stream; anything finished (or interrupted) → replay from stored events.
+  return info.status === "running" ? <LiveRun run={info} /> : <ReplayRun run={info} />;
 }

@@ -1,8 +1,8 @@
 "use client";
 
-import { Background, Controls, MarkerType, ReactFlow, ReactFlowProvider, useNodesInitialized, useReactFlow, type Edge, type NodeMouseHandler } from "@xyflow/react";
+import { Background, Controls, MarkerType, ReactFlow, ReactFlowProvider, useReactFlow, type Edge, type NodeMouseHandler, type OnNodesChange } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { buildGraph, topologyKey } from "@/lib/graph/build-graph";
 import { layoutGraph } from "@/lib/graph/layout";
 import type { RunState } from "@/lib/run-state/reducer";
@@ -20,12 +20,28 @@ function Graph({ state, selectedAgentId, onSelectAgent, onClearSelection }: Prop
   // Re-run dagre only when nodes are added (§6), not on every event.
   const positions = useMemo(() => layoutGraph(graph.nodes, graph.edges), [key]);
   const { fitView } = useReactFlow();
-  const initialized = useNodesInitialized();
 
-  // Refit once new nodes have been measured.
+  // Refit when nodes are added: wait until React Flow reports the new nodes' dimensions.
+  const pendingFit = useRef(true);
+  const fitTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const scheduleFit = useCallback(() => {
+    clearTimeout(fitTimer.current);
+    fitTimer.current = setTimeout(() => {
+      pendingFit.current = false;
+      void fitView({ padding: 0.15, duration: 250, maxZoom: 1.1 });
+    }, 60);
+  }, [fitView]);
   useEffect(() => {
-    if (initialized) void fitView({ padding: 0.15, duration: 250, maxZoom: 1.1 });
-  }, [key, initialized, fitView]);
+    pendingFit.current = true;
+    scheduleFit();
+  }, [key, scheduleFit]);
+  useEffect(() => () => clearTimeout(fitTimer.current), []);
+  const onNodesChange: OnNodesChange<HiveFlowNode> = useCallback(
+    (changes) => {
+      if (pendingFit.current && changes.some((c) => c.type === "dimensions")) scheduleFit();
+    },
+    [scheduleFit],
+  );
 
   const nodes: HiveFlowNode[] = graph.nodes.map((n) => ({
     id: n.id,
@@ -69,6 +85,7 @@ function Graph({ state, selectedAgentId, onSelectAgent, onClearSelection }: Prop
       edges={edges}
       nodeTypes={nodeTypes}
       onNodeClick={onNodeClick}
+      onNodesChange={onNodesChange}
       onPaneClick={onClearSelection}
       colorMode="dark"
       fitView
@@ -85,8 +102,15 @@ function Graph({ state, selectedAgentId, onSelectAgent, onClearSelection }: Prop
 }
 
 export function AgentGraph(props: Props) {
+  // When the run state resets (a replay restarts), remount React Flow: nodes re-added under the same
+  // ids otherwise keep stale measurements and stay hidden.
+  const generation = useRef(0);
+  const lastSeq = useRef(props.state.lastSeq);
+  if (props.state.lastSeq < lastSeq.current) generation.current += 1;
+  lastSeq.current = props.state.lastSeq;
+
   return (
-    <ReactFlowProvider>
+    <ReactFlowProvider key={generation.current}>
       <Graph {...props} />
     </ReactFlowProvider>
   );
