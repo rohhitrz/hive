@@ -11,10 +11,12 @@ export class Budget {
     readonly maxAgents: number,
   ) {}
 
-  charge(usage: Usage, tier: keyof typeof PRICES) {
+  /** Adds the cost of one model call and returns it. */
+  charge(usage: Usage, tier: keyof typeof PRICES): number {
     const p = PRICES[tier];
-    this.spentUsd +=
-      ((usage.inputTokens ?? 0) * p.input + (usage.outputTokens ?? 0) * p.output) / 1_000_000;
+    const cost = ((usage.inputTokens ?? 0) * p.input + (usage.outputTokens ?? 0) * p.output) / 1_000_000;
+    this.spentUsd += cost;
+    return cost;
   }
 
   get exhausted() {

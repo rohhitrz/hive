@@ -45,11 +45,30 @@ export const ReviewSchema = z.object({
 });
 export type Review = z.infer<typeof ReviewSchema>;
 
-// Streamed to the UI later (agent graph).
+// Event protocol streamed to the UI. Keep in sync with docs/ARCHITECTURE.md §3.
+export type Phase = "planning" | "researching" | "critiquing" | "synthesizing";
+
+export type ToolCallSummary = { name: string; input: string; result: string };
+
+export type Citation = { n: number; findingId: string; claim: string; url: string };
+
+export type RunStatus = "done" | "failed" | "cancelled";
+
 export type HiveEvent =
+  | { type: "phase"; phase: Phase; round: number }
   | { type: "plan"; questions: SubQuestion[] }
-  | { type: "agent_spawned"; agent: AgentSpec }
-  | { type: "agent_done"; agentId: string; ok: boolean }
+  | { type: "agent_spawned"; agent: AgentSpec; round: number }
+  | {
+      type: "agent_step";
+      agentId: string;
+      step: number;
+      toolCalls: ToolCallSummary[];
+      text?: string;
+      costUsd: number;
+    }
+  | { type: "agent_done"; agentId: string; ok: boolean; summary?: string; error?: string; costUsd: number }
   | { type: "board"; entry: BoardEntry }
-  | { type: "review"; review: Review }
-  | { type: "budget"; spentUsd: number };
+  | { type: "review"; round: number; review: Review }
+  | { type: "budget"; spentUsd: number; agentsSpawned: number }
+  | { type: "report"; markdown: string; citations: Citation[] }
+  | { type: "run_end"; status: RunStatus; error?: string };

@@ -1,29 +1,30 @@
 import { generateObject } from "ai";
-import { MODELS } from "./config.js";
-import type { Blackboard } from "./blackboard.js";
-import type { Budget } from "./budget.js";
+import { emitBudget, type RunContext } from "./context.js";
 import { ReviewSchema, type Review } from "./types.js";
 
-export async function critique(goal: string, board: Blackboard, budget: Budget): Promise<Review> {
-  const findings = board
+export async function critique(ctx: RunContext): Promise<Review> {
+  const findings = ctx.board
     .list("finding")
     .map((e) => `[${e.id}] ${e.finding.claim}\n  source: ${e.finding.sourceUrl}\n  evidence: ${e.finding.evidence}`)
     .join("\n");
 
   const { object, usage } = await generateObject({
-    model: MODELS.lead,
+    model: ctx.models.lead,
     schema: ReviewSchema,
     system:
       "You are a skeptical fact-checker. For every finding, judge whether its evidence actually " +
       "supports the claim, and whether it contradicts another finding. Then list the most " +
       "important gaps left for answering the goal.",
-    prompt: `Goal: ${goal}\n\nFindings:\n${findings || "(none)"}`,
+    prompt: `Goal: ${ctx.goal}\n\nFindings:\n${findings || "(none)"}`,
+    abortSignal: ctx.signal,
   });
-  budget.charge(usage, "lead");
+  ctx.budget.charge(usage, "lead");
+  emitBudget(ctx);
 
+  const known = new Set(ctx.board.list("finding").map((e) => e.id));
   for (const v of object.verdicts) {
-    if (v.verdict !== "supported") {
-      board.post("critic", { type: "dispute", findingId: v.findingId, reason: v.note });
+    if (v.verdict !== "supported" && known.has(v.findingId)) {
+      ctx.board.post("critic", { type: "dispute", findingId: v.findingId, reason: v.note });
     }
   }
   return object;

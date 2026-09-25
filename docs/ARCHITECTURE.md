@@ -89,7 +89,15 @@ type RunEvent = { runId: string; seq: number; at: string /* ISO */; event: HiveE
 Rules:
 - `seq` starts at 1 and increases by 1 per run, with no gaps.
 - `input` / `result` summaries are truncated to 300 chars in core.
-- Rounds are 1-based.
+- Rounds are 1-based. `phase` events for `planning` and `synthesizing` carry `round: 0` (not part of a round).
+- A `budget` event follows every `agent_step`, and every lead-model call (plan, agent design, critique, synthesis).
+- `agent_step.costUsd` is that step's cost; `agent_done.costUsd` is the agent's total.
+- An agent ends `ok: false` if its model call throws (incl. timeout/cancel, `error: "cancelled"`), or if its tools
+  errored and it posted no findings. Tool errors are otherwise fed back to the model so it can recover.
+- Report citations only include numbers that appear in the markdown; `[n]` markers that don't match a finding are
+  removed, and `[1, 2]` is normalized to `[1][2]`.
+- `runHive(goal, { budgetUsd, maxAgents, maxRounds, onEvent, signal, models?, tools? })` resolves to
+  `{ status, report?, error?, spentUsd, agents }`. `models` / `tools` are test overrides.
 - The UI ignores unknown `type`s.
 
 ### Required core changes (vs. the week-1 skeleton)
