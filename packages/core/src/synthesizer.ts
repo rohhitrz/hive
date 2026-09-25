@@ -1,5 +1,5 @@
 import { generateText } from "ai";
-import { emitBudget, type RunContext } from "./context.js";
+import { emitBudget, MAX_RETRIES, type RunContext } from "./context.js";
 import type { Citation } from "./types.js";
 
 const SYNTH_TIMEOUT_MS = 120_000;
@@ -40,6 +40,7 @@ export async function synthesize(ctx: RunContext): Promise<{ markdown: string; c
       "cite them inline like [2]. End with a Sources list and a section on open questions.",
     prompt: `Goal: ${ctx.goal}\n\nVerified findings:\n${sources || "(none)"}`,
     abortSignal: AbortSignal.timeout(SYNTH_TIMEOUT_MS),
+    maxRetries: MAX_RETRIES,
   });
   ctx.budget.charge(usage, "lead");
   emitBudget(ctx);

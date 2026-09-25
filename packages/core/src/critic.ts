@@ -1,6 +1,6 @@
 import { generateObject } from "ai";
-import { emitBudget, type RunContext } from "./context.js";
-import { ReviewSchema, type Review } from "./types.js";
+import { emitBudget, MAX_RETRIES, type RunContext } from "./context.js";
+import { LIMITS, ReviewSchema, type Review } from "./types.js";
 
 export async function critique(ctx: RunContext): Promise<Review> {
   const findings = ctx.board
@@ -17,6 +17,7 @@ export async function critique(ctx: RunContext): Promise<Review> {
       "important gaps left for answering the goal.",
     prompt: `Goal: ${ctx.goal}\n\nFindings:\n${findings || "(none)"}`,
     abortSignal: ctx.signal,
+    maxRetries: MAX_RETRIES,
   });
   ctx.budget.charge(usage, "lead");
   emitBudget(ctx);
@@ -27,5 +28,5 @@ export async function critique(ctx: RunContext): Promise<Review> {
       ctx.board.post("critic", { type: "dispute", findingId: v.findingId, reason: v.note });
     }
   }
-  return object;
+  return { ...object, gaps: object.gaps.slice(0, LIMITS.gaps) };
 }

@@ -1,6 +1,6 @@
 import { generateText, stepCountIs } from "ai";
 import { buildTools } from "./tools.js";
-import { emitBudget, errorMessage, truncate, type RunContext } from "./context.js";
+import { emitBudget, errorMessage, MAX_RETRIES, truncate, type RunContext } from "./context.js";
 import type { AgentSpec, ToolCallSummary } from "./types.js";
 
 const AGENT_TIMEOUT_MS = 120_000;
@@ -31,6 +31,7 @@ export async function runSubAgent(spec: AgentSpec, ctx: RunContext): Promise<{ s
   let costUsd = 0;
   let step = 0;
   let lastToolError: string | undefined;
+  const timeout = AbortSignal.timeout(AGENT_TIMEOUT_MS);
   const findingsBefore = ctx.board.list("finding").filter((e) => e.from === spec.id).length;
 
   try {
@@ -40,7 +41,10 @@ export async function runSubAgent(spec: AgentSpec, ctx: RunContext): Promise<{ s
       prompt: `Team goal: ${ctx.goal}\nYour objective: ${spec.objective}`,
       tools: buildTools(spec.id, ctx.board, ctx.tools),
       stopWhen: stepCountIs(spec.maxSteps),
-      abortSignal: AbortSignal.any([ctx.signal, AbortSignal.timeout(AGENT_TIMEOUT_MS)]),
+      maxRetries: MAX_RETRIES,
+      // Last step: no tools, so the agent always ends with its summary.
+      prepareStep: ({ stepNumber }) => (stepNumber === spec.maxSteps - 1 ? { toolChoice: "none" } : undefined),
+      abortSignal: AbortSignal.any([ctx.signal, timeout]),
       onStepFinish: (s) => {
         const stepCost = ctx.budget.charge(s.usage, "worker");
         costUsd += stepCost;
@@ -71,7 +75,11 @@ export async function runSubAgent(spec: AgentSpec, ctx: RunContext): Promise<{ s
     return { summary: result.text, costUsd };
   } catch (err) {
     if (err instanceof AgentError) throw err;
-    const message = ctx.signal.aborted ? "cancelled" : errorMessage(err);
+    const message = ctx.signal.aborted
+      ? "cancelled"
+      : timeout.aborted
+        ? `timed out after ${AGENT_TIMEOUT_MS / 1000}s`
+        : errorMessage(err);
     throw new AgentError(message, costUsd);
   }
 }

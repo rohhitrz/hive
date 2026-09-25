@@ -3,6 +3,9 @@ import type { Blackboard } from "./blackboard.js";
 import type { Budget } from "./budget.js";
 import type { HiveEvent } from "./types.js";
 
+// Parallel agents can hit provider tokens-per-minute limits; every model call backs off and retries.
+export const MAX_RETRIES = 5;
+
 export type SearchResult = { title: string; url: string; snippet: string };
 
 /** Network-facing tool implementations. Injectable so tests run without API keys. */

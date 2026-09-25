@@ -161,3 +161,13 @@ describe("resolveCitations", () => {
     expect(citations.map((c) => c.findingId)).toEqual(["m1", "m2"]);
   });
 });
+
+describe("lenient model output", () => {
+  it("clamps critic gaps to 3 instead of failing validation", async () => {
+    const { events, result } = await run({ roles: ["market analyst"], gaps: ["a?", "b?", "c?", "d?", "e?"] });
+    const review = events.find((e) => e.type === "review");
+    expect(review?.type === "review" && review.review.gaps).toHaveLength(3);
+    expect(events.filter((e) => e.type === "agent_spawned" && e.round === 2)).toHaveLength(3);
+    expect(result.status).toBe("done");
+  });
+});

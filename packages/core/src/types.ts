@@ -1,10 +1,13 @@
 import { z } from "zod";
 
+// Model-facing schemas avoid min/max limits: OpenAI structured outputs don't enforce them, so a
+// response that breaks one would fail validation. Callers clamp instead (see LIMITS).
+export const LIMITS = { subQuestions: 6, gaps: 3, minSteps: 3, maxSteps: 12 } as const;
+
 export const PlanSchema = z.object({
   subQuestions: z
     .array(z.object({ question: z.string(), role: z.string() }))
-    .min(1)
-    .max(6),
+    .describe("2-6 independent sub-questions"),
 });
 export type SubQuestion = z.infer<typeof PlanSchema>["subQuestions"][number];
 
@@ -13,7 +16,7 @@ export const AgentSpecSchema = z.object({
   role: z.string().describe("Short role name, e.g. 'regulatory researcher'"),
   objective: z.string().describe("The single question this agent must answer"),
   systemPrompt: z.string().describe("Instructions tailored to this role and objective"),
-  maxSteps: z.number().int().min(3).max(12).describe("Tool-call budget; harder questions get more"),
+  maxSteps: z.number().int().describe("Tool-call budget between 3 and 12; harder questions get more"),
 });
 export type AgentSpec = z.infer<typeof AgentSpecSchema> & { id: string };
 
@@ -41,7 +44,7 @@ export const ReviewSchema = z.object({
       note: z.string(),
     }),
   ),
-  gaps: z.array(z.string()).max(3).describe("Important open questions still unanswered"),
+  gaps: z.array(z.string()).describe("Up to 3 important open questions still unanswered"),
 });
 export type Review = z.infer<typeof ReviewSchema>;
 
