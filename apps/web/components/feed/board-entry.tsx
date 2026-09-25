@@ -2,6 +2,7 @@ import type { BoardEntry } from "@hive/core";
 import { Badge } from "@/components/ui/badge";
 import { sourceDomain } from "@/lib/run-state/labels";
 import { cn } from "@/lib/utils";
+import { safeHref } from "@/lib/safe-href";
 
 const CONFIDENCE_TONE = { low: "bad", medium: "warn", high: "ok" } as const;
 
@@ -17,7 +18,7 @@ export function BoardEntryRow({ entry, agentName, disputed }: { entry: BoardEntr
           {disputed && <Badge tone="bad">disputed</Badge>}
         </div>
         <p className={cn("leading-snug", disputed && "text-muted-foreground line-through decoration-red-500/60")}>{f.claim}</p>
-        <a href={f.sourceUrl} target="_blank" rel="noreferrer noopener" className="text-[11px] text-sky-400 hover:underline">
+        <a href={safeHref(f.sourceUrl)} target="_blank" rel="noreferrer noopener" className="text-[11px] text-sky-400 hover:underline">
           {sourceDomain(f.sourceUrl)}
         </a>
       </li>

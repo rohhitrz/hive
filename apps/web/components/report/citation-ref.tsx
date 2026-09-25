@@ -4,6 +4,7 @@ import type { Citation } from "@hive/core";
 import { useState } from "react";
 import { sourceDomain } from "@/lib/run-state/labels";
 import { cn } from "@/lib/utils";
+import { safeHref } from "@/lib/safe-href";
 
 const CARD_ROOM_PX = 200;
 
@@ -24,7 +25,7 @@ export function CitationRef({ n, citation }: { n: number; citation?: Citation })
   return (
     <span className="group relative inline-block" onMouseEnter={place} onFocus={place}>
       <a
-        href={citation.url}
+        href={safeHref(citation.url)}
         target="_blank"
         rel="noreferrer noopener"
         data-citation={n}

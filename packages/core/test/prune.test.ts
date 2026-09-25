@@ -41,3 +41,14 @@ describe("pruneToolResults", () => {
     expect(original?.role === "tool" && original.content[0]!.output.type === "text" && original.content[0]!.output.value.length).toBeGreaterThan(5000);
   });
 });
+
+describe("URL safety", () => {
+  it("only accepts http(s) source URLs", async () => {
+    const { FindingSchema } = await import("../src/types.js");
+    const base = { claim: "c", evidence: "e", confidence: "high" as const };
+    expect(FindingSchema.safeParse({ ...base, sourceUrl: "https://who.int/x" }).success).toBe(true);
+    for (const bad of ["javascript:alert(1)", "data:text/html,<script>1</script>", "file:///etc/passwd"]) {
+      expect(FindingSchema.safeParse({ ...base, sourceUrl: bad }).success).toBe(false);
+    }
+  });
+});

@@ -21,9 +21,15 @@ export const AgentSpecSchema = z.object({
 });
 export type AgentSpec = z.infer<typeof AgentSpecSchema> & { id: string };
 
+/** http(s) only: findings come from models reading untrusted pages, and URLs end up as links in the UI. */
+export const HttpUrlSchema = z
+  .string()
+  .url()
+  .refine((u) => /^https?:\/\//i.test(u), { message: "Only http(s) URLs are allowed" });
+
 export const FindingSchema = z.object({
   claim: z.string(),
-  sourceUrl: z.string().url(),
+  sourceUrl: HttpUrlSchema,
   evidence: z.string().describe("Short excerpt from the source that supports the claim"),
   confidence: z.enum(["low", "medium", "high"]),
 });

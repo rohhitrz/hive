@@ -2,6 +2,7 @@ import type { Citation } from "@hive/core";
 import type { Components } from "react-markdown";
 import { citationNumber } from "@/lib/report/citations";
 import { CitationRef } from "./citation-ref";
+import { safeHref } from "@/lib/safe-href";
 
 /** Dense dark styles for report markdown; [n] links become citation hover cards. */
 export function markdownComponents(citations: Map<number, Citation>): Components {
@@ -28,7 +29,7 @@ export function markdownComponents(citations: Map<number, Citation>): Components
       const n = citationNumber(href);
       if (n !== undefined) return <CitationRef n={n} citation={citations.get(n)} />;
       return (
-        <a href={href} target="_blank" rel="noreferrer noopener" className="break-all text-sky-400 hover:underline">
+        <a href={safeHref(href)} target="_blank" rel="noreferrer noopener" className="break-all text-sky-400 hover:underline">
           {children}
         </a>
       );

@@ -6,7 +6,8 @@ services:
       POSTGRES_PASSWORD: hive
       POSTGRES_DB: hive
     ports:
-      - "5432:5432"
+      # Localhost only: the dev password is not a secret, so never expose this port.
+      - "127.0.0.1:5432:5432"
     volumes:
       - hive-pg:/var/lib/postgresql/data
     healthcheck:
