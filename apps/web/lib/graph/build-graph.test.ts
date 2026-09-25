@@ -117,3 +117,32 @@ describe("performance", () => {
     expect(layoutMs).toBeLessThan(100);
   });
 });
+
+describe("ended runs", () => {
+  it("shows agents cut off by cancel as stopped, not failed", () => {
+    const events = syntheticRun([2]);
+    const cut = events.findIndex((e) => e.event.type === "agent_done");
+    const s = reduceAll([
+      ...events.slice(0, cut),
+      { ...events[cut]!, event: { type: "run_end", status: "cancelled" } },
+    ]);
+    const agents = buildGraph(s).nodes.filter((n) => n.kind === "agent");
+    expect(agents.map((a) => a.status)).toEqual(["stopped", "stopped"]);
+  });
+});
+
+describe("cancelled agents", () => {
+  it("shows agents that ended with error 'cancelled' as stopped", () => {
+    const events = syntheticRun([2]);
+    const cut = events.findIndex((e) => e.event.type === "agent_done");
+    const at = events[cut]!.at;
+    const s = reduceAll([
+      ...events.slice(0, cut),
+      { runId: "synthetic", seq: cut + 1, at, event: { type: "agent_done", agentId: "agent-r1-0", ok: false, error: "cancelled", costUsd: 0 } },
+      { runId: "synthetic", seq: cut + 2, at, event: { type: "agent_done", agentId: "agent-r1-1", ok: false, error: "search exploded", costUsd: 0 } },
+    ]);
+    const byId = Object.fromEntries(buildGraph(s).nodes.map((n) => [n.id, n.status]));
+    expect(byId["agent-r1-0"]).toBe("stopped");
+    expect(byId["agent-r1-1"]).toBe("failed");
+  });
+});

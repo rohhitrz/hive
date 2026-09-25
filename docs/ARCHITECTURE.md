@@ -34,7 +34,7 @@ hive/
 │       │   ├── runner.ts                   # run registry + execution
 │       │   └── run-state/reducer.ts        # pure event → UI state
 │       ├── components/  (graph/, feed/, inspector/, report/, status-bar/)
-│       └── middleware.ts                   # optional basic auth
+│       └── proxy.ts                        # optional basic auth (Next 16 renamed middleware → proxy)
 └── docs/  PRD.md ARCHITECTURE.md TASKS.md
 ```
 

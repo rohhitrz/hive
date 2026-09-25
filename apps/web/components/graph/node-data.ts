@@ -11,4 +11,5 @@ export const STATUS_STYLES: Record<GraphNode["status"], string> = {
   researching: "border-sky-400/80 hive-pulse",
   done: "border-emerald-500/50",
   failed: "border-red-500/70 bg-red-500/5",
+  stopped: "border-amber-500/60 border-dashed",
 };

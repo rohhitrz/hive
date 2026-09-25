@@ -17,7 +17,7 @@ function StageNodeImpl({ data }: NodeProps<HiveFlowNode>) {
       <div className="min-w-0">
         <div className="truncate font-medium text-foreground">{n.label}</div>
         <div className="text-muted-foreground">
-          {n.status === "active" ? "working…" : n.status === "failed" ? "stopped" : n.kind === "critic" ? `${n.disputes} disputes` : "done"}
+          {n.status === "active" ? "working…" : n.status === "failed" ? "failed" : n.status === "stopped" ? "stopped" : n.kind === "critic" ? `${n.disputes} disputes` : "done"}
         </div>
       </div>
       <Handle type="source" position={Position.Bottom} className="!opacity-0" />

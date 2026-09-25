@@ -33,7 +33,14 @@ export function InspectorDrawer({ agent, findings, runEnded, onClose }: Props) {
         <div className="min-w-0 flex-1 space-y-1">
           <div className="flex items-center gap-2">
             <h2 className="truncate text-sm font-semibold">{spec.role}</h2>
-            <Badge tone={running ? "live" : TONE[agent.status]}>{running ? "researching" : agent.status === "researching" ? "stopped" : agent.status}</Badge>
+            {(() => {
+              const stopped = (agent.status === "researching" && !running) || agent.error === "cancelled";
+              return (
+                <Badge tone={running ? "live" : stopped ? "warn" : TONE[agent.status]}>
+                  {running ? "researching" : stopped ? "stopped" : agent.status}
+                </Badge>
+              );
+            })()}
           </div>
           <div className="flex gap-3 text-[11px] tabular-nums text-muted-foreground">
             <span>round {agent.round}</span>

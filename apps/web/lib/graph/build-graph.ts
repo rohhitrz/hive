@@ -1,6 +1,6 @@
 import type { RunState } from "../run-state/reducer";
 
-export type NodeStatus = "idle" | "active" | "spawning" | "researching" | "done" | "failed";
+export type NodeStatus = "idle" | "active" | "spawning" | "researching" | "done" | "failed" | "stopped";
 
 export type GraphNode =
   | { id: string; kind: "lead"; label: string; status: NodeStatus }
@@ -31,9 +31,16 @@ export function buildGraph(state: RunState): { nodes: GraphNode[]; edges: GraphE
   const critics = new Set(state.criticRounds);
 
   for (const a of agents) {
-    const status: NodeStatus = a.status === "researching" ? (a.steps.length === 0 ? "spawning" : "researching") : a.status;
-    // A cancelled or interrupted run leaves agents that will never finish.
-    const shown: NodeStatus = terminal && (status === "researching" || status === "spawning") ? "failed" : status;
+    const status: NodeStatus =
+      a.status === "researching"
+        ? a.steps.length === 0
+          ? "spawning"
+          : "researching"
+        : a.status === "failed" && a.error === "cancelled"
+          ? "stopped"
+          : a.status;
+    // A cancelled or interrupted run leaves agents that will never finish: stopped, not failed.
+    const shown: NodeStatus = terminal && (status === "researching" || status === "spawning") ? "stopped" : status;
     nodes.push({ id: a.spec.id, kind: "agent", label: a.spec.role, status: shown, round: a.round, findings: a.findingIds.length, costUsd: a.costUsd });
     const prevCritic = criticId(a.round - 1);
     const source = a.round > 1 && critics.has(a.round - 1) ? prevCritic : LEAD_ID;
@@ -46,7 +53,9 @@ export function buildGraph(state: RunState): { nodes: GraphNode[]; edges: GraphE
   for (const round of state.criticRounds) {
     const id = criticId(round);
     const active = state.phase === "critiquing" && state.round === round;
-    nodes.push({ id, kind: "critic", label: `Critic · round ${round}`, status: active ? "active" : "done", round, disputes: disputesByRound.get(round) ?? 0 });
+    const reviewed = state.reviews[round] !== undefined;
+    const criticStatus: NodeStatus = active ? "active" : reviewed ? "done" : state.phase === "failed" ? "failed" : "stopped";
+    nodes.push({ id, kind: "critic", label: `Critic · round ${round}`, status: criticStatus, round, disputes: disputesByRound.get(round) ?? 0 });
     for (const a of agents) {
       if (a.round === round) edges.push({ id: `${a.spec.id}->${id}`, source: a.spec.id, target: id, kind: "flow" });
     }
@@ -55,7 +64,7 @@ export function buildGraph(state: RunState): { nodes: GraphNode[]; edges: GraphE
   if (state.synthStarted) {
     const lastCritic = state.criticRounds.at(-1);
     const source = lastCritic !== undefined ? criticId(lastCritic) : LEAD_ID;
-    const status: NodeStatus = state.report ? "done" : state.phase === "synthesizing" ? "active" : "failed";
+    const status: NodeStatus = state.report ? "done" : state.phase === "synthesizing" ? "active" : state.phase === "failed" ? "failed" : "stopped";
     nodes.push({ id: SYNTH_ID, kind: "synth", label: "Synthesizer · report", status });
     edges.push({ id: `${source}->${SYNTH_ID}`, source, target: SYNTH_ID, kind: "flow" });
   }

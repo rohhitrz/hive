@@ -6,7 +6,7 @@ import { formatUsd } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { STATUS_STYLES, type HiveFlowNode } from "./node-data";
 
-const STATUS_TEXT = { spawning: "spawning", researching: "researching", done: "done", failed: "failed", idle: "", active: "" } as const;
+const STATUS_TEXT = { spawning: "spawning", researching: "researching", done: "done", failed: "failed", stopped: "stopped", idle: "", active: "" } as const;
 
 function AgentNodeImpl({ data }: NodeProps<HiveFlowNode>) {
   const n = data.node;
@@ -24,7 +24,7 @@ function AgentNodeImpl({ data }: NodeProps<HiveFlowNode>) {
         <span className="truncate font-medium text-foreground" title={n.label}>
           {n.label}
         </span>
-        <span className={cn("shrink-0 text-[9px] uppercase tracking-wider", n.status === "failed" ? "text-red-400" : n.status === "done" ? "text-emerald-400" : "text-sky-300")}>
+        <span className={cn("shrink-0 text-[9px] uppercase tracking-wider", n.status === "failed" ? "text-red-400" : n.status === "stopped" ? "text-amber-300" : n.status === "done" ? "text-emerald-400" : "text-sky-300")}>
           {STATUS_TEXT[n.status]}
         </span>
       </div>
