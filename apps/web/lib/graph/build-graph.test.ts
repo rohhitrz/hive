@@ -90,7 +90,7 @@ describe("layout", () => {
   it("topology key changes when nodes are added, not when data changes", () => {
     const events = syntheticRun([2]);
     const mid = reduceAll(events.slice(0, 20));
-    const later = reduceRun(mid, { ...events[20]!, event: { type: "budget", spentUsd: 1, agentsSpawned: 2 } });
+    const later = reduceRun(mid, { ...events[20]!, event: { type: "budget", spentUsd: 1, agentsSpawned: 2, searches: 0 } });
     expect(topologyKey(buildGraph(mid).nodes)).toBe(topologyKey(buildGraph(later).nodes));
     expect(topologyKey(buildGraph(reduceAll(events)).nodes)).not.toBe(topologyKey(buildGraph(mid).nodes));
   });

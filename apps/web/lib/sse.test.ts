@@ -7,7 +7,7 @@ const ev = (seq: number): RunEvent => ({
   runId: "r1",
   seq,
   at: new Date(0).toISOString(),
-  event: { type: "budget", spentUsd: seq / 100, agentsSpawned: 0 } satisfies HiveEvent,
+  event: { type: "budget", spentUsd: seq / 100, agentsSpawned: 0, searches: 0 } satisfies HiveEvent,
 });
 const range = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => ev(from + i));
 

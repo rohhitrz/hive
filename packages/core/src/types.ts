@@ -2,7 +2,8 @@ import { z } from "zod";
 
 // Model-facing schemas avoid min/max limits: OpenAI structured outputs don't enforce them, so a
 // response that breaks one would fail validation. Callers clamp instead (see LIMITS).
-export const LIMITS = { subQuestions: 6, gaps: 3, minSteps: 3, maxSteps: 12 } as const;
+// minSteps 6 leaves room for read_board → search → post → read → post → summary.
+export const LIMITS = { subQuestions: 6, gaps: 3, minSteps: 6, maxSteps: 12 } as const;
 
 export const PlanSchema = z.object({
   subQuestions: z
@@ -16,7 +17,7 @@ export const AgentSpecSchema = z.object({
   role: z.string().describe("Short role name, e.g. 'regulatory researcher'"),
   objective: z.string().describe("The single question this agent must answer"),
   systemPrompt: z.string().describe("Instructions tailored to this role and objective"),
-  maxSteps: z.number().int().describe("Tool-call budget between 3 and 12; harder questions get more"),
+  maxSteps: z.number().int().describe("Tool-call budget between 6 and 12; harder questions get more"),
 });
 export type AgentSpec = z.infer<typeof AgentSpecSchema> & { id: string };
 
@@ -72,6 +73,6 @@ export type HiveEvent =
   | { type: "agent_done"; agentId: string; ok: boolean; summary?: string; error?: string; costUsd: number }
   | { type: "board"; entry: BoardEntry }
   | { type: "review"; round: number; review: Review }
-  | { type: "budget"; spentUsd: number; agentsSpawned: number }
+  | { type: "budget"; spentUsd: number; agentsSpawned: number; searches: number }
   | { type: "report"; markdown: string; citations: Citation[] }
   | { type: "run_end"; status: RunStatus; error?: string };

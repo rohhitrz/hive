@@ -8,7 +8,7 @@ import { critique } from "./critic.js";
 import { synthesize } from "./synthesizer.js";
 import { defaultToolImpls } from "./tools.js";
 import { createLimiter } from "./limit.js";
-import { errorMessage, type Models, type RunContext, type ToolImpls } from "./context.js";
+import { createSearchGate, errorMessage, type Models, type RunContext, type ToolImpls } from "./context.js";
 import type { Citation, HiveEvent, RunStatus, SubQuestion } from "./types.js";
 
 export type HiveOptions = {
@@ -17,6 +17,8 @@ export type HiveOptions = {
   maxRounds: number;
   /** Agents running at once; the rest queue. Keeps parallel agents under provider rate limits. Default 3. */
   maxConcurrency?: number;
+  /** Web searches each agent may make (default 4). The run is capped at maxAgents × this. */
+  maxSearchesPerAgent?: number;
   onEvent?: (e: HiveEvent) => void;
   /** Aborting skips remaining work, still writes a report from existing findings, and ends "cancelled". */
   signal?: AbortSignal;
@@ -27,9 +29,11 @@ export type HiveOptions = {
 
 const DEFAULT_CONCURRENCY = 3;
 
-function defaultConcurrency(): number {
-  const fromEnv = Number(process.env.HIVE_MAX_CONCURRENCY);
-  return Number.isInteger(fromEnv) && fromEnv > 0 ? fromEnv : DEFAULT_CONCURRENCY;
+const DEFAULT_SEARCHES_PER_AGENT = 4;
+
+function positiveIntEnv(name: string, fallback: number): number {
+  const fromEnv = Number(process.env[name]);
+  return Number.isInteger(fromEnv) && fromEnv > 0 ? fromEnv : fallback;
 }
 
 export type HiveResult = {
@@ -38,6 +42,7 @@ export type HiveResult = {
   error?: string;
   spentUsd: number;
   agents: number;
+  searches: number;
 };
 
 export async function runHive(goal: string, opts: HiveOptions): Promise<HiveResult> {
@@ -53,12 +58,14 @@ export async function runHive(goal: string, opts: HiveOptions): Promise<HiveResu
   const board = new Blackboard();
   const budget = new Budget(opts.budgetUsd, opts.maxAgents);
   const signal = opts.signal ?? new AbortController().signal;
+  const perAgent = opts.maxSearchesPerAgent ?? positiveIntEnv("HIVE_MAX_SEARCHES_PER_AGENT", DEFAULT_SEARCHES_PER_AGENT);
   const ctx: RunContext = {
     goal,
     board,
     budget,
     models: opts.models ?? MODELS,
     tools: opts.tools ?? defaultToolImpls,
+    search: createSearchGate(perAgent, perAgent * opts.maxAgents),
     signal,
     emit,
   };
@@ -66,12 +73,12 @@ export async function runHive(goal: string, opts: HiveOptions): Promise<HiveResu
 
   const finish = (status: RunStatus, report?: HiveResult["report"], error?: string): HiveResult => {
     emit({ type: "run_end", status, ...(error ? { error } : {}) });
-    return { status, report, error, spentUsd: budget.spentUsd, agents: budget.agentsSpawned };
+    return { status, report, error, spentUsd: budget.spentUsd, agents: budget.agentsSpawned, searches: ctx.search.used };
   };
 
   let status: RunStatus = "done";
   try {
-    await research(ctx, opts.maxRounds, opts.maxConcurrency ?? defaultConcurrency());
+    await research(ctx, opts.maxRounds, opts.maxConcurrency ?? positiveIntEnv("HIVE_MAX_CONCURRENCY", DEFAULT_CONCURRENCY));
   } catch (err) {
     if (!signal.aborted) return finish("failed", undefined, errorMessage(err));
   }

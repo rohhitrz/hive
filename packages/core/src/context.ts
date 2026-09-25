@@ -16,6 +16,23 @@ export type ToolImpls = {
 
 export type Models = { lead: LanguageModel; worker: LanguageModel };
 
+/**
+ * Web searches cost provider credits, and models happily fire dozens in parallel.
+ * Each agent gets `perAgent` searches; the run as a whole makes at most `runLimit` real calls.
+ * Identical queries within a run share one call.
+ */
+export type SearchGate = {
+  perAgent: number;
+  runLimit: number;
+  /** Real (billed) search calls made so far. */
+  used: number;
+  cache: Map<string, Promise<SearchResult[]>>;
+};
+
+export function createSearchGate(perAgent: number, runLimit: number): SearchGate {
+  return { perAgent, runLimit, used: 0, cache: new Map() };
+}
+
 /** Everything a pipeline stage needs for one run. */
 export type RunContext = {
   goal: string;
@@ -23,12 +40,18 @@ export type RunContext = {
   budget: Budget;
   models: Models;
   tools: ToolImpls;
+  search: SearchGate;
   signal: AbortSignal;
   emit: (e: HiveEvent) => void;
 };
 
 export function emitBudget(ctx: RunContext) {
-  ctx.emit({ type: "budget", spentUsd: ctx.budget.spentUsd, agentsSpawned: ctx.budget.agentsSpawned });
+  ctx.emit({
+    type: "budget",
+    spentUsd: ctx.budget.spentUsd,
+    agentsSpawned: ctx.budget.agentsSpawned,
+    searches: ctx.search.used,
+  });
 }
 
 export function truncate(value: unknown, max = 300): string {

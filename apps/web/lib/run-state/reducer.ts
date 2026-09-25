@@ -23,6 +23,8 @@ export type RunState = {
   round: number;
   spentUsd: number;
   agentsSpawned: number;
+  /** Billed web searches so far (0 for runs recorded before search tracking). */
+  searches: number;
   /** Insertion order = spawn order. */
   agents: Record<string, AgentState>;
   board: BoardEntry[];
@@ -45,6 +47,7 @@ export const initialRunState: RunState = {
   round: 0,
   spentUsd: 0,
   agentsSpawned: 0,
+  searches: 0,
   agents: {},
   board: [],
   disputes: {},
@@ -132,7 +135,12 @@ function apply(state: RunState, event: HiveEvent, at: string): RunState {
       return { ...state, reviews: { ...state.reviews, [num(event.round, state.round)]: event.review } };
 
     case "budget":
-      return { ...state, spentUsd: num(event.spentUsd, state.spentUsd), agentsSpawned: num(event.agentsSpawned, state.agentsSpawned) };
+      return {
+        ...state,
+        spentUsd: num(event.spentUsd, state.spentUsd),
+        agentsSpawned: num(event.agentsSpawned, state.agentsSpawned),
+        searches: num(event.searches, state.searches),
+      };
 
     case "report":
       if (typeof event.markdown !== "string") return state;

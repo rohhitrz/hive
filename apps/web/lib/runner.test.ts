@@ -24,7 +24,7 @@ function memoryStore(appendDelayMs = 0) {
   return { store, events, patches, orphans: () => orphanCalls };
 }
 
-const result: HiveResult = { status: "done", spentUsd: 0.01, agents: 1 };
+const result: HiveResult = { status: "done", spentUsd: 0.01, agents: 1, searches: 0 };
 
 const scripted = (events: HiveEvent[]): RunHiveFn => async (_goal, opts) => {
   for (const e of events) opts.onEvent?.(e);
@@ -33,9 +33,9 @@ const scripted = (events: HiveEvent[]): RunHiveFn => async (_goal, opts) => {
 
 const script: HiveEvent[] = [
   { type: "phase", phase: "planning", round: 0 },
-  { type: "budget", spentUsd: 0.001, agentsSpawned: 0 },
+  { type: "budget", spentUsd: 0.001, agentsSpawned: 0, searches: 0 },
   { type: "plan", questions: [{ role: "analyst", question: "q" }] },
-  { type: "budget", spentUsd: 0.002, agentsSpawned: 1 },
+  { type: "budget", spentUsd: 0.002, agentsSpawned: 1, searches: 0 },
   { type: "report", markdown: "# R [1]", citations: [{ n: 1, findingId: "m1", claim: "c", url: "https://a.com" }] },
   { type: "run_end", status: "done" },
 ];

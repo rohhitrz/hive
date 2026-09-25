@@ -39,6 +39,10 @@ export type Scenario = {
   /** Synthesizer output; defaults to a report citing [1] and [2]. */
   report?: string;
   workerDelayMs?: number;
+  /** First worker step fires this many parallel web_search calls (queries q0..qN-1, plus given duplicates). */
+  searchBurst?: number;
+  /** Every agent searches for these exact queries in its first step (tests the shared cache). */
+  sharedQueries?: string[];
 };
 
 export function mockModels(s: Scenario): Models {
@@ -73,6 +77,10 @@ export function mockModels(s: Scenario): Models {
         { type: "tool-call", toolCallId: `c${++callId}`, toolName, input: JSON.stringify(input) },
       ];
       const delay = s.workerDelayMs ?? 5;
+      if (toolTurns === 0 && (s.searchBurst || s.sharedQueries)) {
+        const queries = s.sharedQueries ?? Array.from({ length: s.searchBurst ?? 0 }, (_, i) => `q${i}`);
+        return respond(opts, queries.flatMap((query) => call("web_search", { query })), delay);
+      }
       if (toolTurns === 0) return respond(opts, call("web_search", { query: broken ? "boom" : "market size" }), delay);
       if (toolTurns === 1 && !broken) {
         return respond(
@@ -100,3 +108,16 @@ export const mockTools: ToolImpls = {
   },
   readPage: async () => "page text",
 };
+
+/** Wraps tool impls and counts real (billed) search calls. */
+export function countingTools() {
+  const queries: string[] = [];
+  const tools: ToolImpls = {
+    ...mockTools,
+    webSearch: async (query, signal) => {
+      queries.push(query);
+      return mockTools.webSearch(query, signal);
+    },
+  };
+  return { tools, queries };
+}

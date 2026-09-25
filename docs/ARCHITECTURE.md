@@ -76,7 +76,7 @@ type HiveEvent =
   | { type: "agent_done"; agentId: string; ok: boolean; summary?: string; error?: string; costUsd: number }
   | { type: "board"; entry: BoardEntry }
   | { type: "review"; round: number; review: Review }
-  | { type: "budget"; spentUsd: number; agentsSpawned: number }
+  | { type: "budget"; spentUsd: number; agentsSpawned: number; searches: number }  // searches = billed web searches
   | { type: "report"; markdown: string; citations: Citation[] }
   | { type: "run_end"; status: "done" | "failed" | "cancelled"; error?: string };
 
@@ -100,6 +100,13 @@ Rules:
   `{ status, report?, error?, spentUsd, agents }`. `models` / `tools` are test overrides.
 - At most `maxConcurrency` agents run at once (default 3, env `HIVE_MAX_CONCURRENCY`); the rest queue. An agent's
   `agent_spawned` fires when it actually starts, so a queued agent has no node yet, and its timeout starts then too.
+- Web searches are budgeted (they cost Tavily credits): each agent gets `maxSearchesPerAgent` (default 4, env
+  `HIVE_MAX_SEARCHES_PER_AGENT`), the run makes at most `maxAgents ×` that many real calls, identical queries within a
+  run share one call. Parallel tool calls stay on; the gate counts calls synchronously so a burst can't overshoot. Over budget, `web_search` returns
+  a message telling the agent to read pages or post findings instead.
+- Gather → post: right after a step returns page text or non-empty search results, the next step may only call
+  `post_finding` (`toolChoice: required`), while that source text is still unpruned in context. The final step
+  has tools off so the agent always writes its summary. Agents get 6–12 steps.
 - To stay under provider tokens-per-minute limits, each agent step resends older tool results in slim form: past
   `read_page` bodies become a one-line stub with the URL, past `web_search` results keep only title + URL.
 - The UI ignores unknown `type`s.
@@ -171,7 +178,7 @@ A single **pure reducer** turns events into UI state. Live, reconnect, and repla
 type RunState = {
   phase: Phase | "done" | "failed" | "cancelled" | "interrupted";
   round: number;
-  spentUsd: number; agentsSpawned: number;
+  spentUsd: number; agentsSpawned: number; searches: number;
   agents: Record<string, {
     spec: AgentSpec; round: number;
     status: "researching" | "done" | "failed";
@@ -208,6 +215,7 @@ OPENAI_API_KEY=         TAVILY_API_KEY=     JINA_API_KEY=        # JINA optional
 DATABASE_URL=postgres://hive:hive@localhost:5432/hive
 HIVE_LEAD_MODEL=        HIVE_WORKER_MODEL=                        # optional overrides (default gpt-6-luna)
 HIVE_MAX_CONCURRENCY=                                             # optional, agents running at once (default 3)
+HIVE_MAX_SEARCHES_PER_AGENT=                                      # optional, web searches per agent (default 4)
 HIVE_BASIC_AUTH=        # optional "user:pass"; enables auth middleware
 ```
 

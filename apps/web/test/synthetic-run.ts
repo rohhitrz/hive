@@ -25,7 +25,7 @@ export function syntheticRun(agentsPerRound: number[], minEvents = 0): RunEvent[
       for (let step = 1; step <= 3; step++) {
         spent += 0.001;
         events.push({ type: "agent_step", agentId: id, step, toolCalls: [{ name: "web_search", input: "{}", result: "[]" }], costUsd: 0.001 });
-        events.push({ type: "budget", spentUsd: spent, agentsSpawned: spawned });
+        events.push({ type: "budget", spentUsd: spent, agentsSpawned: spawned, searches: 0 });
       }
       finding += 1;
       events.push({ type: "board", entry: { type: "finding", id: `m${finding}`, from: id, at: 0, finding: { claim: `Claim ${finding}`, sourceUrl: "https://example.com", evidence: "e", confidence: "high" } } });
