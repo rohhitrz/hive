@@ -108,9 +108,11 @@ async function research(ctx: RunContext, maxRounds: number, maxConcurrency: numb
 
   for (let round = 1; round <= maxRounds && questions.length > 0; round++) {
     if (signal.aborted || budget.exhausted) return;
+    // No agent slots left: another round would only re-run the critic on the same findings.
+    const granted = budget.reserveAgents(questions.length);
+    if (granted === 0) return;
 
     emit({ type: "phase", phase: "researching", round });
-    const granted = budget.reserveAgents(questions.length);
 
     // Parallel fan-out, capped by the limiter. One failed agent must not kill the run: keep partial results.
     await Promise.allSettled(

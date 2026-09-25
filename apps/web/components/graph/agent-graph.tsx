@@ -21,20 +21,40 @@ function Graph({ state, selectedAgentId, onSelectAgent, onClearSelection }: Prop
   const positions = useMemo(() => layoutGraph(graph.nodes, graph.edges), [key]);
   const { fitView } = useReactFlow();
 
-  // Refit when nodes are added: on the topology change, and again when React Flow reports new nodes'
-  // dimensions. Nodes have a fixed size, so dimension changes only happen when nodes mount.
+  // Sizes React Flow has measured, passed back on every render. Without `measured`, controlled nodes
+  // (rebuilt each render) get re-measured after every event.
+  const measured = useRef(new Map<string, { width: number; height: number }>());
+
+  // Fit once per topology change (§6: only when nodes are added), after the new nodes are measured,
+  // so a user's zoom/pan survives ordinary events.
+  const pendingFit = useRef(true);
   const fitTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
-  const scheduleFit = useCallback(() => {
-    clearTimeout(fitTimer.current);
-    fitTimer.current = setTimeout(() => void fitView({ padding: 0.15, duration: 250, maxZoom: 1.1 }), 60);
-  }, [fitView]);
+  const scheduleFit = useCallback(
+    (final: boolean) => {
+      clearTimeout(fitTimer.current);
+      fitTimer.current = setTimeout(() => {
+        if (final) pendingFit.current = false;
+        void fitView({ padding: 0.15, duration: 250, maxZoom: 1.1 });
+      }, 60);
+    },
+    [fitView],
+  );
   useEffect(() => {
-    scheduleFit();
+    pendingFit.current = true;
+    // Covers topology changes that don't mount nodes (none today); the measured pass below is final.
+    scheduleFit(false);
   }, [key, scheduleFit]);
   useEffect(() => () => clearTimeout(fitTimer.current), []);
   const onNodesChange: OnNodesChange<HiveFlowNode> = useCallback(
     (changes) => {
-      if (changes.some((c) => c.type === "dimensions")) scheduleFit();
+      let resized = false;
+      for (const c of changes) {
+        if (c.type === "dimensions" && c.dimensions) {
+          measured.current.set(c.id, c.dimensions);
+          resized = true;
+        }
+      }
+      if (resized && pendingFit.current) scheduleFit(true);
     },
     [scheduleFit],
   );
@@ -44,6 +64,7 @@ function Graph({ state, selectedAgentId, onSelectAgent, onClearSelection }: Prop
     type: n.kind === "agent" ? "agent" : "stage",
     position: positions[n.id] ?? { x: 0, y: 0 },
     data: { node: n, selected: n.id === selectedAgentId },
+    measured: measured.current.get(n.id),
     draggable: false,
     connectable: false,
   }));

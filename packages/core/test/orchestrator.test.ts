@@ -171,3 +171,19 @@ describe("lenient model output", () => {
     expect(result.status).toBe("done");
   });
 });
+
+describe("agent slots", () => {
+  it("stops the round loop when no agent slots are left", async () => {
+    const events: HiveEvent[] = [];
+    await runHive("Should I launch a matcha brand in Germany?", {
+      budgetUsd: 5,
+      maxAgents: 2,
+      maxRounds: 3,
+      models: mockModels({ roles: ["market analyst", "regulatory expert"], gaps: ["pricing?"] }),
+      tools: mockTools,
+      onEvent: (e) => events.push(e),
+    });
+    expect(phases(events)).toEqual(["planning:0", "researching:1", "critiquing:1", "synthesizing:0"]);
+    expect(events.at(-1)).toEqual({ type: "run_end", status: "done" });
+  });
+});
